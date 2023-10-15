@@ -1,1 +1,1 @@
-web: gunicorn kidomart.wsgi:application
+web: gunicorn kido_mart.wsgi:application
