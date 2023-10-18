@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,6 +27,7 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" />
     {% endblock %}
     <title>{% block title %}KidoMart{% endblock %}</title>
   </head>
