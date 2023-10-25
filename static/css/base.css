@@ -1,1 +1,14 @@
 @import url(https://fonts.googleapis.com/css2?family=Suez+One&family=Varela&display=swap);
+
+/* Generic Styles */
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #2b2d2f;
+    font-family: 'Varela', sans-serif, 'FontAwesome';
+    scroll-behavior: smooth;
+}
