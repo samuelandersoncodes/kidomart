@@ -12,3 +12,8 @@ body {
     font-family: 'Varela', sans-serif, 'FontAwesome';
     scroll-behavior: smooth;
 }
+
+/* generic heading font style */
+.heading-font {
+    font-family: 'Suez One', serif;
+}
