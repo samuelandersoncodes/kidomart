@@ -1,7 +1,8 @@
-{% extends "base.html" %} {% load static %} {% block page_header %}
+{% extends "base.html" %}
+{% load static %}
 
+{% block page_header %}
 {% include 'navbar.html' %}
-
 <!-- Landing page -->
 <section class="bg-secondary py-5">
   <div class="container header-container px-4 px-lg-5 my-5">
@@ -11,28 +12,21 @@
     </div>
   </div>
 </section>
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
 <!-- Section for item card -->
 <section class="py-4">
   <div class="container px-4 px-lg-5 mt-5">
-    <div
-      class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
-    >
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
       <div class="col mb-5">
         <div class="card h-100">
           <!-- Sale badge-->
-          <div
-            class="badge bg-dark text-white position-absolute"
-            style="top: 0.5rem; right: 0.5rem"
-          >
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
             Sale
           </div>
           <!-- Product image-->
-          <img
-            class="card-img-top"
-            src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-            alt="product images"
-          />
+          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="product images" />
           <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">
@@ -53,4 +47,7 @@
     </div>
   </div>
 </section>
-{% endblock content %}
+
+{% include 'footer.html' %}
+
+{% endblock %}
