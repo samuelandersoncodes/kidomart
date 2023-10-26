@@ -20,6 +20,15 @@ body {
 
 /*********************** Navbar styles ***********************/
 
+/* navbar container style */
+.nav-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+}
+
 /* search form style */
 .search-form {
     width: 55%;
