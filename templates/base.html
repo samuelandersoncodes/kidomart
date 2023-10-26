@@ -2,68 +2,47 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- meta elements -->
-    {% block meta %}
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="kidomart is an e-commerce website that sells children products"
-    />
-    <meta
-      name="keywords"
-      content="children's clothing e-commerce, online shopping sites, e-commerce website for children's products, 
-      best online shops for children's clothes, children's clothing, online stores for children's clothing, kids toys, 
-      children's products shopping,  children products, toys, lego shop, lego shop online, toys for children, buy children products"
-    />
-    <meta name="author" content="Samuel Anderson" />
-    {% endblock %}
-    <!-- main style sheet links -->
-    {% block corecss %}
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{% static 'favicon//apple-touch-icon.png' %}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{% static 'favicon/favicon-32x32.png' %}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{% static 'favicon/favicon-16x16.png' %}"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link href="{% static 'css/base.css' %}" rel="stylesheet" />
-    {% endblock %}
-    <title>{% block title %}KidoMart{% endblock %}</title>
-  </head>
-  <body>
-    <!-- header -->
-    <header>
-      {% block page_header %}
-      <!-- landing page content goes here -->
-      {% endblock %}
-    </header>
 
-    {% block content %}
-    <!-- products content goes here -->
-    {% endblock content %}
-   
-    <script
-      src="https://kit.fontawesome.com/b6d3775a16.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+<head>
+  <!-- meta elements -->
+  {% block meta %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="kidomart is an e-commerce website that sells children products" />
+  <meta name="keywords"
+    content="children's clothing e-commerce, online shopping sites, e-commerce website for children's products, 
+      best online shops for children's clothes, children's clothing, online stores for children's clothing, kids toys, 
+      children's products shopping,  children products, toys, lego shop, lego shop online, toys for children, buy children products" />
+  <meta name="author" content="Samuel Anderson" />
+  {% endblock %}
+  <!-- main style sheet links -->
+  {% block corecss %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon//apple-touch-icon.png' %}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+  {% endblock %}
+  <title>{% block title %}KidoMart{% endblock %}</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    {% block page_header %}
+    <!-- landing page content goes here -->
+    {% endblock %}
+  </header>
+
+  {% block content %}
+  <!-- products content goes here -->
+  {% endblock content %}
+
+  {% block postloadjs %}
+  <script src="https://kit.fontawesome.com/b6d3775a16.js" crossorigin="anonymous"></script>
+  {% endblock %}
+</body>
+
 </html>
