@@ -29,3 +29,8 @@ body {
 .search-button {
     border-radius: 0 4px 4px 0;
 }
+
+/* logo style */
+.logo {
+    font-size: 200%;
+}
