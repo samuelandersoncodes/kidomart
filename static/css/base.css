@@ -17,3 +17,15 @@ body {
 .heading-font {
     font-family: 'Suez One', serif;
 }
+
+/*********************** Navbar styles ***********************/
+
+/* search form style */
+.search-form {
+    width: 55%;
+}
+
+/* search button style */
+.search-button {
+    border-radius: 0 4px 4px 0;
+}
