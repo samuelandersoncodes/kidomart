@@ -1,56 +1,47 @@
 <!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-light bg-light">
   <div class="container-fluid px-2 px-lg-3">
-    <a class="navbar-brand heading-font" href="#!">
+    <a class="navbar-brand heading-font" href="#">
       <i class="fa-solid fa-baby-carriage"></i>KidoMart
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#!"> Home </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Store
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#!">All Products</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-            <li><a class="dropdown-item" href="#!">Clothing</a></li>
-            <li><a class="dropdown-item" href="#!">Toys & Legos</a></li>
-          </ul>
-        </li>
-      </ul>
-      <!-- search form -->
-      <div class="mx-3 search-form">
-        <form action="#" class="text-white d-flex">
-          <div class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="search" aria-label="Search" required>
-            <div class="input-group-append">
-              <button class="btn btn-secondary search-button" type="submit">
-                <i class="fa fa-search"></i>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- cart form -->
-      <form class="d-flex">
-        <button class="btn btn-outline-dark" type="submit">
-          <i class="bi-cart-fill me-1"></i>
-          Cart
-          <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+    <!-- dropdown -->
+    <div class="col-lg col-sm col-md col-6 flex-grow-0">
+      <div class="category-wrap dropdown d-inline-block float-right">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-bars"></i> All Products
         </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Clothing </a>
+          <a class="dropdown-item" href="#">Toys </a>
+          <a class="dropdown-item" href="#">Legos</a>
+          <a class="dropdown-item" href="#">Dolls</a>
+          <a class="dropdown-item" href="#">Electronics</a>
+          <a class="dropdown-item" href="#">Health & Beauty </a>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="btn btn-outline-secondary"><strong>Store</strong> </a>
+    <!-- search form -->
+    <div class="mx-3 search-form">
+      <form action="#" class="text-white d-flex">
+        <div class="input-group">
+          <input type="text" name="search" class="form-control" placeholder="search" aria-label="Search" required>
+          <div class="input-group-append">
+            <button class="btn btn-secondary search-button" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
       </form>
     </div>
+    <!-- cart form -->
+    <form class="d-flex">
+      <button class="btn btn-outline-dark" type="submit">
+        <i class="bi-cart-fill me-1"></i>
+        Cart
+        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+      </button>
+    </form>
+  </div>
   </div>
 </nav>
