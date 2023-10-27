@@ -6,6 +6,7 @@ Django==3.2.22
 django-storages==1.14.2
 gunicorn==21.2.0
 jmespath==1.0.1
+Pillow==10.1.0
 psycopg2==2.9.9
 pytz==2023.3.post1
 s3transfer==0.7.0
