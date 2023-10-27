@@ -23,8 +23,8 @@ body {
 /* navbar container style */
 .nav-container {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
     text-align: center;
     align-items: center;
 }
@@ -42,4 +42,26 @@ body {
 /* logo style */
 .logo {
     font-size: 200%;
+    margin-right: 0.55rem;
+}
+
+/*********************** Media queries ***********************/
+
+/* small screens */
+@media (max-width: 540px) {
+
+    .search-form {
+        width: 45%;
+        margin-left: 0.15rem !important;
+    }
+
+}
+
+@media (max-width: 365px) {
+
+    .search-form {
+        width: 70%;
+        margin: 0.35rem 0.40rem;
+    }
+
 }
