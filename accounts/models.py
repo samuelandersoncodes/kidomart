@@ -70,7 +70,7 @@ class Account(AbstractBaseUser):
     # Set auth required fields
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
     # Extends MyAccountManager objects
-	objects = MyAccountManager()
+    objects = MyAccountManager()
 
     def __str__(self):
         # Returns email address value
