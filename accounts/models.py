@@ -3,6 +3,46 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 # Custom User model
 
+class MyAccountManager(BaseUserManager):
+    """
+    This class creates a custom regular user
+    and a custom super user
+    """
+    def create_user(self, first_name, last_name, username, email, password=None):
+        # Creates regular user and set mandatory fields for email and username
+        if not email:
+            raise ValueError('You must have an email')
+
+        if not username:
+            raise ValueError('You must have a username')
+
+        user = self.model(
+            email = self.normalize_email(email),
+            username = username,
+            first_name = first_name,
+            last_name = last_name,
+        )
+
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, first_name, last_name, username, email, password):
+         # Creates super user
+        user = self.create_user(
+            email = self.normalize_email(email),
+            username = username,
+            password = password,
+            first_name = first_name,
+            last_name = last_name,
+        )
+        user.is_admin = True
+        user.is_active = True
+        user.is_staff = True
+        user.is_superadmin = True
+        user.save(using=self._db)
+        return user
+
 
 class Account(AbstractBaseUser):
     """
@@ -29,6 +69,8 @@ class Account(AbstractBaseUser):
     USERNAME_FIELD = 'email'
     # Set auth required fields
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
+    # Extends MyAccountManager objects
+	objects = MyAccountManager()
 
     def __str__(self):
         # Returns email address value
