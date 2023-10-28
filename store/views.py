@@ -4,11 +4,9 @@ from products.models import Product
 
 def home(request):
     """View for home page"""
-    product_items = Product.objects.all().filter(is_available=True)
+    products = Product.objects.all().filter(is_available=True)
 
     context = {
-        'products': product_items,
+        'products': products,
     }
-    
     return render(request, 'index.html', context)
-    
