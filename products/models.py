@@ -17,6 +17,8 @@ class Product(models.Model):
     modified_date = models.DateTimeField(auto_now=True)
     stock = models.IntegerField()
     is_available = models.BooleanField(default=True)
+    on_sale = models.BooleanField(default=False)
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
         # Returns actual product name
