@@ -45,6 +45,13 @@ body {
     margin-right: 0.55rem;
 }
 
+/*********************** Navbar styles ***********************/
+
+.badge {
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
 /*********************** Media queries ***********************/
 
 /* small screens */
