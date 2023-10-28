@@ -19,31 +19,41 @@
 <section class="py-4">
   <div class="container px-4 px-lg-5 mt-5">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+      {% for product in products %}
       <div class="col mb-5">
         <div class="card h-100">
+          {% if product.on_sale %}
           <!-- Sale badge-->
-          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+          <div class="badge bg-dark text-white position-absolute">
             Sale
           </div>
+          {% endif %}
           <!-- Product image-->
-          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="product images" />
+          <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.product_name }}" />
           <!-- Product details-->
-          <div class="card-body p-4">
+          <div class="card-body p-1">
             <div class="text-center">
               <!-- Product name-->
-              <h5 class="fw-bolder">Toy car</h5>
+              <h6 class="fw-bold">{{ product.product_name }}</h6>
               <!-- Product price-->
-              $40
+              {% if product.on_sale %}
+              <strike>${{ product.price }}</strike> | <strong>${{ product.sale_price }}</strong>
+              {% else %}
+              {{ product.price }}
+              {% endif %}
             </div>
           </div>
           <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center">
-              <a class="btn btn-outline-dark mt-auto" href="#">View options</a>
-            </div>
+          <div class="card-footer p-1 border-top-0 bg-transparent text-center">
+            {% if product.rating %}
+            <small class="text-muted"><i class="fas fa-star"></i>{{ product.rating }} / 5</small>
+            {% else %}
+            <small class="text-muted">No Rating yet</small>
+            {% endif %}
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
   </div>
 </section>
