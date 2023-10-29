@@ -1,5 +1,12 @@
 from django.db import models
 from category.models import Category
+import uuid
+
+def generate_item_id(instance):
+    # Customizes a product id for each product
+    prefix = 'kidoprod'  # Custom prefix for products
+    unique_id = uuid.uuid4().hex[:10]  # Generate a unique identifier
+    return f'{prefix}-{unique_id}'
 
 class Product(models.Model):
     """
@@ -8,7 +15,7 @@ class Product(models.Model):
     product_name = models.CharField(max_length=30,  unique=True)
     slug = models.SlugField(max_length=60, unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default='other')
-    item_id = models.CharField(max_length=60, null=True, blank=True)
+    item_id = models.CharField(max_length=60, unique=True, default=generate_item_id)
     description = models.TextField(max_length=60, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
