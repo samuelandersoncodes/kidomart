@@ -61,6 +61,15 @@ body {
     background-color: #2b2d2f10;
 }
 
+/*********************** Footer styles ***********************/
+
+.footer {
+    height: 115px;
+    margin-top: auto;
+    background-color: #2b2d2f42;
+    color: black;
+}
+
 /*********************** Media queries ***********************/
 
 /* small screens */
