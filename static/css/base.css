@@ -91,11 +91,35 @@ body {
 /*********************** Media queries ***********************/
 
 /* small screens */
+@media (max-width: 607px) {
+
+    .carousel-img {
+        max-height: 17rem;
+    }
+
+}
+
 @media (max-width: 540px) {
 
     .search-form {
         width: 45%;
         margin-left: 0.15rem !important;
+    }
+
+}
+
+@media (max-width: 472px) {
+
+    .carousel-img {
+        max-height: 14rem;
+    }
+
+}
+
+@media (max-width: 392px) {
+
+    .carousel-img {
+        max-height: 11rem;
     }
 
 }
