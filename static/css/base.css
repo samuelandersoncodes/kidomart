@@ -61,8 +61,14 @@ body {
     background-color: #2b2d2f10;
 }
 
+/* Carousel style */
+.carousel-img {
+    max-height: 22rem;
+}
+
 /*********************** Footer styles ***********************/
 
+/* footer style */
 .footer {
     height: 115px;
     margin-top: auto;
@@ -70,11 +76,13 @@ body {
     color: black;
 }
 
+/* footer icons style */
 .footer-icons>a {
     color: #2b2d2f;
     font-size: 150%;
 }
 
+/* footer copyright style */
 .copyright {
     color: black;
     font-size: 120%;
