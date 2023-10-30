@@ -70,6 +70,16 @@ body {
     color: black;
 }
 
+.footer-icons>a {
+    color: #2b2d2f;
+    font-size: 150%;
+}
+
+.copyright {
+    color: black;
+    font-size: 120%;
+}
+
 /*********************** Media queries ***********************/
 
 /* small screens */
