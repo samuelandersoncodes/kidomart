@@ -17,39 +17,46 @@
 {% block content %}
 <!-- Section for item card -->
 <section class="py-4">
-  <div class="container px-4 px-lg-5 mt-5">
-    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+  <div class="container py-4 px-4 px-lg-5 mt-0 product-container">
+    <div class="row">
       {% for product in products %}
-      <div class="col mb-5">
-        <div class="card h-100">
-          {% if product.on_sale %}
+      <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3">
+        <div class="card h-100 border-0">
           <!-- Sale badge-->
+          {% if product.on_sale %}
           <div class="badge bg-dark text-white position-absolute">
             Sale
           </div>
           {% endif %}
           <!-- Product image-->
-          <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.product_name }}" />
-          <!-- Product details-->
-          <div class="card-body p-1">
-            <div class="text-center">
-              <!-- Product name-->
-              <h6 class="fw-bold">{{ product.product_name }}</h6>
-              <!-- Product price-->
-              {% if product.on_sale %}
-              <strike>${{ product.price }}</strike> | <strong>${{ product.sale_price }}</strong>
-              {% else %}
-              ${{ product.price }}
-              {% endif %}
-            </div>
+          <a href="">
+            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.product_name }}">
+          </a>
+          <!-- placeholder for card alignment -->
+          <div class="card-body pb-0">
           </div>
-          <!-- Product actions-->
-          <div class="card-footer p-1 border-top-0 bg-transparent text-center">
-            {% if product.rating %}
-            <small class="text-muted"><i class="fas fa-star"></i>{{ product.rating }} / 5</small>
-            {% else %}
-            <small class="text-muted">No Rating yet</small>
-            {% endif %}
+          <!-- card footer -->
+          <div class="card-footer bg-white pt-0 border-0 text-center">
+            <div class="row">
+              <div class="col">
+                <!-- Product name-->
+                <p class="mb-0 fw-bold fs-5">{{ product.product_name }}</p>
+                <!-- Product price-->
+                {% if product.on_sale %}
+                <p class="mb-0">
+                  <strike>${{ product.price }}</strike> | <strong>${{ product.sale_price }}</strong>
+                </p>
+                {% else %}
+                <p class="mb-0">${{ product.price }}</p>
+                {% endif %}
+                <!-- Product rating -->
+                {% if product.rating %}
+                <small class="text-muted"><i class="fas fa-star"></i>{{ product.rating }}</small>
+                {% else %}
+                <small class="text-muted">No Rating yet</small>
+                {% endif %}
+              </div>
+            </div>
           </div>
         </div>
       </div>
