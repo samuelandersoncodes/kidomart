@@ -11,6 +11,9 @@ body {
     color: #2b2d2f;
     font-family: 'Varela', sans-serif, 'FontAwesome';
     scroll-behavior: smooth;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* generic heading font style */
