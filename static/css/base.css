@@ -45,11 +45,17 @@ body {
     margin-right: 0.55rem;
 }
 
-/*********************** Navbar styles ***********************/
+/*********************** Home page styles ***********************/
 
+/* sale badge style */
 .badge {
     top: 0.5rem;
     right: 0.5rem;
+}
+
+/* product container style */
+.product-container {
+    background-color: aqua;
 }
 
 /*********************** Media queries ***********************/
