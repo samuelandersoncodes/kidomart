@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Category(models.Model):
     """
@@ -13,6 +14,10 @@ class Category(models.Model):
     class Meta:
         # Correctly pluralize the category word
         verbose_name_plural = 'Categories'
+
+    def get_url(self):
+        # Dynamically generates category url by slug
+        return reverse('products_category', args=[self.slug])
 
     def __str__(self):
         return self.category_name
