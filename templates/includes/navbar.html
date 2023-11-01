@@ -10,12 +10,9 @@
         Categories
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Clothing </a>
-        <a class="dropdown-item" href="#">Toys </a>
-        <a class="dropdown-item" href="#">Legos</a>
-        <a class="dropdown-item" href="#">Dolls</a>
-        <a class="dropdown-item" href="#">Electronics</a>
-        <a class="dropdown-item" href="#">Health & Beauty </a>
+        {% for category in links %}
+        <a class="dropdown-item" href="{{ category.get_url }}">{{ category.category_name }} </a>
+        {% endfor %}
       </div>
     </div>
     <!-- search form -->
