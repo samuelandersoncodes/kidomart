@@ -6,7 +6,7 @@ from category.models import Category
 def generate_item_id():
     # Customizes a product id for each product
     prefix = 'kidoprod'  # Custom prefix for products
-    unique_id = uuid.uuid4().hex[:10]  # Generate a unique identifier
+    unique_id = str(uuid.uuid4())  # Generate a unique identifier
     return f'{prefix}-{unique_id}'
 
 class Product(models.Model):
