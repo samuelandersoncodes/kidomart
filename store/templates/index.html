@@ -67,7 +67,7 @@
             <div class="row">
               <div class="col">
                 <!-- Product name-->
-                <a href="{% url 'product_detail' category_slug=product.category.slug product_slug=product.slug %}">
+                <a href="{% url 'product_detail' category_slug=product.category.slug product_slug=product.slug %}" class="text-decoration-none text-dark">
                   <p class="mb-0 fw-bold fs-5">{{ product.product_name }}</p>
                 </a>
                 <!-- Product price-->
