@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'kidomart-78f25893d540.herokuapp.com',
-    '8000-samuelanderson-kidomart-scn4sskwo16.ws-eu105.gitpod.io'
+    '8000-samuelanderson-kidomart-scn4sskwo16.ws-eu106.gitpod.io'
 ]
 
 
