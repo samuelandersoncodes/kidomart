@@ -23,7 +23,7 @@
 					<article class="content-body">
 						<!-- product detail name -->
 						<h2>
-							{{single_product.product_name}}
+							{{ single_product.product_name }}
 						</h2>
 						<div class="mb-3">
 							<!-- Product price-->
@@ -35,6 +35,11 @@
 							{% else %}
 							<p class="mb-0">${{ single_product.price }}</p>
 							{% endif %}
+						</div>
+						<div>
+							<p class="fs-5">
+								{{ single_product.description }}
+							</p>
 						</div>
 						<hr>
 						<div class="row">
