@@ -41,10 +41,10 @@
 								{{ single_product.description }}
 							</p>
 						</div>
+						{% if single_product.has_sizes %}
 						<hr>
 						<div class="row">
 							<!-- product detail sizes -->
-							{% if single_product.has_sizes %}
 							<div class="item-option-select">
 								<h6>Select Size</h6>
 								<div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
@@ -62,8 +62,8 @@
 									</label>
 								</div>
 							</div>
-							{% endif %}
 						</div>
+						{% endif %}
 						<div class="row">
 							<div>
 								<div>
