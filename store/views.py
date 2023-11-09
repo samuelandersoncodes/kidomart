@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import Http404
 from products.models import Product
 from category.models import Category
 
@@ -29,4 +30,12 @@ def home(request, category_slug=None):
 
 def product_detail(request, category_slug, product_slug):
     # product detail view
-    return render(request, 'product_detail.html')
+    try:
+        single_product = Product.objects.get(category__slug=category_slug, slug=product_slug)
+    except Product.DoesNotExist:
+        raise Http404("Sorry! This product does not exist")
+    
+    context = {
+        'single_product': single_product,
+    }
+    return render(request, 'product_detail.html', context)
