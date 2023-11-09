@@ -43,11 +43,26 @@
 						</div>
 						<hr>
 						<div class="row">
+							<!-- product detail sizes -->
+							{% if single_product.has_sizes %}
 							<div class="item-option-select">
-								<div>
-
+								<h6>Select Size</h6>
+								<div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-light" aria-label="Small">
+										<input type="radio" name="radio_color"> S
+									</label>
+									<label class="btn btn-light active" aria-label="Medium">
+										<input type="radio" name="radio_color" checked> M
+									</label>
+									<label class="btn btn-light" aria-label="Large">
+										<input type="radio" name="radio_color"> L
+									</label>
+									<label class="btn btn-light" aria-label="Extra large">
+										<input type="radio" name="radio_color"> XL
+									</label>
 								</div>
 							</div>
+							{% endif %}
 						</div>
 						<div class="row">
 							<div>
