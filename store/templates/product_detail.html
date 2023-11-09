@@ -21,11 +21,20 @@
 				<!-- details for each product -->
 				<main class="col-md-6 border-left">
 					<article class="content-body">
+						<!-- product detail name -->
 						<h2>
 							{{single_product.product_name}}
 						</h2>
 						<div class="mb-3">
-
+							<!-- Product price-->
+							{% if single_product.on_sale %}
+							<p class="mb-0">
+								<strike>${{ single_product.price }}</strike> |
+								<strong>${{ single_product.sale_price }}</strong>
+							</p>
+							{% else %}
+							<p class="mb-0">${{ single_product.price }}</p>
+							{% endif %}
 						</div>
 						<hr>
 						<div class="row">
