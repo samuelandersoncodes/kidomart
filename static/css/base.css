@@ -70,6 +70,14 @@ body {
     max-height: 22rem;
 }
 
+/*********************** Product detail page styles ***********************/
+
+/* Product detail article body style */
+.article-body {
+    flex: 1 1 auto;
+    padding: 2rem 0 1.5rem 2rem;
+}
+
 /*********************** Footer styles ***********************/
 
 /* footer style */
