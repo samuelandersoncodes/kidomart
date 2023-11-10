@@ -93,6 +93,11 @@ body {
     display: inline-block;
 }
 
+/* image wrap anchor style */
+.main-img-wrap .img-wrap a {
+    display: block;
+}
+
 /*********************** Footer styles ***********************/
 
 /* footer style */
