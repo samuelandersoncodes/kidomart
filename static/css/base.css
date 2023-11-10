@@ -78,6 +78,21 @@ body {
     padding: 2rem 0 1.5rem 2rem;
 }
 
+/* product detail image wrap style */
+.main-img-wrap .img-wrap {
+    margin-bottom: 0;
+    border-radius: 0.32rem 0 0 0.32rem;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* product detail image style */
+.main-img-wrap .img-wrap img {
+    height: 420px;
+    width: auto;
+    display: inline-block;
+}
+
 /*********************** Footer styles ***********************/
 
 /* footer style */
