@@ -18,11 +18,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            {% for cart_item in cart_items %}
                             <tr>
                                 <td>
                                     <figure class="align-items-center">
-                                        <div class="aside"><img src="" class="img-sm" alt=""></div>
+                                        <div class="aside"><img src="{{cart_item.product.image.url}}" class="img-sm"
+                                                alt="{{cart_item.product.product_name}}"></div>
                                         <figcaption class="info">
                                             <a href="#" class="title text-dark"></a>
                                             <p class="text-muted small"></p>
@@ -55,6 +56,7 @@
                                     <a href="" class="btn btn-danger"></a>
                                 </td>
                             </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
