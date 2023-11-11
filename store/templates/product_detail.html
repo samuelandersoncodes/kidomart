@@ -77,7 +77,7 @@
 							Out of stock
 						</h6>
 						{% else %} 
-						<a href="{% url 'add_cart' item_id=selected_product.item_id %}" class="btn  btn-secondary hvr-pop">
+						<a href="{% url 'add_cart' item_id=single_product.item_id %}" class="btn  btn-secondary hvr-pop">
 							<span class="text">Add to cart</span>
 							<i class="fas fa-shopping-cart"></i>
 						</a>
