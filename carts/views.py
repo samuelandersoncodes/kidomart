@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from products.models import Product
 from .models import Cart, CartItem
 
@@ -51,6 +51,27 @@ def add_cart(request, item_id):
     return redirect('cart')
 
 
+def remove_cart(request, item_id):
+    """
+    View for decreasing product quantity in the cart
+    It gets the Cart object associated with the current session
+    And gets the Product object with the specified item_id or raise a 404 error if not found
+    It then gets the CartItem associated with the Cart and Product
+    and check if cart item quantity is more than one
+    If the quantity is one or less, it removes the cart item
+    And redirects user to cart page after removing item
+    """
+    cart = Cart.objects.get(cart_id=_cart_id(request))
+    product = get_object_or_404(Product, item_id=item_id)
+    cart_item = CartItem.objects.get(product=product, cart=cart)
+    if cart_item.quantity > 1:
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        cart_item.delete()
+    return redirect('cart')
+
+
 def cart(request, total=0, quantity=0, cart_items=None):
     """
     View to display cart template
@@ -75,6 +96,6 @@ def cart(request, total=0, quantity=0, cart_items=None):
         'quantity': quantity,
         'cart_items': cart_items,
         'tax': tax,
-        'grand_total': grand_total, 
+        'grand_total': grand_total,
     }
     return render(request, 'cart.html', context)
