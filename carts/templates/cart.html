@@ -5,6 +5,17 @@
 {% include 'includes/navbar.html' %}
 <section>
     <div class="container">
+        {% if not cart_items %}
+        <div class="text-center mt-5 pt-4">
+            <h2>
+                Your cart is empty
+            </h2>
+            <br>
+            <div>
+                <a href="{% url 'home' %}" class="btn btn-secondary hvr-pop">Continue Shopping</a>
+            </div>
+        </div>
+        {% else %}
         <div class="row">
             <aside class="col-lg-9">
                 <div class="card">
@@ -58,7 +69,8 @@
                                     </div>
                                 </td>
                                 <td class="text-right">
-                                    <a href="{% url 'delete_cart_item' cart_item.product.item_id %}" class="btn btn-danger">Remove</a>
+                                    <a href="{% url 'delete_cart_item' cart_item.product.item_id %}"
+                                        class="btn btn-danger">Remove</a>
                                 </td>
                             </tr>
                             {% endfor %}
@@ -94,6 +106,7 @@
 
             </aside>
         </div>
+        {% endif %}
     </div>
 </section>
 {% include 'includes/footer.html' %}
