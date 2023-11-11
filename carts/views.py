@@ -72,6 +72,20 @@ def remove_cart(request, item_id):
     return redirect('cart')
 
 
+def delete_cart_item(request, item_id):
+    """
+    Cart item removal view
+    It gets the Cart object associated with the current session
+    And gets the Product object with the specified item_id or raise 404 error
+    Deletes the cart item and returns to cart page
+    """
+    cart = Cart.objects.get(cart_id=_cart_id(request))
+    product = get_object_or_404(Product, item_id=item_id)
+    cart_item = CartItem.objects.get(product=product, cart=cart)
+    cart_item.delete()
+    return redirect('cart')
+
+
 def cart(request, total=0, quantity=0, cart_items=None):
     """
     View to display cart template
