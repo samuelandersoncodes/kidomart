@@ -58,7 +58,7 @@
                                     </div>
                                 </td>
                                 <td class="text-right">
-                                    <a href="" class="btn btn-danger"></a>
+                                    <a href="{% url 'delete_cart_item' cart_item.product.item_id %}" class="btn btn-danger">Remove</a>
                                 </td>
                             </tr>
                             {% endfor %}
