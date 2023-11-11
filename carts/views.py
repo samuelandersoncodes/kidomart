@@ -15,7 +15,7 @@ def _cart_id(request):
     return cart
 
 
-def add_cart(request, product_id):
+def add_cart(request, item_id):
     """
     View for adding a product to the cart
     It gets the product object based on the provided product ID
@@ -27,7 +27,7 @@ def add_cart(request, product_id):
     If no cart item exists, it creates a new one with quantity 1
     And finally Redirect the user to the 'cart' page after adding the item
     """
-    product = Product.objects.get(id=product_id)
+    product = Product.objects.get(item_id=item_id)
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
     except Cart.DoesNotExist:
@@ -42,7 +42,7 @@ def add_cart(request, product_id):
         cart_item.save()
     except CartItem.DoesNotExist:
         cart_item = CartItem.objects.create(
-            product=product,
+            selected_product=product,
             quantity=1,
             cart=cart,
         )
