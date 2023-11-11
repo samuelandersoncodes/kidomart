@@ -42,7 +42,7 @@ def add_cart(request, item_id):
         cart_item.save()
     except CartItem.DoesNotExist:
         cart_item = CartItem.objects.create(
-            selected_product=product,
+            product=product,
             quantity=1,
             cart=cart,
         )
