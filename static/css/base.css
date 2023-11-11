@@ -98,6 +98,21 @@ body {
     display: block;
 }
 
+/*********************** Cart page styles ***********************/
+
+/* cart image style */
+.small-img {
+    height: 3.5rem;
+    width: 5.5rem;
+}
+
+/* cart figure style */
+.item-on-side {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
 /*********************** Footer styles ***********************/
 
 /* footer style */
