@@ -128,26 +128,6 @@ body {
     flex-grow: 1;
 }
 
-/* Product scope style */
-.product-scope {
-    width: 22rem;
-}
-
-/* Quantity scope style */
-.quantity-scope {
-    width: 12rem;
-}
-
-/* Price scope style */
-.price-scope {
-    width: 8rem;
-}
-
-/* Button scope style */
-.button-scope {
-    width: 6rem;
-}
-
 /*********************** Footer styles ***********************/
 
 /* footer style */
