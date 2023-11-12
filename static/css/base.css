@@ -113,6 +113,21 @@ body {
     width: 100%;
 }
 
+/* Tax and total card style */
+.dlist-align {
+    display: flex;
+}
+
+.dlist-align dt {
+    width: 120px;
+    word-wrap: break-word;
+    font-weight: normal;
+}
+
+.dlist-align dd {
+    flex-grow: 1;
+}
+
 /*********************** Footer styles ***********************/
 
 /* footer style */
