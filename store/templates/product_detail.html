@@ -76,6 +76,9 @@
 						<h6 class="text-danger">
 							Out of stock
 						</h6>
+						<div>
+							<a href="{% url 'home' %}" class="btn btn-secondary btn-sm hvr-pop">Continue Shopping</a>
+						</div>
 						{% else %} 
 						<a href="{% url 'add_cart' item_id=single_product.item_id %}" class="btn  btn-secondary hvr-pop">
 							<span class="text">Add to cart</span>
