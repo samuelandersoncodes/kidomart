@@ -201,6 +201,22 @@ body {
         border-radius: 0.32rem 0.32rem 0 0;
     }
 
+    .cart-title {
+        display: none;
+    }
+
+    .remove-button {
+        padding: 3px;
+    }
+
+    .price-wrap {
+        margin: 8px 2px;
+    }
+
+    .item-quantity {
+        max-width: 25%;
+    }
+
 }
 
 /* small screens */
