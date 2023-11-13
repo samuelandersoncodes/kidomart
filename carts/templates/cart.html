@@ -99,7 +99,7 @@
                         <span>Subtotal :</span>
                     </div>
                     <div class="col text-right">
-                        <span>$ {{ total }}</span>
+                        <span>$ {{ total|floatformat:2 }}</span>
                     </div>
                 </div>
                 <!-- Tax -->
@@ -108,7 +108,7 @@
                         <span">Tax :</span>
                     </div>
                     <div class="col text-right">
-                        <span>$ {{ tax }}</span>
+                        <span>$ {{ tax|floatformat:2 }}</span>
                     </div>
                 </div>
                 <!-- Grand total -->
@@ -117,7 +117,7 @@
                         <span>Grand Total :</span>
                     </div>
                     <div class="col text-right">
-                        <span class="text-dark"><strong>$ {{ grand_total }}</strong></span>
+                        <span class="text-dark"><strong>$ {{ grand_total|floatformat:2 }}</strong></span>
                     </div>
                 </div>
                 <hr>
