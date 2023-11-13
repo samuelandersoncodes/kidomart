@@ -72,19 +72,20 @@
 							</div>
 						</div>
 						<hr>
-						{% if single_product.stock <= 0 %}
-						<h6 class="text-danger">
+						{% if single_product.stock <= 0 %} <h6 class="text-danger">
 							Out of stock
-						</h6>
-						<div>
-							<a href="{% url 'home' %}" class="btn btn-secondary btn-sm hvr-pop">Continue Shopping</a>
-						</div>
-						{% else %} 
-						<a href="{% url 'add_cart' item_id=single_product.item_id %}" class="btn  btn-secondary hvr-pop">
-							<span class="text">Add to cart</span>
-							<i class="fas fa-shopping-cart"></i>
-						</a>
-						{% endif %}
+							</h6>
+							<div>
+								<a href="{% url 'home' %}" class="btn btn-secondary btn-sm hvr-pop">
+									Continue Shopping
+								</a>
+							</div>
+							{% else %}
+							<form method="post" action="{% url 'add_to_cart' single_product.item_id %}">
+								{% csrf_token %}
+								<button type="submit" class="btn btn-secondary hvr-pop">Add to Cart</button>
+							</form>
+							{% endif %}
 					</article>
 				</main>
 			</div>
