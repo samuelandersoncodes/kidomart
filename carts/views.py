@@ -15,7 +15,7 @@ def _cart_id(request):
     return cart
 
 
-def add_cart(request, item_id):
+def add_to_cart(request, item_id):
     """
     View for adding a product to the cart
     It gets the product object based on the provided product ID
@@ -27,31 +27,35 @@ def add_cart(request, item_id):
     If no cart item exists, it creates a new one with quantity 1
     And finally Redirect the user to the 'cart' page after adding the item
     """
-    product = Product.objects.get(item_id=item_id)
-    try:
-        cart = Cart.objects.get(cart_id=_cart_id(request))
-    except Cart.DoesNotExist:
-        cart = Cart.objects.create(
-            cart_id=_cart_id(request)
-        )
-    cart.save()
+    if request.method == 'POST':
+        product = Product.objects.get(item_id=item_id)
+        cart_id = request.session.session_key
+        if not cart_id:
+            request.session.create()
+            cart_id = request.session.session_key
 
-    try:
-        cart_item = CartItem.objects.get(product=product, cart=cart)
-        cart_item.quantity += 1
-        cart_item.save()
-    except CartItem.DoesNotExist:
-        cart_item = CartItem.objects.create(
-            product=product,
-            quantity=1,
-            cart=cart,
-        )
-        cart_item.save()
+        try:
+            cart = Cart.objects.get(cart_id=cart_id)
+        except Cart.DoesNotExist:
+            cart = Cart.objects.create(cart_id=cart_id)
+            cart.save()
+
+        try:
+            cart_item = CartItem.objects.get(product=product, cart=cart)
+            cart_item.quantity += 1
+            cart_item.save()
+        except CartItem.DoesNotExist:
+            cart_item = CartItem.objects.create(
+                product=product,
+                quantity=1,
+                cart=cart,
+            )
+            cart_item.save()
 
     return redirect('cart')
 
 
-def remove_cart(request, item_id):
+def remove_from_cart(request, item_id):
     """
     View for decreasing product quantity in the cart
     It gets the Cart object associated with the current session
@@ -61,14 +65,17 @@ def remove_cart(request, item_id):
     If the quantity is one or less, it removes the cart item
     And redirects user to cart page after removing item
     """
-    cart = Cart.objects.get(cart_id=_cart_id(request))
-    product = get_object_or_404(Product, item_id=item_id)
-    cart_item = CartItem.objects.get(product=product, cart=cart)
-    if cart_item.quantity > 1:
-        cart_item.quantity -= 1
-        cart_item.save()
-    else:
-        cart_item.delete()
+    if request.method == 'POST':
+        cart_id = request.session.session_key
+        cart = Cart.objects.get(cart_id=cart_id)
+        product = get_object_or_404(Product, item_id=item_id)
+        cart_item = CartItem.objects.get(product=product, cart=cart)
+        if cart_item.quantity > 1:
+            cart_item.quantity -= 1
+            cart_item.save()
+        else:
+            cart_item.delete()
+
     return redirect('cart')
 
 
