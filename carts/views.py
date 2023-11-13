@@ -98,12 +98,13 @@ def cart(request, total=0, quantity=0, cart_items=None):
     View to display cart template
     It tries to retrieve the cart based on the current session
     And also retrieves active cart items associated with the cart
+    It arranges the cart items in descendning order
     It then calculates the tax, total price and quantity of items in the cart
     And renders the template with the calculated context
     """
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
-        cart_items = CartItem.objects.filter(cart=cart, is_active=True)
+        cart_items = CartItem.objects.filter(cart=cart, is_active=True).order_by('-id')
         for cart_item in cart_items:
             total += (cart_item.product.price * cart_item.quantity)
             quantity += cart_item.quantity
