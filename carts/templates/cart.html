@@ -50,19 +50,27 @@
                 </div>
                 <div class="col-12 col-md-3">
                     <div class="input-group">
-                        <!-- item quantity decrement button -->
-                        <div class="input-group-prepend">
-                            <a href="{% url 'remove_cart' cart_item.product.item_id %}" class="btn btn-light"
-                                type="button" id="button-plus"> <i class="fa fa-minus"></i> </a>
-                        </div>
-                        <!-- cart item quantity display -->
-                        <input type="text" class="form-control item-quantity" id="" value="{{ cart_item.quantity }}">
-                        <!-- cart item quantity increment button -->
-                        <div class="input-group-append">
-                            <a href="{% url 'add_cart' cart_item.product.item_id %}" class="btn btn-light" type="button"
-                                id="button-minus"> <i class="fa fa-plus"></i>
-                            </a>
-                        </div>
+                        <!-- Quantity decrement button -->
+                        <form method="post" action="{% url 'remove_from_cart' cart_item.product.item_id %}">
+                            {% csrf_token %}
+                            <div class="input-group-prepend">
+                                <button class="btn btn-light" type="submit" id="button-minus">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <!-- Quantity display -->
+                        <input type="text" name="quantity" class="form-control item-quantity"
+                            value="{{ cart_item.quantity }}">
+                        <!-- Quantity increment button -->
+                        <form method="post" action="{% url 'add_to_cart' cart_item.product.item_id %}">
+                            {% csrf_token %}
+                            <div class="input-group-append">
+                                <button class="btn btn-light" type="submit" id="button-plus">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-12 col-md-3">
