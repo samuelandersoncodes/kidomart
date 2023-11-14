@@ -7,14 +7,16 @@ from category.models import Category
 def home(request, category_slug=None):
     """
     View for home page
-    the function also displays url sorted category of products
+    the function also displays url sorted category of products,
+    their respective category names and product counts
     """
-
+    selected_category = None
     categories = None
     products = None
 
     if category_slug != None:
         categories = get_object_or_404(Category, slug=category_slug)
+        selected_category = get_object_or_404(Category, slug=category_slug)
         products = Product.objects.filter(category=categories, is_available=True)
         product_count = products.count()
     else:
@@ -24,6 +26,8 @@ def home(request, category_slug=None):
     context = {
         'products': products,
         'product_count': product_count,
+        'selected_category': selected_category,
+        'categories': categories,
     }
     return render(request, 'index.html', context)
 
