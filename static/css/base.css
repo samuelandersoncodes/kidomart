@@ -245,6 +245,17 @@ body {
 
 }
 
+@media (max-width: 489px) {
+
+    .view-added-buttons {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-right: 3px;
+    }
+
+}
+
 @media (max-width: 472px) {
 
     .carousel-img {

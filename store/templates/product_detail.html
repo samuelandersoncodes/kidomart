@@ -82,14 +82,14 @@
 							</div>
 							{% else %}
 							{% if in_cart %}
-							<div class="d-flex gap-2">
-								<div class="col">
-									<a href="#" class="btn btn-success btn-md disabled add-to-cart"
+							<div class="d-flex gap-2 view-added-buttons">
+								<div class="">
+									<a href="#" class="btn btn-success btn-md disabled"
 										aria-disabled="true">
 										Added to Cart <i class="fa-solid fa-check"></i>
 									</a>
 								</div>
-								<div class="col">
+								<div class="">
 									<a href="{% url 'cart' %}" class="btn btn-outline-secondary hvr-pop"
 										aria-label="View Cart">
 										<i class="fa-regular fa-eye"></i> View Cart
