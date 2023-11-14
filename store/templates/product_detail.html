@@ -81,10 +81,27 @@
 								</a>
 							</div>
 							{% else %}
+							{% if in_cart %}
+							<div class="d-flex gap-2">
+								<div class="col">
+									<a href="#" class="btn btn-success btn-md disabled add-to-cart"
+										aria-disabled="true">
+										Added to Cart <i class="fa-solid fa-check"></i>
+									</a>
+								</div>
+								<div class="col">
+									<a href="{% url 'cart' %}" class="btn btn-outline-secondary hvr-pop"
+										aria-label="View Cart">
+										<i class="fa-regular fa-eye"></i> View Cart
+									</a>
+								</div>
+							</div>
+							{% else %}
 							<form method="post" action="{% url 'add_to_cart' single_product.item_id %}">
 								{% csrf_token %}
 								<button type="submit" class="btn btn-secondary hvr-pop">Add to Cart</button>
 							</form>
+							{% endif %}
 							{% endif %}
 					</article>
 				</main>
