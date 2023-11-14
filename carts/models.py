@@ -1,6 +1,7 @@
 from django.db import models
 from products.models import Product
 
+
 class Cart(models.Model):
     # Shopping cart model
     cart_id = models.CharField(max_length=250, blank=True)
@@ -18,9 +19,18 @@ class CartItem(models.Model):
     quantity = models.IntegerField()
     is_active = models.BooleanField(default=True)
 
+    @property
     def sub_total(self):
-        # Calculates subtotal 
-        return self.product.price * self.quantity
+        """
+        This function defines a CartItem property
+        And checks if the associated product is on sale
+        It calculates the subtotal by multiplying
+        either sale or regular price with the quantity respectively
+        """
+        if self.product.on_sale:
+            return (self.product.sale_price) * self.quantity
+        else:
+            return (self.product.price) * self.quantity
 
     def __str__(self):
         # Returns the product as the string representation
