@@ -10,6 +10,7 @@
         Categories
       </button>
       <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'home' %}">All</a>
         {% for category in links %}
         <a class="dropdown-item" href="{{ category.get_url }}">{{ category.category_name }} </a>
         {% endfor %}
