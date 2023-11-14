@@ -170,6 +170,11 @@ body {
         padding: 1rem 0 1rem 1.5rem;
     }
 
+    .checkout-card {
+        margin: 0 auto;
+        width: 60%;
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -246,6 +251,10 @@ body {
         max-height: 14rem;
     }
 
+    .checkout-card {
+        width: 90%;
+    }
+
 }
 
 @media (max-width: 440px) {
@@ -293,6 +302,10 @@ body {
 
     .main-img-wrap .img-wrap img {
         height: 140px;
+    }
+
+    .checkout-card {
+        width: 100%;
     }
 
 }
