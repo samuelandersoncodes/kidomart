@@ -39,12 +39,17 @@
                     <div class="col-12 col-md-4">
                         <figure class="align-items-center item-on-side">
                             <!-- product image -->
-                            <div class="aside"><img src="{{ cart_item.product.image.url }}" class="mx-1 small-img"
-                                    alt="{{ cart_item.product.product_name }}">
+                            <div class="aside">
+                                <a href="{% url 'product_detail' cart_item.product.category.slug cart_item.product.slug%}"
+                                    aria-label="product detail">
+                                    <img src="{{ cart_item.product.image.url }}" class="mx-1 small-img"
+                                        alt="{{ cart_item.product.product_name }}">
+                                </a>
                             </div>
                             <figcaption>
                                 <!-- product name -->
-                                <a href="#" class="text-decoration-none text-dark">
+                                <a href="{% url 'product_detail' cart_item.product.category.slug cart_item.product.slug %}"
+                                    class="text-decoration-none text-dark" aria-label="product detail">
                                     {{ cart_item.product.product_name }}
                                 </a>
                                 <p class="text-muted small"></p>
