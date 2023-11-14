@@ -55,16 +55,16 @@
       </div>
     </div>
     {% endif %}
-    {% if product_count == 0 %}
-    <div class="text_center">
-      <p class="fs-4">Sorry! This category is out of stock</p>
-      <br>
-      <a href="{% url 'home' %}" class="btn btn-secondary btn-sm hvr-pop">
-        Continue Shopping
-      </a>
-    </div>
-    {% endif %}
     <div class="row">
+      {% if product_count == 0 %}
+      <div class="col text_center">
+        <p class="fs-4">Sorry! This category is out of stock</p>
+        <br>
+        <a href="{% url 'home' %}" class="btn btn-secondary hvr-pop">
+          Continue Shopping
+        </a>
+      </div>
+      {% endif %}
       {% for product in products %}
       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3">
         <div class="card h-100 border-0">
