@@ -18,6 +18,23 @@ class ProductAdmin(admin.ModelAdmin):
     }
 
 
+class ProductVariationAdmin(admin.ModelAdmin):
+    # Displays specified product variation fields
+    list_display = (
+        'product',
+        'variation_category',
+        'variation_value',
+        'is_active'
+    )
+    list_editable = ('is_active',)
+    list_filter = (
+        'product',
+        'variation_category',
+        'variation_value',
+        'is_active'
+    )
+
+
 admin.site.register(Product, ProductAdmin)
 
-admin.site.register(ProductVariation)
+admin.site.register(ProductVariation, ProductVariationAdmin)
