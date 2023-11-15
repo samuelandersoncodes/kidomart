@@ -21,7 +21,7 @@ def home(request, category_slug=None):
         selected_category = get_object_or_404(Category, slug=category_slug)
         products = Product.objects.filter(
             category=selected_category, is_available=True)
-        paginator = Paginator(products, 3)
+        paginator = Paginator(products, 8)
         page = request.GET.get('page')
         paged_products = paginator.get_page(page)
         product_count = products.count()
