@@ -114,7 +114,47 @@
     </div>
   </div>
 </section>
+<!-- page pagination -->
+<nav class="container" aria-label="Page navigation">
+  {% if products.has_other_pages %}
+  <ul class="pagination justify-content-center">
+    {% if products.has_previous %}
+    <li class="page-item">
+      <a href="?page={{products.previous_page_number}}" class="page-link text-dark"
+        aria-label="previous page navigator">&laquo;
+        PREV </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a href="#" class="page-link text-dark" aria-label-disabled="true">&laquo; PREV </a>
+    </li>
+    {% endif %}
+    {% for i in products.paginator.page_range %}
+    {% if products.number == i %}
+    <li class="page-item active">
+      <a href="#" class="page-link text-dark bg-secondary" aria-label="previous page navigator">
+        {{ i }}</a>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a href="?page={{ i }}" class="page-link text-dark" aria-label="page number iteration navigator">{{ i }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% if products.has_next %}
+    <li class="page-item">
+      <a href="?page={{products.next_page_number}}" class="page-link text-dark" aria-label="next page navigator"> NEXT
+        &raquo;</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a href="#" class="page-link text-dark" aria-label-disabled="true" aria-label="next page navigator"> NEXT
+        &raquo;</a>
+    </li class="page-item">
+    {% endif %}
+  </ul>
+  {% endif %}
+</nav>
 
 {% include 'includes/footer.html' %}
-
 {% endblock %}
