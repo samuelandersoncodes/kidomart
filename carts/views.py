@@ -44,7 +44,6 @@ def add_to_cart(request, item_id):
             except:
                 pass
 
-        product = Product.objects.get(item_id=item_id)
         cart_id = request.session.session_key
         if not cart_id:
             request.session.create()
@@ -58,6 +57,10 @@ def add_to_cart(request, item_id):
 
         try:
             cart_item = CartItem.objects.get(product=product, cart=cart)
+            if len(product_variation) > 0:
+                cart_item.variations.clear()
+                for item in product_variation:
+                    cart_item.variations.add(item)
             cart_item.quantity += 1
             cart_item.save()
         except CartItem.DoesNotExist:
@@ -66,6 +69,10 @@ def add_to_cart(request, item_id):
                 quantity=1,
                 cart=cart,
             )
+            if len(product_variation) > 0:
+                cart_item.variations.clear()
+                for item in product_variation:
+                    cart_item.variations.add(item)
             cart_item.save()
 
     return redirect('cart')
