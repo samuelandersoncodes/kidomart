@@ -55,15 +55,29 @@ def add_to_cart(request, item_id):
             cart = Cart.objects.create(cart_id=cart_id)
             cart.save()
 
-        try:
-            cart_item = CartItem.objects.get(product=product, cart=cart)
-            if len(product_variation) > 0:
-                cart_item.variations.clear()
-                for item in product_variation:
-                    cart_item.variations.add(item)
-            cart_item.quantity += 1
-            cart_item.save()
-        except CartItem.DoesNotExist:
+        cart_item_exists = CartItem.objects.filter(product=product, cart=cart). exists()
+        if cart_item_exists:
+            cart_item = CartItem.objects.filter(product=product, cart=cart)
+            old_variation_list = []
+            id = []
+            for item in cart_item:
+                existing_variation = item.variations.all()
+                old_variation_list.append(list(existing_variation))
+                id.append(item.id)
+
+            if product_variation in old_variation_list:
+                index = old_variation_list.index(product_variation)
+                cart_item_id = id[index]
+                item = CartItem.object.get(product=product, id=cart_item_id)
+                item.quantity += 1
+                item.save()
+            else:
+                item = CartItem.objects.create(product=product, quantity=1, cart=cart)
+                if len(product_variation) > 0:
+                    item.variations.clear()
+                    item.variation.add(*product_variation)
+                item.save()
+        else:
             cart_item = CartItem.objects.create(
                 product=product,
                 quantity=1,
@@ -71,8 +85,7 @@ def add_to_cart(request, item_id):
             )
             if len(product_variation) > 0:
                 cart_item.variations.clear()
-                for item in product_variation:
-                    cart_item.variations.add(item)
+                cart_item.variations.add(*product_variation)
             cart_item.save()
 
     return redirect('cart')
