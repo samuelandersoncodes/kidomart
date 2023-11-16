@@ -33,6 +33,6 @@ class CartItem(models.Model):
         else:
             return (self.product.price) * self.quantity
 
-    def __unicode__(self):
-        # Returns the product as a unicode string representation
-        return self.product
+    def __str__(self):
+        # Returns the product as a string representation
+        return str(self.product)
