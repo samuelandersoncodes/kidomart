@@ -38,6 +38,17 @@ class Product(models.Model):
         return self.product_name
 
 
+class VariationManager(models.Manager):
+    # Custom product variation manager class
+    def colors(self):
+        # Retrieves color variation
+        return super(VariationManager, self).filter(variation_category=color, is_active=True)
+
+    def sizes(self):
+         # Retrieves size variation
+        return super(VariationManager, self).filter(variation_category=size, is_active=True)
+
+
 # Variation choices
 variation_category_choice = (
     ('color', 'color'),
@@ -55,6 +66,8 @@ class ProductVariation(models.Model):
     variation_value = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
     created_date = models.DateTimeField(auto_now=True)
+
+    objects = VariationManager()
 
     def __unicode__(self):
         return self.product
