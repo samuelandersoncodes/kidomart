@@ -58,21 +58,6 @@
 								</a>
 							</div>
 							{% else %}
-							{% if in_cart %}
-							<div class="d-flex gap-2 view-added-buttons">
-								<div class="">
-									<a href="#" class="btn btn-success btn-md disabled" aria-disabled="true">
-										Added to Cart <i class="fa-solid fa-check"></i>
-									</a>
-								</div>
-								<div class="">
-									<a href="{% url 'cart' %}" class="btn btn-outline-secondary hvr-pop"
-										aria-label="View Cart">
-										<i class="fa-regular fa-eye"></i> View Cart
-									</a>
-								</div>
-							</div>
-							{% else %}
 							<div>
 								<form method="post" action="{% url 'add_to_cart' single_product.item_id %}">
 									{% csrf_token %}
@@ -99,7 +84,6 @@
 									</div>
 								</form>
 							</div>
-							{% endif %}
 							{% endif %}
 					</article>
 				</main>
