@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from products.models import Product
+from products.models import Product, ProductVariation
 from .models import Cart, CartItem
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -26,9 +26,24 @@ def add_to_cart(request, item_id):
     It also tries to retrieve an existing cart item for the given product and cart
     If the item exists, it increments its quantity
     If no cart item exists, it creates a new one with quantity 1
+    It the posts products with associated variations
     And finally Redirect the user to the 'cart' page after adding the item
     """
+    product = Product.objects.get(item_id=item_id)
+    product_variation = []
+
     if request.method == 'POST':
+        for item in request.POST:
+            key = item
+            value = request.POST[key]
+
+            try:
+                variation = ProductVariation.objects.get(
+                    product=product, variation_category__iexact=key, variation_value__iexact=value)
+                product_variation.append(variation)
+            except:
+                pass
+
         product = Product.objects.get(item_id=item_id)
         cart_id = request.session.session_key
         if not cart_id:
@@ -107,7 +122,8 @@ def cart(request, total=0, quantity=0, cart_items=None):
         tax = 0
         grand_total = 0
         cart = Cart.objects.get(cart_id=_cart_id(request))
-        cart_items = CartItem.objects.filter(cart=cart, is_active=True).order_by('-id')
+        cart_items = CartItem.objects.filter(
+            cart=cart, is_active=True).order_by('-id')
         for cart_item in cart_items:
             if cart_item.product.on_sale:
                 total += (cart_item.product.sale_price * cart_item.quantity)
