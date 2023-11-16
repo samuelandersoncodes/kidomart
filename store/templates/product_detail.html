@@ -84,8 +84,7 @@
 							{% if in_cart %}
 							<div class="d-flex gap-2 view-added-buttons">
 								<div class="">
-									<a href="#" class="btn btn-success btn-md disabled"
-										aria-disabled="true">
+									<a href="#" class="btn btn-success btn-md disabled" aria-disabled="true">
 										Added to Cart <i class="fa-solid fa-check"></i>
 									</a>
 								</div>
@@ -97,10 +96,31 @@
 								</div>
 							</div>
 							{% else %}
-							<form method="post" action="{% url 'add_to_cart' single_product.item_id %}">
-								{% csrf_token %}
-								<button type="submit" class="btn btn-secondary hvr-pop">Add to Cart</button>
-							</form>
+							<div>
+								<form method="post" action="{% url 'add_to_cart' single_product.item_id %}">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-secondary hvr-pop">Add to Cart</button>
+									<div>
+										<div class="item-option-select">
+											<h6></h6>
+											<select name="color" class="form-control w-25">
+												<option value="" disabled selected>Choose color</option>
+												{% for v in single_product.productvariation_set.colors %}
+												<option value="{{ v.variation_value }}">{{ v.variation_value }}</option>
+												{% endfor %}
+											</select>
+										</div>
+										<div>
+											<select name="size" class="form-control w-25">
+												<option value="" disabled selected>Choose size</option>
+												{% for v in single_product.productvariation_set.sizes %}
+												<option value="{{ v.variation_value }}">{{ v.variation_value }}</option>
+												{% endfor %}
+											</select>
+										</div>
+									</div>
+								</form>
+							</div>
 							{% endif %}
 							{% endif %}
 					</article>
