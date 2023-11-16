@@ -41,29 +41,6 @@
 								{{ single_product.description }}
 							</p>
 						</div>
-						{% if single_product.has_sizes %}
-						<hr>
-						<div class="row">
-							<!-- product detail sizes -->
-							<div class="item-option-select">
-								<h6>Select Size</h6>
-								<div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-light" aria-label="Small">
-										<input type="radio" name="radio_color"> S
-									</label>
-									<label class="btn btn-light active" aria-label="Medium">
-										<input type="radio" name="radio_color" checked> M
-									</label>
-									<label class="btn btn-light" aria-label="Large">
-										<input type="radio" name="radio_color"> L
-									</label>
-									<label class="btn btn-light" aria-label="Extra large">
-										<input type="radio" name="radio_color"> XL
-									</label>
-								</div>
-							</div>
-						</div>
-						{% endif %}
 						<div class="row">
 							<div>
 								<div>
@@ -102,7 +79,7 @@
 									<button type="submit" class="btn btn-secondary hvr-pop">Add to Cart</button>
 									<div>
 										<div class="item-option-select">
-											<h6></h6>
+											<!-- product detail colors -->
 											<select name="color" class="form-control w-25">
 												<option value="" disabled selected>Choose color</option>
 												{% for v in single_product.productvariation_set.colors %}
@@ -111,6 +88,7 @@
 											</select>
 										</div>
 										<div>
+											<!-- product detail sizes -->
 											<select name="size" class="form-control w-25">
 												<option value="" disabled selected>Choose size</option>
 												{% for v in single_product.productvariation_set.sizes %}
