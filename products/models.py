@@ -42,11 +42,11 @@ class VariationManager(models.Manager):
     # Custom product variation manager class
     def colors(self):
         # Retrieves color variation
-        return super(VariationManager, self).filter(variation_category=color, is_active=True)
+        return super(VariationManager, self).filter(variation_category='color', is_active=True)
 
     def sizes(self):
          # Retrieves size variation
-        return super(VariationManager, self).filter(variation_category=size, is_active=True)
+        return super(VariationManager, self).filter(variation_category='size', is_active=True)
 
 
 # Variation choices
