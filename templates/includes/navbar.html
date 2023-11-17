@@ -18,9 +18,9 @@
     </div>
     <!-- search form -->
     <div class="mx-2 search-form">
-      <form action="#" class="text-white">
+      <form action="{% url 'search' %}" method="GET" class="text-white">
         <div class="input-group">
-          <input type="text" name="search" class="form-control" placeholder="search" aria-label="Search" required>
+          <input type="text" class="form-control" placeholder="search" name="keyword" aria-label="Search" required>
           <div class="input-group-append">
             <button class="btn btn-secondary search-button" type="submit">
               <i class="fa fa-search"></i>
