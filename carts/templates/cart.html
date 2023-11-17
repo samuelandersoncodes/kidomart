@@ -66,7 +66,7 @@
                     <div class="col-12 col-md-3">
                         <div class="input-group">
                             <!-- Quantity decrement button -->
-                            <form method="post" action="{% url 'remove_from_cart' cart_item.product.item_id %}">
+                            <form method="post" action="{% url 'remove_from_cart' cart_item.product.item_id cart_item.id %}">
                                 {% csrf_token %}
                                 <div class="input-group-prepend">
                                     <button class="btn btn-light" type="submit" id="button-minus">
@@ -102,7 +102,7 @@
                     </div>
                     <div class="col-12 col-md-2 text-md-right">
                         <!-- Remove Button -->
-                        <a href="{% url 'delete_cart_item' cart_item.product.item_id %}"
+                        <a href="{% url 'delete_cart_item' cart_item.product.item_id cart_item.id %}"
                             class="btn btn-danger remove-button">Remove</a>
                     </div>
                 </div>
