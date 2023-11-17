@@ -55,7 +55,8 @@ def add_to_cart(request, item_id):
             cart = Cart.objects.create(cart_id=cart_id)
             cart.save()
 
-        cart_item_exists = CartItem.objects.filter(product=product, cart=cart). exists()
+        cart_item_exists = CartItem.objects.filter(
+            product=product, cart=cart). exists()
         if cart_item_exists:
             cart_item = CartItem.objects.filter(product=product, cart=cart)
             old_variation_list = []
@@ -72,7 +73,8 @@ def add_to_cart(request, item_id):
                 item.quantity += 1
                 item.save()
             else:
-                item = CartItem.objects.create(product=product, quantity=1, cart=cart)
+                item = CartItem.objects.create(
+                    product=product, quantity=1, cart=cart)
                 if len(product_variation) > 0:
                     item.variations.clear()
                     item.variation.add(*product_variation)
@@ -107,7 +109,8 @@ def remove_from_cart(request, item_id, remove_cart_item_id):
         product = get_object_or_404(Product, item_id=item_id)
 
         try:
-            cart_item = CartItem.objects.get(product=product, cart=cart, id=remove_cart_item_id)
+            cart_item = CartItem.objects.get(
+                product=product, cart=cart, id=remove_cart_item_id)
             if cart_item.quantity > 1:
                 cart_item.quantity -= 1
                 cart_item.save()
@@ -118,7 +121,7 @@ def remove_from_cart(request, item_id, remove_cart_item_id):
     return redirect('cart')
 
 
-def delete_cart_item(request, item_id):
+def delete_cart_item(request, item_id, remove_cart_item_id):
     """
     Cart item removal view
     It gets the Cart object associated with the current session
@@ -127,7 +130,8 @@ def delete_cart_item(request, item_id):
     """
     cart = Cart.objects.get(cart_id=_cart_id(request))
     product = get_object_or_404(Product, item_id=item_id)
-    cart_item = CartItem.objects.get(product=product, cart=cart)
+    cart_item = CartItem.objects.get(
+        product=product, cart=cart, id=remove_cart_item_id)
     cart_item.delete()
     return redirect('cart')
 
