@@ -91,7 +91,7 @@ def add_to_cart(request, item_id):
     return redirect('cart')
 
 
-def remove_from_cart(request, item_id):
+def remove_from_cart(request, item_id, remove_cart_item_id):
     """
     View for decreasing product quantity in the cart
     It gets the Cart object associated with the current session
@@ -105,13 +105,16 @@ def remove_from_cart(request, item_id):
         cart_id = request.session.session_key
         cart = Cart.objects.get(cart_id=cart_id)
         product = get_object_or_404(Product, item_id=item_id)
-        cart_item = CartItem.objects.get(product=product, cart=cart)
-        if cart_item.quantity > 1:
-            cart_item.quantity -= 1
-            cart_item.save()
-        else:
-            cart_item.delete()
 
+        try:
+            cart_item = CartItem.objects.get(product=product, cart=cart, id=remove_cart_item_id)
+            if cart_item.quantity > 1:
+                cart_item.quantity -= 1
+                cart_item.save()
+            else:
+                cart_item.delete()
+        except:
+            pass
     return redirect('cart')
 
 
