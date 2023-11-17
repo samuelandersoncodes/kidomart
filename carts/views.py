@@ -68,7 +68,7 @@ def add_to_cart(request, item_id):
             if product_variation in old_variation_list:
                 index = old_variation_list.index(product_variation)
                 cart_item_id = id[index]
-                item = CartItem.object.get(product=product, id=cart_item_id)
+                item = CartItem.objects.get(product=product, id=cart_item_id)
                 item.quantity += 1
                 item.save()
             else:
