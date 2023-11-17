@@ -44,6 +44,19 @@
 <!-- Section for item card -->
 <section class="py-4">
   <div class="container py-1 px-4 px-lg-5 mt-0 product-container">
+    <!-- search count display -->
+    {% if 'search' in request.path %}
+    <p class="mb-0 fs-5"><strong>{{ product_count }}</strong> kido-items found</p>
+    {% if product_count == 0 %}
+    <div class="col mt-4 mb-4 text-center">
+      <p class="fs-3 text-danger">Sorry! We do not have this item yet</p>
+      <br>
+      <a href="{% url 'home' %}" class="btn btn-secondary hvr-pop">
+        Continue Shopping
+      </a>
+    </div>
+    {% endif %}
+    {% endif %}
     <!-- category name and product count display -->
     {% if selected_category %}
     <div class="row">
@@ -56,6 +69,7 @@
     </div>
     {% endif %}
     <div class="row">
+      {% if selected_category %}
       {% if product_count == 0 %}
       <div class="col mt-4 mb-4 text-center">
         <p class="fs-3 text-danger">Sorry! This category is out of stock</p>
@@ -64,6 +78,7 @@
           Continue Shopping
         </a>
       </div>
+      {% endif %}
       {% endif %}
       {% for product in products %}
       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3">
