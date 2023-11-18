@@ -11,36 +11,36 @@
             </p>
         </div>
     </div>
-    <div class="card mx-auto">
+    <div class="card mx-auto col-md-8">
         <article class="card-body">
             <form action="{% url 'register' %}" method="POST">
                 {% csrf_token %}
                 <div class="row">
-                    <div class="col-md-6 form-group mb-1">
+                    <div class="col-md-6 form-group mb-3">
                         <label for="{{ form.first_name.id_for_label }}">First Name</label>
                         {{ form.first_name }}
                     </div>
-                    <div class="col-md-6 form-group mb-1">
+                    <div class="col-md-6 form-group mb-3">
                         <label for="{{ form.last_name.id_for_label }}">Last Name</label>
                         {{ form.last_name }}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 form-group mb-1">
+                    <div class="col-md-6 form-group mb-3">
                         <label for="{{ form.email.id_for_label }}">Email Address</label>
                         {{ form.email }}
                     </div>
-                    <div class="col-md-6 form-group mb-1">
+                    <div class="col-md-6 form-group mb-3">
                         <label for="{{ form.tel.id_for_label }}">Phone Number</label>
                         {{ form.tel }}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="form-group col-md-6 mb-1">
+                    <div class="form-group col-md-6 mb-3">
                         <label for="{{ form.password.id_for_label }}">Create Password</label>
                         {{ form.password }}
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 mb-3">
                         <label for="{{ form.confirm_password.id_for_label }}">Confirm Password</label>
                         {{ form.confirm_password }}
                     </div>
