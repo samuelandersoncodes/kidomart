@@ -13,34 +13,41 @@
     </div>
     <div class="card mx-auto col-lg-8 col-md-10">
         <article class="card-body">
+            {{ form.non_field_errors }}
             <form action="{% url 'register' %}" method="POST">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6 form-group mb-3">
+                        {{ form.first_name.error }}
                         <label for="{{ form.first_name.id_for_label }}">First Name</label>
                         {{ form.first_name }}
                     </div>
                     <div class="col-md-6 form-group mb-3">
+                        {{ form.last_name.error }}
                         <label for="{{ form.last_name.id_for_label }}">Last Name</label>
                         {{ form.last_name }}
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 form-group mb-3">
+                        {{ form.email.error }}
                         <label for="{{ form.email.id_for_label }}">Email Address</label>
                         {{ form.email }}
                     </div>
                     <div class="col-md-6 form-group mb-3">
+                        {{ form.tel.error }}
                         <label for="{{ form.tel.id_for_label }}">Phone Number</label>
                         {{ form.tel }}
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6 mb-3">
+                        {{ form.password.error }}
                         <label for="{{ form.password.id_for_label }}">Create Password</label>
                         {{ form.password }}
                     </div>
                     <div class="form-group col-md-6 mb-3">
+                        {{ form.confirm_password.error }}
                         <label for="{{ form.confirm_password.id_for_label }}">Confirm Password</label>
                         {{ form.confirm_password }}
                     </div>
