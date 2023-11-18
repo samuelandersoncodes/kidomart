@@ -32,3 +32,20 @@ class RegistrationForm(forms.ModelForm):
         self.fields['tel'].widget.attrs['placeholder'] = 'Enter phone number'
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'form-control'
+
+    def clean(self):
+        """
+        Overrides the clean method to perform additional validation
+        Gets cleaned data from the form
+        Extracts the password and confirmpassword from cleaned data
+        And checks if both passwords match
+        If passwords don't match, it raises a validation error
+        """
+        cleaned_data = super(RegistrationForm, self).clean()
+        password = cleaned_data.get('password')
+        confirm_password = cleaned_data.get('confirm_password')
+
+        if password != confirm_password:
+            raise forms.ValidationError(
+                "Sorry! Both passwords must match"
+            )
