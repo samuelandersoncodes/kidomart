@@ -35,14 +35,14 @@
                         {{ form.tel }}
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label></label>
-                        <input class="form-control" type="password">
+                <div class="row">
+                    <div class="form-group col-md-6 mb-1">
+                        <label for="{{ form.password.id_for_label }}">Create Password</label>
+                        {{ form.password }}
                     </div>
                     <div class="form-group col-md-6">
-                        <label></label>
-                        <input class="form-control" type="password">
+                        <label for="{{ form.confirm_password.id_for_label }}">Confirm Password</label>
+                        {{ form.confirm_password }}
                     </div>
                 </div>
                 <div class="form-group">
