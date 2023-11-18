@@ -14,6 +14,7 @@
     <div class="card mx-auto">
         <article class="card-body">
             <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
                 <div class="form-row">
                     <div class="col form-group">
                         <label></label>
