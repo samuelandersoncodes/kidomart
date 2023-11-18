@@ -7,3 +7,7 @@ def register(request):
 def login(request):
     # login view
     return render(request, 'accounts/login.html')
+
+def logout(request):
+    # logout view
+    return
