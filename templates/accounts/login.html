@@ -13,7 +13,8 @@
     </div>
     <div class="card mx-auto col-lg-8 col-md-10">
         <article class="card-body">
-            <form action="" method="POST">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6 form-group mb-3">
                         <label for=""></label>
