@@ -30,20 +30,30 @@
       </form>
     </div>
     <div class="mx-2">
+      {% if user.id is None %}
       <small class="text-muted text-dark">Welcome to KidoMart</small>
       <div class="text-center">
         <a href="{% url 'login' %}" class="text-dark text-decoration-none"><strong>Log in</strong> </a> <span> | </span>
         <a href="{% url 'register' %}" class="text-dark text-decoration-none"><strong>Register</strong></a>
       </div>
     </div>
-    <!-- cart form -->
-    <form action="{% url 'cart' %}" class="my-1 cart-form">
-      <button class="btn btn-outline-dark" type="submit" aria-label="Shopping Cart">
-        <i class="bi-cart-fill"></i>
-        <strong>Cart&nbsp;</strong>
-        <span class="badge bg-dark text-white ms-1 rounded-pill">{{ cart_count }}</span>
-      </button>
-    </form>
+    {% else %}
+    <small class="text-muted text-dark">Welcome {{ user.first_name }}</small>
+    <div class="text-center">
+      <a href="#" class="text-dark text-decoration-none"><strong>Dashboard</strong> </a> <span> |
+      </span>
+      <a href="{% url 'logout' %}" class="text-dark text-decoration-none"><strong>Logout</strong></a>
+    </div>
+  </div>
+  {% endif %}
+  <!-- cart form -->
+  <form action="{% url 'cart' %}" class="my-1 cart-form">
+    <button class="btn btn-outline-dark" type="submit" aria-label="Shopping Cart">
+      <i class="bi-cart-fill"></i>
+      <strong>Cart&nbsp;</strong>
+      <span class="badge bg-dark text-white ms-1 rounded-pill">{{ cart_count }}</span>
+    </button>
+  </form>
   </div>
   </div>
 </nav>
