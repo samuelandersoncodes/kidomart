@@ -11,36 +11,26 @@
             </p>
         </div>
     </div>
-    <div class="card mx-auto col-lg-8 col-md-10">
-        <article class="card-body">
+    <div class="card mx-auto col-lg-6 col-md-8">
+        <div class="card-body">
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
-                <div class="row">
-                    <div class="col-md-6 form-group mb-3">
-                        <label for=""></label>
-                    </div>
-                    <div class="col-md-6 form-group mb-3">
-                        <label for=""></label>
-                    </div>
+                <div class="form-group">
+                    <label for=""></label>
+                    <input type="email" name="email" class="form-control" placeholder="Email Address">
                 </div>
-                <div class="row">
-                    <div class="col-md-6 form-group mb-3">
-                        <label for=""></label>
-                    </div>
-                    <div class="col-md-6 form-group mb-3">
-                        <label for=""></label>
-                    </div>
+                <div class="form-group">
+                    <label for=""></label>
+                    <input type="password" name="password" class="form-control" placeholder="Password">
                 </div>
-                <div class="row">
-                    <div class="form-group ">
-                        <label for=""></label>
-                    </div>
+                <div class="form-group">
+                    <a href="#"></a>
                 </div>
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-secondary btn-lg w-50 mb-2 mt-2 hvr-pop"></button>
                 </div>
             </form>
-        </article>
+        </div>
     </div>
     <p class="text-center mt-4 fs-5"><a href="#" class="text-decoration-none"></a>
         If you do not have a Kido account, please
