@@ -13,6 +13,7 @@
     </div>
     <div class="card mx-auto col-lg-8 col-md-10">
         <article class="card-body">
+            {% include 'includes/alerts.html' %}
             {{ form.non_field_errors }}
             <form action="{% url 'register' %}" method="POST">
                 {% csrf_token %}
