@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import RegistrationForm
 from .models import Account
+from django.contrib import messages
 
 
 def register(request):
@@ -27,6 +28,8 @@ def register(request):
             )
             user.tel = tel
             user.save()
+            messages.success(request, 'Your Kido Registration is Successful!')
+            return redirect('register')
     else:
         form = RegistrationForm()
     context = {
