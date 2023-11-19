@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import RegistrationForm
 from .models import Account
-from django.contrib import messages
+from django.contrib import messages, auth
 
 
 def register(request):
@@ -39,7 +39,22 @@ def register(request):
 
 
 def login(request):
-    # login view
+    """
+    This function handles user login based on provided email and password.
+    And authenticates the user using the provided email and password
+    """
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        username = email.split("@")[0]
+        user = auth.authenticate(email=email, password=password)
+        if user is not None:
+            auth.login(request, user)
+            messages.success(request, f'You are logged in as {username}')
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid login credentials')
+            return redirect('login')
     return render(request, 'accounts/login.html')
 
 
