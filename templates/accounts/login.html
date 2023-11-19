@@ -13,6 +13,7 @@
     </div>
     <div class="card mx-auto col-lg-6 col-md-8">
         <div class="card-body">
+            {% include 'includes/alerts.html' %}
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
