@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.contrib.messages import constants as messages
 # Checks and imports env module if env.py exists
 if os.path.isfile('env.py'):
     import env
@@ -176,3 +177,9 @@ if 'USE_AWS' in os.environ:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+    50: "critical",
+}
