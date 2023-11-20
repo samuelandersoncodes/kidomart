@@ -4,6 +4,17 @@
 {% block content %}
 {% include 'includes/navbar.html' %}
 <section class="container mb-3">
+    {% if request.GET.command == 'verification' %}
+    <div class="container text-center alert alert-info mt-4 mw-25" role="alert" id="verification">
+        <p class="fs-4">Thanks for registering with KidoMart!</p>
+        <p class="fs-5">We have sent a verification link to your email address:</p>
+        <p>{{ request.GET.email }}</p>
+        <p><strong>Please verify first</strong></p>
+        <br>
+        <p class="d-inline"> Already verified?</p><a href="{% url 'login' %}"
+            class="text-decoration-none">&nbsp;Login</a>
+    </div>
+    {% else %}
     <div class="row">
         <div class="col-md-8 mx-auto mt-3 text-center heading-font">
             <h2>Log in to your Kido Account</h2>
@@ -42,6 +53,7 @@
         If you do not have a Kido account, please
         <a href="{% url 'register' %}" class="text-decoration-none">Register</a>
     </p>
+    {% endif %}
 </section>
 {% include 'includes/footer.html' %}
 {% endblock %}
