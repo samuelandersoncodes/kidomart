@@ -17,12 +17,12 @@
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <div class="form-group mb-3">
-                    <label for="email">Email Address</label>
+                    <label for="email">Email Address *</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email Address">
                 </div>
                 <div class="form-group">
-                    <label for=""></label>
-                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <label for="password">Password *</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <a href="#"></a>
