@@ -85,3 +85,28 @@ def logout(request):
     messages.success(request, 'You just logged out!')
     return redirect('login')
 
+
+def activate(request, uidb64, token):
+    """
+     This function activates user account based on UID and activation token.
+     This function attempts to activate a user account
+     using the provided UID and activation token.
+     It decodes the UID, retrieves the corresponding user from the database,
+     and checks if the token is valid. If successful, it sets the user as active,
+     saves the changes, and redirects to the login page with a success message.
+     If unsuccessful, it redirects to the registration page with an error message.
+     """
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = Account._default_manager.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, Account.DoesNotExist):
+        user = None
+
+    if user is not None and default_token_generator.check_token(user, token):
+        user.is_active = True
+        user.save()
+        messages.success(request, 'Your Kido account is activated!')
+        return redirect('login')
+    else:
+        messages.error(request, 'Invalid activation link')
+        return redirect('register')
