@@ -38,6 +38,10 @@
     </a>
   </div>
 </header>
+<!-- alert messages -->
+{% if messages %}
+{% include 'includes/alerts.html' %}
+{% endif %}
 {% endblock %}
 
 {% block content %}
