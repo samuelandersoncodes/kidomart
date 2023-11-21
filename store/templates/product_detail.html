@@ -61,7 +61,6 @@
 							<div>
 								<form method="post" action="{% url 'add_to_cart' single_product.item_id %}">
 									{% csrf_token %}
-									<button type="submit" class="btn btn-secondary hvr-pop">Add to Cart</button>
 									<div>
 										<div class="item-option-select">
 											<!-- product detail colors -->
@@ -86,6 +85,7 @@
 											{% endif %}
 										</div>
 									</div>
+									<button type="submit" class="btn btn-secondary hvr-pop">Add to Cart</button>
 								</form>
 							</div>
 							{% endif %}
