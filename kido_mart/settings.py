@@ -178,6 +178,9 @@ if 'USE_AWS' in os.environ:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Message storage
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 # Messages
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
