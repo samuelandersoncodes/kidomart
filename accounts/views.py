@@ -124,7 +124,7 @@ def forgotPassword(request):
     If the account exists, it generates a password reset email.
     Sends the email with a unique user ID and token to the user,
     Sets a success message and redirects the user to the login page.
-    If the account does not exist, it sets an error message 
+    If the account does not exist, it sets an error message
     and redirects the user back to the 'forgotPassword' page.
     """
     if request.method == 'POST':
@@ -149,3 +149,31 @@ def forgotPassword(request):
             messages.error(request, 'This account does not exist')
             return redirect('forgotPassword')
     return render(request, 'accounts/forgotPassword.html')
+
+
+def reset_password_validate(request, uidb64, token):
+    """
+    This function validates the user and token when resetting password.
+    It decodes the base64-encoded user ID and retrieves the user.
+    If the user exists and the token is valid,
+    It stores the user ID in the session for later password reset confirmation.
+    Shows a success message.
+    And then redirects the user to the resetPassword page.
+    If the user does not exist or the token is invalid,
+    It shows an error message.
+    Then redirects the user to the forgotPassword page.
+    """
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = Account._default_manager.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, Account.DoesNotExist):
+        user = None
+
+    if user is not None and default_token_generator.check_token(user, token):
+        request.session['uid'] = uid
+        messages.success(request, 'Please reset your password')
+        return redirect('resetPassword')
+    else:
+        messages.error(
+            request, 'This link is expired, please resubmit your email')
+        return redirect('forgotPassword')
