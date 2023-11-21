@@ -61,11 +61,11 @@
 							<div>
 								<form method="post" action="{% url 'add_to_cart' single_product.item_id %}">
 									{% csrf_token %}
-									<div>
-										<div class="item-option-select">
+									<div class="row mb-3 mx-auto">
+										<div class="col-lg-4 col-md-6 col-sm-8 item-option-select mb-3">
 											<!-- product detail colors -->
 											{% if single_product.productvariation_set.colors %}
-											<select name="color" class="form-control w-25">
+											<select name="color" class="form-control">
 												<option value="" disabled selected>Choose color</option>
 												{% for v in single_product.productvariation_set.colors %}
 												<option value="{{ v.variation_value }}">{{ v.variation_value }}</option>
@@ -73,10 +73,10 @@
 											</select>
 											{% endif %}
 										</div>
-										<div>
+										<div div class="col-lg-4 col-md-6 col-sm-8 item-option-select">
 											<!-- product detail sizes -->
 											{% if single_product.productvariation_set.colors %}
-											<select name="size" class="form-control w-25">
+											<select name="size" class="form-control">
 												<option value="" disabled selected>Choose size</option>
 												{% for v in single_product.productvariation_set.sizes %}
 												<option value="{{ v.variation_value }}">{{ v.variation_value }}</option>
@@ -85,7 +85,11 @@
 											{% endif %}
 										</div>
 									</div>
-									<button type="submit" class="btn btn-secondary hvr-pop">Add to Cart</button>
+									<div class="row mx-auto">
+										<div class="col">
+											<button type="submit" class="btn btn-secondary hvr-pop">Add to Cart</button>
+										</div>
+									</div>
 								</form>
 							</div>
 							{% endif %}
