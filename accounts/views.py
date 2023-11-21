@@ -117,6 +117,16 @@ def dashboard(request):
 
 
 def forgotPassword(request):
+    """
+    This function handles the initiation of a password reset for a user account.
+    It retrieves the user email which was submitted through the form.
+    Checks if an account with the provided email exists,
+    If the account exists, it generates a password reset email.
+    Sends the email with a unique user ID and token to the user,
+    Sets a success message and redirects the user to the login page.
+    If the account does not exist, it sets an error message 
+    and redirects the user back to the 'forgotPassword' page.
+    """
     if request.method == 'POST':
         email = request.POST['email']
         if Account.objects.filter(email=email).exists():
