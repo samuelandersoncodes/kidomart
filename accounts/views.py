@@ -180,5 +180,25 @@ def reset_password_validate(request, uidb64, token):
 
 
 def resetPassword(request):
-    # View for password reset
-    return render(request, 'accounts/resetPassword.html')
+    """
+    This function checks if the both created
+    and confirmed passwords are the same,
+    if they are, user is allowed to reset their password.
+    If not, an error message is shown and use ris redirected
+    to the reset password page.
+    """
+    if request.method == 'POST':
+        password = request.POST['password']
+        confirm_password = request.POST['confirm_password']
+        if password == confirm_password:
+            uid = request.session.get('uid')
+            user = Account.objects.get(pk=uid)
+            user.set_password(password)
+            user.save()
+            messages.success(request, 'Password reset successful!')
+            return redirect('login')
+        else:
+            messages.error(request, 'Password does not match')
+            return redirect('resetPassword')
+    else:
+        return render(request, 'accounts/resetPassword.html')
