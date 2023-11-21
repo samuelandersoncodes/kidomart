@@ -70,7 +70,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.success(request, f'You are logged in as {username}')
-            return redirect('home')
+            return redirect('dashboard')
         else:
             messages.error(request, 'Invalid login credentials')
             return redirect('login')
