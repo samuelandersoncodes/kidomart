@@ -65,12 +65,14 @@
 									<div>
 										<div class="item-option-select">
 											<!-- product detail colors -->
+											{% if single_product.productvariation_set.colors %}
 											<select name="color" class="form-control w-25">
 												<option value="" disabled selected>Choose color</option>
 												{% for v in single_product.productvariation_set.colors %}
 												<option value="{{ v.variation_value }}">{{ v.variation_value }}</option>
 												{% endfor %}
 											</select>
+											{% endif %}
 										</div>
 										<div>
 											<!-- product detail sizes -->
