@@ -3,6 +3,9 @@
 
 {% block content %}
 {% include 'includes/navbar.html' %}
+{% if messages %}
+{% include 'includes/alerts.html' %}
+{% endif %}
 <section>
     <div class="container">
         <div class="row">
