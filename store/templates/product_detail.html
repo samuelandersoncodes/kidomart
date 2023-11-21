@@ -68,7 +68,9 @@
 											<select name="color" class="form-control">
 												<option value="" disabled selected>Choose color</option>
 												{% for v in single_product.productvariation_set.colors %}
-												<option value="{{ v.variation_value }}">{{ v.variation_value }}</option>
+												<option value="{{ v.variation_value }}" aria-label="Choose a color">
+													{{ v.variation_value }}
+												</option>
 												{% endfor %}
 											</select>
 											{% endif %}
@@ -79,7 +81,9 @@
 											<select name="size" class="form-control">
 												<option value="" disabled selected>Choose size</option>
 												{% for v in single_product.productvariation_set.sizes %}
-												<option value="{{ v.variation_value }}">{{ v.variation_value }}</option>
+												<option value="{{ v.variation_value }}" aria-label="Choose a color">
+													{{ v.variation_value }}
+												</option>
 												{% endfor %}
 											</select>
 											{% endif %}
@@ -87,7 +91,10 @@
 									</div>
 									<div class="row mx-auto">
 										<div class="col">
-											<button type="submit" class="btn btn-secondary hvr-pop">Add to Cart</button>
+											<button type="submit" class="btn btn-secondary hvr-pop"
+												aria-label="Add to Cart">
+												Add to Cart
+											</button>
 										</div>
 									</div>
 								</form>
