@@ -65,7 +65,7 @@
 										<div class="col-lg-4 col-md-6 col-sm-8 item-option-select mb-3">
 											<!-- product detail colors -->
 											{% if single_product.productvariation_set.colors %}
-											<select name="color" class="form-control text-center hvr-hollow">
+											<select name="color" class="form-control text-center hvr-hollow" required>
 												<option value="" disabled selected>Choose color</option>
 												{% for v in single_product.productvariation_set.colors %}
 												<option value="{{ v.variation_value }}" aria-label="Choose a color">
@@ -78,7 +78,7 @@
 										<div div class="col-lg-4 col-md-6 col-sm-8 item-option-select">
 											<!-- product detail sizes -->
 											{% if single_product.productvariation_set.colors %}
-											<select name="size" class="form-control text-center hvr-hollow">
+											<select name="size" class="form-control text-center hvr-hollow" required>
 												<option value="" disabled selected>Choose size</option>
 												{% for v in single_product.productvariation_set.sizes %}
 												<option value="{{ v.variation_value }}" aria-label="Choose a color">
