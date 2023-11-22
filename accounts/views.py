@@ -9,6 +9,8 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
+from carts.view import _cart_id
+from carts.models import Cart, CartItem
 
 
 def register(request):
@@ -60,7 +62,8 @@ def register(request):
 def login(request):
     """
     This function handles user login based on provided email and password.
-    And authenticates the user using the provided email and password
+    It then authenticates the user using the provided email and password
+    And assigns respective user cart
     """
     if request.method == 'POST':
         email = request.POST['email']
@@ -68,6 +71,16 @@ def login(request):
         username = email.split("@")[0]
         user = auth.authenticate(email=email, password=password)
         if user is not None:
+            try:
+                cart = Cart.objects.get(cart_id=_cart_id(request))
+                cart_item_exists = CartItem.objects.filter(cart=cart).exists()
+                if cart_item_exists:
+                    cart_item = CartItem.objects.filter(cart=cart)
+                    for item in cart_item:
+                        item.user = user
+                        item.save
+            except:
+                pass
             auth.login(request, user)
             messages.success(request, f'You are logged in as {username}')
             return redirect('dashboard')
