@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from products.models import Product, ProductVariation
 from .models import Cart, CartItem
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
 
 
 def _cart_id(request):
@@ -172,6 +173,7 @@ def cart(request, total=0, quantity=0, cart_items=None):
     return render(request, 'cart.html', context)
 
 
+@login_required(login_url='login')
 def checkout(request, total=0, quantity=0, cart_items=None):
     """
     This function retrieve the cart based on the current session
