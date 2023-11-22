@@ -84,9 +84,6 @@
                             <div class="col-12 col-md-3">
                                 <h6 class="text-uppercase fw-bold">Price</h6>
                             </div>
-                            <div class="col-12 col-md-2 text-right">
-                                <h6 class="text-uppercase fw-bold">Actions</h6>
-                            </div>
                         </div>
                         {% for cart_item in cart_items %}
                         <div class="row">
@@ -126,13 +123,11 @@
                                     <p aria-labelledby="cartQuantityLabel">{{ cart_item.quantity }}</p>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-12 col-md-3">
                                 <!-- Product price  -->
                                 <div>
                                     <var class="price">${{ cart_item.sub_total }}</var>
                                 </div>
-                            </div>
-                            <div class="col-12 col-md-2">
                             </div>
                         </div>
                         <hr>
