@@ -88,16 +88,18 @@
                                 <h6 class="text-uppercase fw-bold">Actions</h6>
                             </div>
                         </div>
+                        {% for cart_item in cart_items %}
                         <div class="row">
                             <div class="col-12 col-md-4">
                                 <figure class="align-items-center item-on-side">
                                     <!-- product image -->
                                     <div class="aside">
+                                        <a href="{% url 'product_detail' cart_item.product.category.slug cart_item.product.slug%}"
+                                            aria-label="product detail">
+                                            <img src="{{ cart_item.product.image.url }}" class="mx-1 small-img"
+                                                alt="{{ cart_item.product.product_name }}">
+                                        </a>
                                     </div>
-                                    <figcaption>
-                                        <p class="text-muted small mb-0">
-                                        </p>
-                                    </figcaption>
                                 </figure>
                             </div>
                             <div class="col-12 col-md-3">
@@ -121,6 +123,7 @@
                             </div>
                         </div>
                         <hr>
+                        {% endfor %}
                     </div>
                     <!-- checkout and keep shopping buttons -->
                     <div class="text-center">
