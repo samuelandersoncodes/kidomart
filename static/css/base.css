@@ -208,6 +208,10 @@ body {
         max-width: 25%;
     }
 
+    .checkout-details-headings {
+        display: none;
+    }
+
 }
 
 /* small screens */
