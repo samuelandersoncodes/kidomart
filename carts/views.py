@@ -53,7 +53,7 @@ def add_to_cart(request, item_id):
             cart = Cart.objects.create(cart_id=cart_id)
             cart.save()
         cart_item_exists = CartItem.objects.filter(
-            product=product, cart=cart). exists()
+            product=product, cart=cart).exists()
         if cart_item_exists:
             cart_item = CartItem.objects.filter(product=product, cart=cart)
             old_variation_list = []
