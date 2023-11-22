@@ -172,6 +172,36 @@ def cart(request, total=0, quantity=0, cart_items=None):
     return render(request, 'cart.html', context)
 
 
-def checkout(request):
-    # Checkout view
-    return render(request, 'checkout.html')
+def checkout(request, total=0, quantity=0, cart_items=None):
+    """
+    This function retrieve the cart based on the current session
+    And also retrieves active cart items associated with the cart
+    It arranges the checkout cart items in descendning order
+    It then calculates the tax, total price and quantity of checked out items
+    And renders the template with the calculated context
+    """
+    try:
+        tax = 0
+        grand_total = 0
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+        cart_items = CartItem.objects.filter(
+            cart=cart, is_active=True).order_by('-id')
+        for cart_item in cart_items:
+            if cart_item.product.on_sale:
+                total += (cart_item.product.sale_price * cart_item.quantity)
+            else:
+                total += (cart_item.product.price * cart_item.quantity)
+            quantity += cart_item.quantity
+        tax = (1 * total)/100
+        grand_total = total + tax
+    except ObjectDoesNotExist:
+        pass
+
+    context = {
+        'total': total,
+        'quantity': quantity,
+        'cart_items': cart_items,
+        'tax': tax,
+        'grand_total': grand_total,
+    }
+    return render(request, 'checkout.html', context)
