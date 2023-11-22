@@ -37,25 +37,21 @@ def add_to_cart(request, item_id):
         for item in request.POST:
             key = item
             value = request.POST[key]
-
             try:
                 variation = ProductVariation.objects.get(
                     product=product, variation_category__iexact=key, variation_value__iexact=value)
                 product_variation.append(variation)
             except:
                 pass
-
         cart_id = request.session.session_key
         if not cart_id:
             request.session.create()
             cart_id = request.session.session_key
-
         try:
             cart = Cart.objects.get(cart_id=cart_id)
         except Cart.DoesNotExist:
             cart = Cart.objects.create(cart_id=cart_id)
             cart.save()
-
         cart_item_exists = CartItem.objects.filter(
             product=product, cart=cart). exists()
         if cart_item_exists:
@@ -66,7 +62,6 @@ def add_to_cart(request, item_id):
                 existing_variation = item.variations.all()
                 old_variation_list.append(list(existing_variation))
                 id.append(item.id)
-
             if product_variation in old_variation_list:
                 index = old_variation_list.index(product_variation)
                 cart_item_id = id[index]
@@ -90,7 +85,6 @@ def add_to_cart(request, item_id):
                 cart_item.variations.clear()
                 cart_item.variations.add(*product_variation)
             cart_item.save()
-
     return redirect('cart')
 
 
@@ -108,7 +102,6 @@ def remove_from_cart(request, item_id, remove_cart_item_id):
         cart_id = request.session.session_key
         cart = Cart.objects.get(cart_id=cart_id)
         product = get_object_or_404(Product, item_id=item_id)
-
         try:
             cart_item = CartItem.objects.get(
                 product=product, cart=cart, id=remove_cart_item_id)
@@ -162,7 +155,6 @@ def cart(request, total=0, quantity=0, cart_items=None):
         grand_total = total + tax
     except ObjectDoesNotExist:
         pass
-
     context = {
         'total': total,
         'quantity': quantity,
@@ -198,7 +190,6 @@ def checkout(request, total=0, quantity=0, cart_items=None):
         grand_total = total + tax
     except ObjectDoesNotExist:
         pass
-
     context = {
         'total': total,
         'quantity': quantity,
