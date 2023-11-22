@@ -120,15 +120,10 @@
                                 </figure>
                             </div>
                             <div class="col-12 col-md-3">
-                                <div class="input-group">
-                                    <!-- Quantity decrement button -->
-                                    <form method="post"></form>
+                                <div>
                                     <!-- Quantity display -->
-                                    <input type="text" class="form-control item-quantity" value="#"
-                                        aria-label="Cart quantity">
-                                    <!-- Quantity increment button -->
-                                    <form method="post" action="#">
-                                    </form>
+                                    <label id="cartQuantityLabel" class="visually-hidden">Cart quantity</label>
+                                    <p aria-labelledby="cartQuantityLabel">{{ cart_item.quantity }}</p>
                                 </div>
                             </div>
                             <div class="col">
