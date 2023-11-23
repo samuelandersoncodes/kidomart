@@ -142,12 +142,15 @@ def remove_from_cart(request, item_id, remove_cart_item_id):
     And redirects user to cart page after removing item
     """
     if request.method == 'POST':
-        cart_id = request.session.session_key
-        cart = Cart.objects.get(cart_id=cart_id)
+        cart_id = _cart_id(request)
         product = get_object_or_404(Product, item_id=item_id)
         try:
-            cart_item = CartItem.objects.get(
-                product=product, cart=cart, id=remove_cart_item_id)
+            if request.user.is_authenticated:
+                cart_item = CartItem.objects.get(
+                product=product, user=request.user, id=remove_cart_item_id)
+            else:
+                cart = Cart.objects.get(cart_id=cart_id)
+                cart_item = CartItem.objects.get(product=product, cart=cart, id=remove_cart_item_id)
             if cart_item.quantity > 1:
                 cart_item.quantity -= 1
                 cart_item.save()
