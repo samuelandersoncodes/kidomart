@@ -64,6 +64,7 @@ def login(request):
     This function handles user login based on provided email and password.
     It then authenticates the user using the provided email and password
     And assigns respective user cart
+    It also takes care of the product variations in adding cart item 
     """
     if request.method == 'POST':
         email = request.POST['email']
@@ -76,9 +77,29 @@ def login(request):
                 cart_item_exists = CartItem.objects.filter(cart=cart).exists()
                 if cart_item_exists:
                     cart_item = CartItem.objects.filter(cart=cart)
+                    product_variation = []
                     for item in cart_item:
-                        item.user = user
-                        item.save
+                        variation = item.variations.all()
+                        product_variation.append(list(variation))
+                    cart_item = CartItem.objects.filter(user=user)
+                    old_variation_list = []
+                    id = []
+                    for item in cart_item:
+                        existing_variation = item.variations.all()
+                        old_variation_list.append(list(existing_variation))
+                        id.append(item.id)
+                    for pv in product_variation:
+                        if pv in old_variation_list.index(pv):
+                            cart_item_id = id[index]
+                            item = CartItem.objects.get(id=cart_item_id)
+                            item.quantity += 1
+                            item.user = user
+                            item.save()
+                        else:
+                            cart_item = CartItem.objects.filter(cart=cart)
+                            for item in cart_item:
+                                item.user = user
+                                item.save
             except:
                 pass
             auth.login(request, user)
