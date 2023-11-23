@@ -168,10 +168,14 @@ def delete_cart_item(request, item_id, remove_cart_item_id):
     And gets the Product object with the specified item_id or raise 404 error
     Deletes the cart item and returns to cart page
     """
-    cart = Cart.objects.get(cart_id=_cart_id(request))
     product = get_object_or_404(Product, item_id=item_id)
-    cart_item = CartItem.objects.get(
-        product=product, cart=cart, id=remove_cart_item_id)
+    if request.user.is_authenticated:
+        cart_item = CartItem.objects.get(
+        product=product, user=request.user, id=remove_cart_item_id)
+    else:
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+        cart_item = CartItem.objects.get(
+            product=product, cart=cart, id=remove_cart_item_id)
     cart_item.delete()
     return redirect('cart')
 
