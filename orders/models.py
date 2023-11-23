@@ -1,5 +1,6 @@
 from django.db import models
 from accounts.models import Account
+from products.models import Product, ProductVariation
 
 
 class Payment(models.Model):
@@ -25,7 +26,8 @@ class Order(models.Model):
         ('Cancelled', 'Cancelled'),
     )
     user = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True)
-    payment = models.ForeignKey(Payment, on_delete=models.SET_NULL, blank=True, null=True)
+    payment = models.ForeignKey(
+        Payment, on_delete=models.SET_NULL, blank=True, null=True)
     order_number = models.CharField(max_length=20)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -50,4 +52,22 @@ class Order(models.Model):
         return self.user.first_name
 
 
+class OrderProduct(models.Model):
+    # Order product model
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    payment = models.ForeignKey(
+        Payment, on_delete=models.SET_NULL, blank=True, null=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    variation = models.ForeignKey(ProductVariation, on_delete=models.CASCADE)
+    color = models.CharField(max_length=50)
+    size = models.CharField(max_length=50)
+    quantity = models.IntegerField()
+    product_price = models.FloatField()
+    ordered = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(slef):
+        # user product name string representation
+        return self.product.product_name
