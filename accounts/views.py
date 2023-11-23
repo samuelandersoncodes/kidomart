@@ -99,7 +99,7 @@ def login(request):
                             cart_item = CartItem.objects.filter(cart=cart)
                             for item in cart_item:
                                 item.user = user
-                                item.save
+                                item.save()
             except:
                 pass
             auth.login(request, user)
