@@ -47,9 +47,9 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(slef):
+    def __str__(self):
         # user first name string representation
-        return self.user.first_name
+        return self.first_name
 
 
 class OrderProduct(models.Model):
