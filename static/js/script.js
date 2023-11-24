@@ -8,7 +8,15 @@ setTimeout(function () {
     $('#message').fadeOut('slow')
 }, 6000)
 
-// Order form billing details submission
-document.getElementById('placeOrderBtn').addEventListener('click', function () {
-    document.getElementById('orderForm').submit();
+// Event listener for Order form billing details submission
+document.addEventListener('DOMContentLoaded', function () {
+    var placeOrderBtn = document.getElementById('placeOrderBtn');
+    if (placeOrderBtn) {
+        placeOrderBtn.addEventListener('click', function () {
+            // Triggers the form submission
+            document.getElementById('orderForm').submit();
+        });
+    }
 });
+
+
