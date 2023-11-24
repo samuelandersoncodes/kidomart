@@ -47,6 +47,10 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def full_name(self):
+        # full name concatenation
+        return f'{self.first_name} {self.last_name}'
+
     def __str__(self):
         # user first name string representation
         return self.first_name
