@@ -53,7 +53,7 @@ class Order(models.Model):
 
     def full_address(self):
         # full address concatenation
-        return f'{address_line_1} {address_line_2}'
+        return f'{self.address_line_1} {self.address_line_2}'
 
     def __str__(self):
         # user first name string representation
