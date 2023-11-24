@@ -5,6 +5,11 @@ from .models import Order
 import datetime
 
 
+def payments(request):
+    # Payments view
+    return render(request, 'payments.html')
+
+
 def place_order(request, total=0, quantity=0):
     """
     This function processes the placement of an order.
