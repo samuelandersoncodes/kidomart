@@ -13,7 +13,7 @@
                         Billing address
                     </h4>
                     <!-- billing address form -->
-                    <form action="{% url 'place_order' %}" method="POST">
+                    <form action="{% url 'place_order' %}" method="POST" id="orderForm">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col form-group mb-3">
@@ -37,12 +37,13 @@
                         </div>
                         <div class="row">
                             <div class="col form-group mb-3">
-                                <label for="address">Address Line 1 *</label>
-                                <input type="text" name="address" id="address" class="form-control" required>
+                                <label for="address_line_1">Address Line 1 *</label>
+                                <input type="text" name="address_line_1" id="address_line_1" class="form-control"
+                                    required>
                             </div>
                             <div class="col form-group mb-3">
-                                <label for="address1">Address line 2</label>
-                                <input type="text" name="address1" id="address1" class="form-control">
+                                <label for="address_line_2">Address line 2</label>
+                                <input type="text" name="address_line_2" id="address_line_2" class="form-control">
                             </div>
                             <div class="row">
                                 <div class="col form-group mb-3">
@@ -140,7 +141,7 @@
                     </div>
                     <!-- Order and keep shopping buttons -->
                     <div class="text-center">
-                        <button type="submit" class="btn btn-secondary btn-block mx-1 mb-2" onclick="submitForm()"
+                        <button type="submit" class="btn btn-secondary btn-block mx-1 mb-2" id="placeOrderBtn"
                             aria-label="Place order">Place order</button>
                         <a href="{% url 'home' %}" class="btn btn-secondary btn-block mb-2"
                             aria-label="Continue Shopping">Continue Shopping</a>
