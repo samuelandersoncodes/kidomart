@@ -12,11 +12,18 @@ setTimeout(function () {
 document.addEventListener('DOMContentLoaded', function () {
     var placeOrderBtn = document.getElementById('placeOrderBtn');
     if (placeOrderBtn) {
-        placeOrderBtn.addEventListener('click', function () {
-            // Triggers the form submission
+        placeOrderBtn.addEventListener('click', function (event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Trigger the form submission
             document.getElementById('orderForm').submit();
+
+            // Redirect to payments.html
+            window.location.href = '/orders/payments/';
         });
     }
 });
+
 
 
