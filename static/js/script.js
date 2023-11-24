@@ -7,3 +7,8 @@ document.getElementById('copyright-date').innerHTML = (new Date().getFullYear())
 setTimeout(function () {
     $('#message').fadeOut('slow')
 }, 6000)
+
+// Order form billing details submission
+document.getElementById('placeOrderBtn').addEventListener('click', function () {
+    document.getElementById('orderForm').submit();
+});
