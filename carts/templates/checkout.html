@@ -13,7 +13,8 @@
                         Billing address
                     </h4>
                     <!-- billing address form -->
-                    <form action="#">
+                    <form action="{% url 'place_order' %}" method="POST">
+                        {% csrf_token %}
                         <div class="row">
                             <div class="col form-group mb-3">
                                 <label for="first_name">First Name *</label>
