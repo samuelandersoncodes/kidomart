@@ -77,8 +77,11 @@
                                 <textarea name="order_note" id="order_note" class="form-control"></textarea>
                             </div>
                         </div>
-                        <button type="submit" id="hiddenSubmitBtn" class="d-none"
-                            aria-label="Hidden place order button"></button>
+                        <div class="text-center">
+                            <button type="submit" class="d-none" id="hiddenPlaceOrderBtn"
+                                aria-label="Hidden place order">
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -154,8 +157,9 @@
                     </div>
                     <!-- Order and keep shopping buttons -->
                     <div class="text-center">
-                        <button type="button" class="btn btn-secondary btn-block mx-1 mb-2" id="placeOrderBtn"
-                            aria-label="Place order">Place order</button>
+                        <button type="submit" class="btn btn-secondary btn btn-block mx-1 mb-2" id="placeOrderBtn"
+                            aria-label="Place order">Place Order
+                        </button>
                         <a href="{% url 'home' %}" class="btn btn-secondary btn-block mb-2"
                             aria-label="Continue Shopping">Continue Shopping</a>
                     </div>
