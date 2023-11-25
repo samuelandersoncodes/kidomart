@@ -11,19 +11,12 @@ setTimeout(function () {
 // Event listener for Order form billing details submission
 document.addEventListener('DOMContentLoaded', function () {
     var placeOrderBtn = document.getElementById('placeOrderBtn');
-    if (placeOrderBtn) {
-        placeOrderBtn.addEventListener('click', function (event) {
-            // Prevent the default form submission behavior
-            event.preventDefault();
+    var hiddenSubmitBtn = document.getElementById('hiddenSubmitBtn');
 
-            // Trigger the form submission
-            document.getElementById('orderForm').submit();
-
-            // Redirect to payments.html
-            window.location.href = '/orders/payments/';
+    if (placeOrderBtn && hiddenSubmitBtn) {
+        placeOrderBtn.addEventListener('click', function () {
+            // Trigger the click event of the hidden submit button
+            hiddenSubmitBtn.click();
         });
     }
 });
-
-
-
