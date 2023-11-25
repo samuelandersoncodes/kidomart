@@ -34,13 +34,73 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card mb-3">
                             <div class="card-header">
-                                <h3 class="heading-font">Review Product</h3>
+                                <h3 class="heading-font">Your Items</h3>
                             </div>
                             <div class="card-body">
-                                <p class="card-text">
-                                </p>
+                                <div class="row mb-3 card-title checkout-details-headings">
+                                    <div class="col-10 col-md-6">
+                                        <h6 class="text-uppercase fw-bold">Product</h6>
+                                    </div>
+                                    <div class="col-8 col-md-3">
+                                        <h6 class="text-uppercase fw-bold">Quantity</h6>
+                                    </div>
+                                    <div class="col-8 col-md-3">
+                                        <h6 class="text-uppercase fw-bold">Price</h6>
+                                    </div>
+                                </div>
+                                {% for cart_item in cart_items %}
+                                <div class="row mb-3">
+                                    <div class="col-12 col-md-6">
+                                        <figure class="align-items-center item-on-side">
+                                            <!-- product image -->
+                                            <div class="aside">
+                                                <a href="{% url 'product_detail' cart_item.product.category.slug cart_item.product.slug%}"
+                                                    aria-label="product detail">
+                                                    <img src="{{ cart_item.product.image.url }}" class="mx-1 small-img"
+                                                        alt="{{ cart_item.product.product_name }}">
+                                                </a>
+                                            </div>
+                                            <figcaption>
+                                                <!-- product name -->
+                                                <a href="{% url 'product_detail' cart_item.product.category.slug cart_item.product.slug %}"
+                                                    class="text-decoration-none text-dark" aria-label="product detail">
+                                                    {{ cart_item.product.product_name }}
+                                                </a>
+                                                <!-- product variations -->
+                                                <p class="text-muted small mb-0">
+                                                    {% if cart_item.variations.all %}
+                                                    {% for item in cart_item.variations.all %}
+                                                    {% if item.variation_category == 'color' %}
+                                                    Color: {{ item.variation_value }}
+                                                    {% endif %}
+                                                    {% if item.variation_category == 'size' %}
+                                                    Size: {{ item.variation_value }}
+                                                    {% endif %}
+                                                    <br>
+                                                    {% endfor %}
+                                                    {% endif %}
+                                                </p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-8 col-md-3">
+                                        <div>
+                                            <!-- Quantity display -->
+                                            <label id="cartQuantityLabel" class="visually-hidden">Cart quantity</label>
+                                            <p aria-labelledby="cartQuantityLabel">{{ cart_item.quantity }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-md-3">
+                                        <!-- Product price  -->
+                                        <div>
+                                            <var class="price">${{ cart_item.sub_total }}</var>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                {% endfor %}                               
                             </div>
                         </div>
                     </div>
