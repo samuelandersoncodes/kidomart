@@ -8,15 +8,42 @@ setTimeout(function () {
     $('#message').fadeOut('slow')
 }, 6000)
 
-// Event listener for Order form billing details submission
+//Event listener for Order form billing details submission
 document.addEventListener('DOMContentLoaded', function () {
     var placeOrderBtn = document.getElementById('placeOrderBtn');
-    var hiddenSubmitBtn = document.getElementById('hiddenSubmitBtn');
+    var hiddenSubmitBtn = document.getElementById('hiddenPlaceOrderBtn');
+    var form = document.getElementById('orderForm');
 
-    if (placeOrderBtn && hiddenSubmitBtn) {
+    if (placeOrderBtn && hiddenSubmitBtn && form) {
         placeOrderBtn.addEventListener('click', function () {
-            // Trigger the click event of the hidden submit button
-            hiddenSubmitBtn.click();
+            // Triggers the form submission
+            form.submit();
+        });
+
+        // Listens for the form submission event
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Sorry! Something went wrong');
+                    }
+                    return response.text();
+                })
+                .then(() => {
+                    // Redirects to payments.html
+                    window.location.href = '/orders/payments/';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Handles errors
+                });
         });
     }
 });
