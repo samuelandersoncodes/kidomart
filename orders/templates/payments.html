@@ -100,7 +100,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                {% endfor %}                               
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -113,28 +113,28 @@
                     <!-- Sub total -->
                     <div class="row">
                         <div class="col">
-                            <span></span>
+                            <span>Subtotal :</span>
                         </div>
                         <div class="col text-right">
-                            <span></span>
+                            <span>$ {{ total|floatformat:2 }}</span>
                         </div>
                     </div>
                     <!-- Tax -->
                     <div class="row">
                         <div class="col">
-                            <span"></span>
+                            <span">Tax :</span>
                         </div>
                         <div class="col text-right">
-                            <span></span>
+                            <span>$ {{ tax|floatformat:2 }}</span>
                         </div>
                     </div>
                     <!-- Grand total -->
                     <div class="row">
                         <div class="col">
-                            <span><strong></strong></span>
+                            <span><strong>Total:</strong></span>
                         </div>
                         <div class="col text-right">
-                            <span class="text-dark"><strong></strong></span>
+                            <span class="text-dark"><strong>$ {{ grand_total|floatformat:2 }}</strong></span>
                         </div>
                     </div>
                     <hr>
