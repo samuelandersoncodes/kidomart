@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from carts. models import CartItem
+from django.conf import settings
 from .forms import OrderForm
 from .models import Order
 import datetime
@@ -7,7 +8,11 @@ import datetime
 
 def payments(request):
     # Payments view
-    return render(request, 'payments.html')
+    paypal_client_id = settings.PAYPAL_CLIENT_ID
+    context = {
+        'paypal_client_id' : paypal_client_id
+    }
+    return render(request, 'payments.html', context)
 
 
 def place_order(request, total=0, quantity=0):
@@ -60,12 +65,14 @@ def place_order(request, total=0, quantity=0):
             data.save()
             order = Order.objects.get(
                 user=current_user, is_ordered=False, order_number=order_number)
+            paypal_client_id = settings.PAYPAL_CLIENT_ID
             context = {
                 'order': order,
                 'cart_items': cart_items,
                 'total': total,
                 'tax': tax,
                 'grand_total': grand_total,
+                'paypal_client_id' : paypal_client_id,
             }
             return render(request, 'payments.html', context)
         else:
