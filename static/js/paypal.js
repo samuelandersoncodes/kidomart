@@ -1,6 +1,15 @@
 // jshint esversion: 6
 
 // Paypal integration
+// This function loads the PayPal SDK dynamically
+function loadPayPalScript(clientID, callback) {
+    var script = document.createElement('script');
+    script.src = `https://www.paypal.com/sdk/js?client-id=${clientID}&currency=USD`;
+    script.async = true;
+    script.defer = true;
+    script.onload = callback;
+    document.head.appendChild(script);
+}
 
 // Function to set up the PayPal button
 function setupPayPalButton() {
