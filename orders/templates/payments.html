@@ -161,6 +161,7 @@
 <script src="{% static 'js/paypal.js' %}"></script>
 <!-- load paypal js script -->
 <script>
+    var totalAmount = '{{ grand_total }}'
     loadPayPalScript('{{ paypal_client_id }}', setupPayPalButton);
 </script>
 {% endblock %}
