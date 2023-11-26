@@ -13,6 +13,23 @@ function loadPayPalScript(clientID, callback) {
     document.head.appendChild(script);
 }
 
+// Geenerates csrf token
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = (cookies[i]).trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
 var payment_method = 'PayPal'
 
 // Function to set up the PayPal button
@@ -36,7 +53,7 @@ function setupPayPalButton() {
                 sendData()
                 function sendData() {
                     fetch(paymentUrl, {
-                        method : "POST",
+                        method: "POST",
                         headers: {
                             "Content-type": "application/json",
                             "X-CSRFToken": csrftoken,
@@ -47,7 +64,7 @@ function setupPayPalButton() {
                             payment_method: payment_method,
                             status: details.status
                         }),
-                    })               
+                    })
                 }
             }).catch(function (error) {
                 // Log the detailed error information
