@@ -13,6 +13,8 @@ function loadPayPalScript(clientID, callback) {
     document.head.appendChild(script);
 }
 
+var payment_method = 'PayPal'
+
 // Function to set up the PayPal button
 function setupPayPalButton() {
     paypal.Buttons({
@@ -22,7 +24,7 @@ function setupPayPalButton() {
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: totalAmount
+                        value: totalAmount,
                     }
                 }]
             });
@@ -31,7 +33,22 @@ function setupPayPalButton() {
             // Capture the funds from the transaction
             return actions.order.capture().then(function (details) {
                 // Display a success message to the user
-                alert('Transaction completed by ' + details.payer.name.given_name + '!');               
+                sendData()
+                function sendData() {
+                    fetch(paymentUrl, {
+                        method : "POST",
+                        headers: {
+                            "Content-type": "application/json",
+                            "X-CSRFToken": csrftoken,
+                        },
+                        body: JSON.stringify({
+                            orderID: orderID,
+                            transID: details.id,
+                            payment_method: payment_method,
+                            status: details.status
+                        }),
+                    })               
+                }
             }).catch(function (error) {
                 // Log the detailed error information
                 console.error('Error capturing funds:', error);
