@@ -4,13 +4,28 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order
 import datetime
+import json
 
 
 def payments(request):
     # Payments view
+    body = json.loads(request.body)
+    order = Order.objects.get(
+        user=request.user, is_ordered=False, order_number=body['orderID'])
+    payment = Payment(
+        user=request.user,
+        payment_id=body['transID'],
+        payment_method=body['payment_method'],
+        amount_paid = order.order_total,
+        status = body['status'],
+    )
+    payment.save()
+    order.payment = payment
+    order.is_ordered = True
+    order.save()
     paypal_client_id = settings.PAYPAL_CLIENT_ID
     context = {
-        'paypal_client_id' : paypal_client_id
+        'paypal_client_id': paypal_client_id
     }
     return render(request, 'payments.html', context)
 
@@ -72,7 +87,7 @@ def place_order(request, total=0, quantity=0):
                 'total': total,
                 'tax': tax,
                 'grand_total': grand_total,
-                'paypal_client_id' : paypal_client_id,
+                'paypal_client_id': paypal_client_id,
             }
             return render(request, 'payments.html', context)
         else:
