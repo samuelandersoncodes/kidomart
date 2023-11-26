@@ -155,3 +155,12 @@
 </section>
 {% include 'includes/footer.html' %}
 {% endblock %}
+
+{% block postloadjs %}
+<!-- custom paypal js -->
+<script src="{% static 'js/paypal.js' %}"></script>
+<!-- load paypal js script -->
+<script>
+    loadPayPalScript('{{ paypal_client_id }}', setupPayPalButton);
+</script>
+{% endblock %}
