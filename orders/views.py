@@ -44,6 +44,11 @@ def payments(request):
         orderproduct.product_price = item.product_price
         orderproduct.ordered = True
         orderproduct.save()
+        cart_item = CartItem.objects.get(id=item.id)
+        product_variation = cart_item.variations.all()
+        orderproduct = OrderProduct.objects.get(id=orderproduct.id)
+        orderproduct.variations.set(product_variation)
+        orderproduct.save()
     paypal_client_id = settings.PAYPAL_CLIENT_ID
     context = {
         'paypal_client_id': paypal_client_id
