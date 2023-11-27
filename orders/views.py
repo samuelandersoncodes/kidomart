@@ -3,6 +3,7 @@ from carts. models import CartItem
 from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderProduct, Payment
+from products.models import Product
 import datetime
 import json
 
@@ -49,6 +50,9 @@ def payments(request):
         orderproduct = OrderProduct.objects.get(id=orderproduct.id)
         orderproduct.variations.set(product_variation)
         orderproduct.save()
+        product = Product.objects.get(id=item.product_id)
+        product.stock -= item.quantity
+        product.save()
     paypal_client_id = settings.PAYPAL_CLIENT_ID
     context = {
         'paypal_client_id': paypal_client_id
