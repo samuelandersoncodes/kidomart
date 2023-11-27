@@ -2,7 +2,22 @@ from django.contrib import admin
 from .models import Payment, Order, OrderProduct
 
 
-class OderAdmin(admin.ModelAdmin):
+class OrderProductInline(admin.TabularInline):
+    # Tabulates product order details
+    model = OrderProduct
+    readonly_fields = (
+        'payment',
+        'user',
+        'product',
+        'quantity',
+        'product_price',
+        'ordered'
+    )
+    extra = 0
+
+
+class OrderAdmin(admin.ModelAdmin):
+    # Displays product order list
     list_display = [
         'order_number',
         'full_name',
@@ -27,8 +42,9 @@ class OderAdmin(admin.ModelAdmin):
         'tel'
     ]
     list_per_page = 25
+    inlines = [OrderProductInline]
 
 
-admin.site.register(Order, OderAdmin)
+admin.site.register(Order, OrderAdmin)
 admin.site.register(OrderProduct)
 admin.site.register(Payment)
