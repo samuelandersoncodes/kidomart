@@ -53,6 +53,7 @@ def payments(request):
         product = Product.objects.get(id=item.product_id)
         product.stock -= item.quantity
         product.save()
+    CartItem.objects.filter(user=request.user).delete()
     paypal_client_id = settings.PAYPAL_CLIENT_ID
     context = {
         'paypal_client_id': paypal_client_id
