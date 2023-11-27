@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex flex-column align-items-center text-center mt-5">
+    <h1>500 Internal Server Error</h1>
+    <p class="fs-4">Sorry! the server encountered an internal error.</p>
+    <br>
+    <button class="btn btn-secondary mb-3 hvr-grow" type="submit">
+        <a class="text-decoration-none text-white" href="{% url 'home' %}">Back</a>
+    </button>
+</div>
+{% endblock %}
