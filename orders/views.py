@@ -6,6 +6,8 @@ from .models import Order, OrderProduct, Payment
 from products.models import Product
 import datetime
 import json
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
 
 
 def payments(request):
@@ -19,6 +21,8 @@ def payments(request):
     and set it as ordered.
     It also processes each item in the user's cart
     and creates corresponding OrderProduct entries
+    clears the cart after successful purchase
+    and send the user an order confirmation email
     """
     body = json.loads(request.body)
     order = Order.objects.get(
@@ -54,6 +58,14 @@ def payments(request):
         product.stock -= item.quantity
         product.save()
     CartItem.objects.filter(user=request.user).delete()
+    mail_subject = 'Thanks for shopping with Kidomart'
+    message = render_to_string('order_recieved_email.html', {
+        'user': request.user,
+        'order': order,
+    })
+    to_email = request.user.email
+    send_email = EmailMessage(mail_subject, message, to=[to_email])
+    send_email.send()
     paypal_client_id = settings.PAYPAL_CLIENT_ID
     context = {
         'paypal_client_id': paypal_client_id
