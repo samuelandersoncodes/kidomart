@@ -2,13 +2,23 @@ from django.shortcuts import render, redirect
 from carts. models import CartItem
 from django.conf import settings
 from .forms import OrderForm
-from .models import Order
+from .models import Order, OrderProduct, Payment
 import datetime
 import json
 
 
 def payments(request):
-    # Payments view
+    """
+    This function loads the request body JSON data
+    Retrieves the order based on user, order status
+    and order number from the request,
+    Creates a Payment object with the
+    received payment details
+    Updates the order with the payment information
+    and set it as ordered.
+    It also processes each item in the user's cart
+    and creates corresponding OrderProduct entries
+    """
     body = json.loads(request.body)
     order = Order.objects.get(
         user=request.user, is_ordered=False, order_number=body['orderID'])
@@ -16,13 +26,24 @@ def payments(request):
         user=request.user,
         payment_id=body['transID'],
         payment_method=body['payment_method'],
-        amount_paid = order.order_total,
-        status = body['status'],
+        amount_paid=order.order_total,
+        status=body['status'],
     )
     payment.save()
     order.payment = payment
     order.is_ordered = True
     order.save()
+    cart_items = CartItem.objects.filter(user=request.user)
+    for item in cart_items:
+        orderproduct = OrderProduct()
+        orderproduct.order_id = order.id
+        orderproduct.payment = payment
+        orderproduct.user_id = request.user_id
+        orderproduct.product_id = item.product_id
+        orderproduct.quantity = item.quantity
+        orderproduct.product_price = item.product_price
+        orderproduct.ordered = True
+        orderproduct.save()
     paypal_client_id = settings.PAYPAL_CLIENT_ID
     context = {
         'paypal_client_id': paypal_client_id
