@@ -33,7 +33,7 @@ class OrderForm(forms.ModelForm):
             'address_line_2': 'Address Line 2',
             'country': 'Country',
             'state': 'State',
-            'city': 'State',
+            'city': 'City',
             'order_note': 'Leave a Note',
         }
         self.fields['first_name'].widget.attrs['autofocus'] = True
