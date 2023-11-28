@@ -22,3 +22,7 @@ var style = {
         iconColor: '#dc3545'
     }
 };
+
+// Stripe card mount
+var card = elements.create('card', {style: style});
+card.mount('#card-element');
