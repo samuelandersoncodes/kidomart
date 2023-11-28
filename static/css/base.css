@@ -142,10 +142,10 @@ body {
     color: #aab7c4;
 }
 
-#orderForm .form-control,
+#payment-form .form-control,
 #card-element {
-    color: #000;
-    border: 1px solid #000;
+    color: black;
+    border: 1px solid #2b2d2fa2;
 }
 
 /*********************** Footer styles ***********************/
