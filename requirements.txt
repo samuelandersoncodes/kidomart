@@ -11,5 +11,5 @@ psycopg2==2.9.9
 pytz==2023.3.post1
 s3transfer==0.7.0
 sqlparse==0.4.4
+stripe==7.6.0
 whitenoise==6.6.0
-requests==2.26.0
