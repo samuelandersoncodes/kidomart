@@ -83,6 +83,15 @@
                             </button>
                         </div>
                     </form>
+                    <!-- A Stripe payment -->
+                    <fieldset>
+                        <!-- A Stripe payment heading -->
+                        <legend class="w-auto fs-5 heading-font">Make Payment</legend>
+                        <!-- A Stripe card element -->
+                        <div class="mb-3" id="card-element"></div>
+                        <!-- Display form errors -->
+                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    </fieldset>
                 </div>
             </div>
         </div>
@@ -172,8 +181,8 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'js/stripe_checkout.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'js/stripe_checkout.js' %}"></script>
 {% endblock %}
