@@ -156,15 +156,3 @@
 </section>
 {% include 'includes/footer.html' %}
 {% endblock %}
-
-{% block postloadjs %}
-<!-- custom paypal js -->
-<script src="{% static 'js/paypal.js' %}"></script>
-<!-- load paypal js script -->
-<script>
-    var paymentUrl = "{% url 'payments' %}"
-    var orderID = '{{ order.order_number }}'
-    var totalAmount = '{{ grand_total }}'
-    loadPayPalScript('{{ paypal_client_id }}', setupPayPalButton);
-</script>
-{% endblock %}
