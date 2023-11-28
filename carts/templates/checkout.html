@@ -20,7 +20,7 @@
                     <!-- billing address form -->
                     {{ form.non_field_errors }}
                     <form action="{% url 'checkout' %}" method="POST" class="form-group fieldWrapper"
-                        enctype="multipart/form-data" id="orderForm">
+                        enctype="multipart/form-data" id="payment-form">
                         {% csrf_token %}
                         <fieldset>
                             <div class="row">
