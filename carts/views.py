@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.conf import settings
 from products.models import Product, ProductVariation
 from .models import Cart, CartItem
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
-
+import stripe
 
 def _cart_id(request):
     """
@@ -232,8 +233,11 @@ def checkout(request, total=0, quantity=0, cart_items=None):
     And also retrieves active cart items associated with the cart
     It arranges the checkout cart items in descendning order
     It then calculates the tax, total price and quantity of checked out items
-    And renders the template with the calculated context
+    Payment is then made via stripe.
+    And template is rendered with the calculated context
     """
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
     try:
         tax = 0
         grand_total = 0
@@ -251,7 +255,17 @@ def checkout(request, total=0, quantity=0, cart_items=None):
                 total += (cart_item.product.price * cart_item.quantity)
             quantity += cart_item.quantity
         tax = (1 * total)/100
-        grand_total = total + tax
+        grand_total = round(total + tax)
+        amount_in_cents = int(grand_total * 100)
+        # Ensure the amount is at least 50 cents
+        if amount_in_cents < 50:
+            amount_in_cents = 50
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=amount_in_cents,
+            currency=settings.STRIPE_CURRENCY,
+            payment_method_types=['card'], 
+        )
     except ObjectDoesNotExist:
         pass
     context = {
@@ -260,5 +274,8 @@ def checkout(request, total=0, quantity=0, cart_items=None):
         'cart_items': cart_items,
         'tax': tax,
         'grand_total': grand_total,
+        'stripe_public_key': stripe_public_key,
+        'stripe_secret_key': stripe_secret_key,
+        'client_secret': intent.client_secret,
     }
     return render(request, 'checkout.html', context)
