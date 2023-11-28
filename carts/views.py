@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from products.models import Product, ProductVariation
 from .models import Cart, CartItem
+from orders.forms import OrderForm
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 import stripe
@@ -236,6 +237,7 @@ def checkout(request, total=0, quantity=0, cart_items=None):
     Payment is then made via stripe.
     And template is rendered with the calculated context
     """
+    order_form = OrderForm()
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     try:
@@ -277,5 +279,6 @@ def checkout(request, total=0, quantity=0, cart_items=None):
         'stripe_public_key': stripe_public_key,
         'stripe_secret_key': stripe_secret_key,
         'client_secret': intent.client_secret,
+        'order_form': order_form,
     }
-    return render(request, 'checkout.html', context)
+    return render(request, 'checkout.html', context,)
