@@ -86,7 +86,7 @@
                     <!-- A Stripe payment -->
                     <fieldset class="mt-3">
                         <!-- Stripe payment heading -->
-                        <legend class="w-auto fs-5 heading-font"></legend>
+                        <legend class="w-auto fs-5 heading-font">Make Payment</legend>
                         <!-- Stripe card element -->
                         <div class="mb-3" id="card-element"></div>
                         <!-- Display form errors -->
@@ -94,7 +94,9 @@
                     </fieldset>
                 </div>
             </div>
+
             <div class="text-center">
+                <p class="text-info">You are paying for a total of ${{ grand_total}}</p>
                 <button id="submit-button" class="btn btn-secondary hvr-pop mb-3" aria-label="Complete payment">
                     <span>Complete Order</span>
                     <span class="icon">
