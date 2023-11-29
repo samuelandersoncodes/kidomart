@@ -12,7 +12,7 @@ class Payment(models.Model):
     status = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(slef):
+    def __str__(self):
         # Payment id string representation
         return self.payment_id
 
@@ -74,6 +74,6 @@ class OrderProduct(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(slef):
+    def __str__(self):
         # user product name string representation
         return self.product.product_name
