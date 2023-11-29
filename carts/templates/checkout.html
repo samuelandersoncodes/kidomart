@@ -18,14 +18,14 @@
                         Billing address
                     </h4>
                     <!-- billing address form -->
-                    {{ form.non_field_errors }}
+                    {{ order_form.non_field_errors }}
                     <form action="{% url 'checkout' %}" method="POST" class="form-group fieldWrapper"
                         enctype="multipart/form-data" id="payment-form">
                         {% csrf_token %}
                         <fieldset>
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    {{ form.first_name.errors }}
+                                    {{ order_form.first_name.errors }}
                                     <label for="{{ form.first_name.id_for_label }}"></label>
                                     {{ order_form.first_name|as_crispy_field }}
                                 </div>
@@ -49,24 +49,24 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    {{ form.address_line_1.errors }}
+                                    {{ order_form.address_line_1.errors }}
                                     <label for="{{ form.address_line_1.id_for_label }}"></label>
                                     {{ order_form.address_line_1|as_crispy_field }}
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    {{ form.address_line_2.errors }}
+                                    {{ order_form.address_line_2.errors }}
                                     <label for="{{ form.address_line_2.id_for_label }}"></label>
                                     {{ order_form.address_line_2|as_crispy_field }}
                                 </div>
                             </div>
                             <div>
-                                {{ form.country.errors }}
+                                {{ order_form.country.errors }}
                                 <label for="{{ form.country.id_for_label }}"></label>
                                 {{ order_form.country|as_crispy_field }}
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    {{ form.city.errors }}
+                                    {{ order_form.city.errors }}
                                     <label for="{{ form.city.id_for_label }}"></label>
                                     {{ order_form.city|as_crispy_field }}
                                 </div>
@@ -77,7 +77,7 @@
                                 </div>
                             </div>
                             <div>
-                                {{ form.order_note.errors }}
+                                {{ order_form.order_note.errors }}
                                 <label for="{{ form.order_note.id_for_label }}"></label>
                                 {{ order_form.order_note|as_crispy_field }}
                             </div>
@@ -95,7 +95,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <p class="text-info">You are paying for a total of ${{ grand_total}}</p>
+                <p class="text-info">You are paying for a total of ${{ order_total }}</p>
                 <button id="submit-button" class="btn btn-secondary hvr-pop mb-3 mt-0" aria-label="Complete payment">
                     <span>Complete Order</span>
                     <span class="icon">
