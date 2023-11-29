@@ -285,6 +285,7 @@ def checkout(request, total=0, quantity=0, cart_items=None):
                 quantity += cart_item.quantity
             tax = (1 * total)/100
             grand_total = round(total + tax)
+            order_total = grand_total
             amount_in_cents = int(grand_total * 100)
             # Ensure the amount is at least 50 cents
             if amount_in_cents < 50:
@@ -302,7 +303,7 @@ def checkout(request, total=0, quantity=0, cart_items=None):
         'quantity': quantity,
         'cart_items': cart_items,
         'tax': tax,
-        'grand_total': grand_total,
+        'order_total': order_total,
         'stripe_public_key': stripe_public_key,
         'stripe_secret_key': stripe_secret_key,
         'client_secret': intent.client_secret,
