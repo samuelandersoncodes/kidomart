@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from products.models import Product, ProductVariation
+from orders.forms import OrderForm
+from orders.models import Order, OrderProduct, Payment
+import datetime
 from .models import Cart, CartItem
 from orders.forms import OrderForm
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 import stripe
+
 
 def _cart_id(request):
     """
@@ -234,42 +238,65 @@ def checkout(request, total=0, quantity=0, cart_items=None):
     And also retrieves active cart items associated with the cart
     It arranges the checkout cart items in descendning order
     It then calculates the tax, total price and quantity of checked out items
+    The function checks and saves the order form.
     Payment is then made via stripe.
     And template is rendered with the calculated context
     """
     order_form = OrderForm()
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    try:
-        tax = 0
-        grand_total = 0
-        if request.user.is_authenticated:
-            cart_items = CartItem.objects.filter(
-                user=request.user, is_active=True).order_by('-id')
+    if request.method == 'POST':
+        form_data = {
+            'first_name': request.POST['first_name'],
+            'last_name': request.POST['last_name'],
+            'email': request.POST['email'],
+            'tel': request.POST['tel'],
+            'address_line_1': request.POST['address_line_1'],
+            'address_line_2': request.POST['address_line_2'],
+            'country': request.POST['country'],
+            'state': request.POST['state'],
+            'city': request.POST['city'],
+            'order_note': request.POST['order_note'],
+        }
+        order_form = OrderForm(form_data)
+        if order_form.is_valid():
+            order_form.save()
         else:
-            cart = Cart.objects.get(cart_id=_cart_id(request))
-            cart_items = CartItem.objects.filter(
-                cart=cart, is_active=True).order_by('-id')
-        for cart_item in cart_items:
-            if cart_item.product.on_sale:
-                total += (cart_item.product.sale_price * cart_item.quantity)
+            messages.error(
+                request, 'Error! Please check your details and resubmit')
+            return redirect('checkout')
+    else:
+        try:
+            tax = 0
+            grand_total = 0
+            if request.user.is_authenticated:
+                cart_items = CartItem.objects.filter(
+                    user=request.user, is_active=True).order_by('-id')
             else:
-                total += (cart_item.product.price * cart_item.quantity)
-            quantity += cart_item.quantity
-        tax = (1 * total)/100
-        grand_total = round(total + tax)
-        amount_in_cents = int(grand_total * 100)
-        # Ensure the amount is at least 50 cents
-        if amount_in_cents < 50:
-            amount_in_cents = 50
-        stripe.api_key = stripe_secret_key
-        intent = stripe.PaymentIntent.create(
-            amount=amount_in_cents,
-            currency=settings.STRIPE_CURRENCY,
-            payment_method_types=['card'], 
-        )
-    except ObjectDoesNotExist:
-        pass
+                cart = Cart.objects.get(cart_id=_cart_id(request))
+                cart_items = CartItem.objects.filter(
+                    cart=cart, is_active=True).order_by('-id')
+            for cart_item in cart_items:
+                if cart_item.product.on_sale:
+                    total += (cart_item.product.sale_price *
+                              cart_item.quantity)
+                else:
+                    total += (cart_item.product.price * cart_item.quantity)
+                quantity += cart_item.quantity
+            tax = (1 * total)/100
+            grand_total = round(total + tax)
+            amount_in_cents = int(grand_total * 100)
+            # Ensure the amount is at least 50 cents
+            if amount_in_cents < 50:
+                amount_in_cents = 50
+            stripe.api_key = stripe_secret_key
+            intent = stripe.PaymentIntent.create(
+                amount=amount_in_cents,
+                currency=settings.STRIPE_CURRENCY,
+                payment_method_types=['card'],
+            )
+        except ObjectDoesNotExist:
+            pass
     context = {
         'total': total,
         'quantity': quantity,
