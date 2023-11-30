@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.conf import settings
 from products.models import Product, ProductVariation
 from orders.forms import OrderForm
@@ -6,6 +7,7 @@ from orders.models import Order, OrderProduct, Payment
 import datetime
 from .models import Cart, CartItem
 from orders.forms import OrderForm
+from orders.views import place_order
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 import stripe
@@ -241,41 +243,79 @@ def checkout(request, total=0, quantity=0, cart_items=None):
     The function checks and saves the order form.
     Payment is then made via stripe.
     And template is rendered with the calculated context
+    upon a successful payment, user is redirected to the checkout success page
     """
+    order_total = 0
+    current_user = request.user
+    cart_items = CartItem.objects.filter(user=current_user)
+    cart_count = cart_items.count()
+    if cart_count <= 0:
+        return redirect('cart')
+    grand_total = 0
+    tax = 0
+    for cart_item in cart_items:
+        if cart_item.product.on_sale:
+            total += (cart_item.product.sale_price * cart_item.quantity)
+        else:
+            total += (cart_item.product.price * cart_item.quantity)
+            quantity += cart_item.quantity
+    tax = (1 * total)/100
+    grand_total = total + tax
     order_form = OrderForm()
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     if request.method == 'POST':
-        form_data = {
-            'first_name': request.POST['first_name'],
-            'last_name': request.POST['last_name'],
-            'email': request.POST['email'],
-            'tel': request.POST['tel'],
-            'address_line_1': request.POST['address_line_1'],
-            'address_line_2': request.POST['address_line_2'],
-            'country': request.POST['country'],
-            'state': request.POST['state'],
-            'city': request.POST['city'],
-            'order_note': request.POST['order_note'],
-        }
-        order_form = OrderForm(form_data)
+        order_form = OrderForm(request.POST)
         if order_form.is_valid():
-            order_form.save()
+            data = Order()
+            data.user = current_user
+            data.first_name = order_form.cleaned_data['first_name']
+            data.last_name = order_form.cleaned_data['last_name']
+            data.email = order_form.cleaned_data['email']
+            data.tel = order_form.cleaned_data['tel']
+            data.address_line_1 = order_form.cleaned_data['address_line_1']
+            data.address_line_2 = order_form.cleaned_data['address_line_2']
+            data.country = order_form.cleaned_data['country']
+            data.state = order_form.cleaned_data['state']
+            data.city = order_form.cleaned_data['city']
+            data.order_note = order_form.cleaned_data['order_note']
+            data.tax = tax
+            grand_total = round(total + tax)
+            order_total = grand_total           
+            data.order_total = round(grand_total, 2)           
+            data.ip = request.META.get('REMOTE_ADDR')
+            data.save()
+            yr = int(datetime.date.today().strftime('%Y'))
+            dt = int(datetime.date.today().strftime('%d'))
+            mt = int(datetime.date.today().strftime('%m'))
+            d = datetime.date(yr, mt, dt)
+            current_date = d.strftime('%Y%d%m')
+            order_number = current_date + str(data.id)
+            data.order_number = order_number                     
+            data.save()
+            order = Order.objects.get(
+                user=current_user, is_ordered=False, order_number=order_number)                      
+            for cart_item in cart_items:
+                order_product = OrderProduct.objects.create(
+                    user=order.user,
+                    order=order,
+                    product=cart_item.product,
+                    quantity=cart_item.quantity,
+                    product_price=cart_item.product.price,
+                )
+                order_product.variations.set(cart_item.variations.all())
+            cart_items.update(is_active=False)
+            grand_total = round(total + tax)
+            order_total = grand_total
+            messages.success(request, 'Your order was successful!')
+            return redirect('checkout_success')
         else:
             messages.error(
                 request, 'Error! Please check your details and resubmit')
             return redirect('checkout')
     else:
-        try:
-            tax = 0
-            grand_total = 0
-            if request.user.is_authenticated:
-                cart_items = CartItem.objects.filter(
-                    user=request.user, is_active=True).order_by('-id')
-            else:
-                cart = Cart.objects.get(cart_id=_cart_id(request))
-                cart_items = CartItem.objects.filter(
-                    cart=cart, is_active=True).order_by('-id')
+        try:           
+            # cart_items = _get_cart_items(request)
             for cart_item in cart_items:
                 if cart_item.product.on_sale:
                     total += (cart_item.product.sale_price *
@@ -309,7 +349,7 @@ def checkout(request, total=0, quantity=0, cart_items=None):
         'client_secret': intent.client_secret,
         'order_form': order_form,
     }
-    return render(request, 'checkout.html', context,)
+    return render(request, 'checkout.html', context)
 
 
 def checkout_success(request):
