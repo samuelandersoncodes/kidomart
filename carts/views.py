@@ -310,3 +310,8 @@ def checkout(request, total=0, quantity=0, cart_items=None):
         'order_form': order_form,
     }
     return render(request, 'checkout.html', context,)
+
+
+def checkout_success(request):
+    # Checkout success view
+    return render(request, 'checkout_success.html')
