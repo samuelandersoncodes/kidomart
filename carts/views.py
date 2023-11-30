@@ -311,7 +311,7 @@ def checkout(request, total=0, quantity=0, cart_items=None):
             return redirect('checkout_success')
         else:
             messages.error(
-                request, 'Error! Please check your details and resubmit')
+                request, 'Please check your details and resubmit')
             return redirect('checkout')
     else:
         try:           
