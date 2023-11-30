@@ -315,7 +315,6 @@ def checkout(request, total=0, quantity=0, cart_items=None):
             return redirect('checkout')
     else:
         try:           
-            # cart_items = _get_cart_items(request)
             for cart_item in cart_items:
                 if cart_item.product.on_sale:
                     total += (cart_item.product.sale_price *
