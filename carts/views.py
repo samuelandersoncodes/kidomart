@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 from products.models import Product, ProductVariation
 from orders.forms import OrderForm
-from orders.models import Order, OrderProduct, Payment
+from orders.models import Order, OrderProduct
 import datetime
 from .models import Cart, CartItem
 from orders.forms import OrderForm
@@ -245,7 +245,7 @@ def checkout(request, total=0, quantity=0, cart_items=None):
     And template is rendered with the calculated context
     upon a successful payment, user is redirected to the checkout success page
     """
-    order_total = 0
+    data = Order()
     current_user = request.user
     cart_items = CartItem.objects.filter(user=current_user)
     cart_count = cart_items.count()
@@ -258,7 +258,7 @@ def checkout(request, total=0, quantity=0, cart_items=None):
             total += (cart_item.product.sale_price * cart_item.quantity)
         else:
             total += (cart_item.product.price * cart_item.quantity)
-            quantity += cart_item.quantity
+        quantity += cart_item.quantity
     tax = (1 * total)/100
     grand_total = total + tax
     order_form = OrderForm()
@@ -279,10 +279,10 @@ def checkout(request, total=0, quantity=0, cart_items=None):
             data.state = order_form.cleaned_data['state']
             data.city = order_form.cleaned_data['city']
             data.order_note = order_form.cleaned_data['order_note']
-            data.tax = tax
-            grand_total = round(total + tax)
-            order_total = grand_total           
-            data.order_total = round(grand_total, 2)           
+            data.tax = round(tax, 2)
+            grand_total = round(total + tax, 2)
+            order_total = grand_total
+            data.order_total = round(grand_total, 2)
             data.ip = request.META.get('REMOTE_ADDR')
             data.save()
             yr = int(datetime.date.today().strftime('%Y'))
@@ -291,10 +291,12 @@ def checkout(request, total=0, quantity=0, cart_items=None):
             d = datetime.date(yr, mt, dt)
             current_date = d.strftime('%Y%d%m')
             order_number = current_date + str(data.id)
-            data.order_number = order_number                     
+            data.order_number = order_number
             data.save()
             order = Order.objects.get(
-                user=current_user, is_ordered=False, order_number=order_number)                      
+                user=current_user, is_ordered=False, order_number=order_number)
+            order.is_ordered = True
+            order.save()
             for cart_item in cart_items:
                 order_product = OrderProduct.objects.create(
                     user=order.user,
@@ -302,29 +304,23 @@ def checkout(request, total=0, quantity=0, cart_items=None):
                     product=cart_item.product,
                     quantity=cart_item.quantity,
                     product_price=cart_item.product.price,
+                    ordered=True,
                 )
                 order_product.variations.set(cart_item.variations.all())
+                cart_item.save()
             cart_items.update(is_active=False)
-            grand_total = round(total + tax)
-            order_total = grand_total
+            tax = data.tax
+            order_total = data.order_total
             messages.success(request, 'Your order was successful!')
-            return redirect('checkout_success')
+            return redirect('checkout_success', order_number=data.order_number)
         else:
             messages.error(
                 request, 'Please check your details and resubmit')
             return redirect('checkout')
     else:
-        try:           
-            for cart_item in cart_items:
-                if cart_item.product.on_sale:
-                    total += (cart_item.product.sale_price *
-                              cart_item.quantity)
-                else:
-                    total += (cart_item.product.price * cart_item.quantity)
-                quantity += cart_item.quantity
-            tax = (1 * total)/100
-            grand_total = round(total + tax)
-            order_total = grand_total
+        try:
+            tax = round((1 * total) / 100, 2)
+            order_total = round(total + tax, 2)
             amount_in_cents = int(grand_total * 100)
             # Ensure the amount is at least 50 cents
             if amount_in_cents < 50:
@@ -351,6 +347,39 @@ def checkout(request, total=0, quantity=0, cart_items=None):
     return render(request, 'checkout.html', context)
 
 
-def checkout_success(request):
-    # Checkout success view
-    return render(request, 'checkout_success.html')
+def checkout_success(request, order_number):
+    """
+    This function retrieves the order by order_number
+    It also retrieves ordered products and associated cart
+    items for the current user, transfers cart items to 
+    order products and update product stock and 
+    clears the user's cart and cart count
+    """
+    order = Order.objects.get(order_number=order_number)
+    order_products = OrderProduct.objects.filter(order=order)
+    cart_items = CartItem.objects.filter(user=request.user)
+    for item in cart_items:
+        orderproduct = OrderProduct()
+        orderproduct.order_id = order.id
+        orderproduct.user = request.user
+        orderproduct.product_id = item.product_id
+        orderproduct.quantity = item.quantity
+        orderproduct.product_price = item.product.price
+        orderproduct.ordered = True
+        orderproduct.save()
+        cart_item = CartItem.objects.get(id=item.id)
+        product_variation = cart_item.variations.all()
+        orderproduct = OrderProduct.objects.get(id=orderproduct.id)
+        orderproduct.variations.set(product_variation)
+        orderproduct.save()
+        product = Product.objects.get(id=item.product_id)
+        product.stock -= item.quantity
+        product.save()
+    CartItem.objects.filter(user=request.user).delete()
+    cart_count = CartItem.objects.filter(user=request.user, quantity__gt=0).count()
+    context = {
+        'order': order,
+        'order_products': order_products,
+        'cart_count': cart_count,
+    }
+    return render(request, 'checkout_success.html', context)
