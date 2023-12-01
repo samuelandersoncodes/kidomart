@@ -357,28 +357,33 @@ def checkout_success(request, order_number):
     order products and update product stock and 
     clears the user's cart and cart count
     """
-    order = Order.objects.get(order_number=order_number)
-    order_products = OrderProduct.objects.filter(order=order)
-    cart_items = CartItem.objects.filter(user=request.user)
-    for item in cart_items:
-        product = Product.objects.get(id=item.product_id)
-        product.stock -= item.quantity
-        product.save()
-    CartItem.objects.filter(user=request.user).delete()
-    cart_count = CartItem.objects.filter(user=request.user, quantity__gt=0).count()
-    order.status = 'Paid'
-    order.save()
-    mail_subject = 'Thanks for shopping with Kidomart'
-    message = render_to_string('order_recieved_email.html', {
-        'user': request.user,
-        'order': order,
-    })
-    to_email = request.user.email
-    send_email = EmailMessage(mail_subject, message, to=[to_email])
-    send_email.send()
-    context = {
-        'order': order,
-        'order_products': order_products,
-        'cart_count': cart_count,
-    }
-    return render(request, 'checkout_success.html', context)
+    order_number = order_number
+    try:
+        order = Order.objects.get(order_number=order_number)
+        order_products = OrderProduct.objects.filter(order=order)
+        cart_items = CartItem.objects.filter(user=request.user)
+        for item in cart_items:
+            product = Product.objects.get(id=item.product_id)
+            product.stock -= item.quantity
+            product.save()
+        CartItem.objects.filter(user=request.user).delete()
+        cart_count = CartItem.objects.filter(
+            user=request.user, quantity__gt=0).count()
+        order.status = 'Paid'
+        order.save()
+        mail_subject = 'Thanks for shopping with Kidomart'
+        message = render_to_string('order_recieved_email.html', {
+            'user': request.user,
+            'order': order,
+        })
+        to_email = request.user.email
+        send_email = EmailMessage(mail_subject, message, to=[to_email])
+        send_email.send()
+        context = {
+            'order': order,
+            'order_products': order_products,
+            'cart_count': cart_count,
+        }
+        return render(request, 'checkout_success.html', context)
+    except (Order.DoesNotExist):
+        return redirect('home')
