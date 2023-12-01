@@ -359,19 +359,6 @@ def checkout_success(request, order_number):
     order_products = OrderProduct.objects.filter(order=order)
     cart_items = CartItem.objects.filter(user=request.user)
     for item in cart_items:
-        orderproduct = OrderProduct()
-        orderproduct.order_id = order.id
-        orderproduct.user = request.user
-        orderproduct.product_id = item.product_id
-        orderproduct.quantity = item.quantity
-        orderproduct.product_price = item.product.price
-        orderproduct.ordered = True
-        orderproduct.save()
-        cart_item = CartItem.objects.get(id=item.id)
-        product_variation = cart_item.variations.all()
-        orderproduct = OrderProduct.objects.get(id=orderproduct.id)
-        orderproduct.variations.set(product_variation)
-        orderproduct.save()
         product = Product.objects.get(id=item.product_id)
         product.stock -= item.quantity
         product.save()
