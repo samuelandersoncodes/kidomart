@@ -54,7 +54,20 @@
                         <tbody>
                             {% for order_product in order_products %}
                             <tr>
-                                <td>{{ order_product.product.product_name }}</td>
+                                <td>{{ order_product.product.product_name }}
+                                    <span>
+                                        {% if order_product.variations.all %}
+                                        {% for item in order_product.variations.all %}
+                                        {% if item.variation_category == 'color' %}
+                                        | Color: {{ item.variation_value }}
+                                        {% endif %}
+                                        {% if item.variation_category == 'size' %}
+                                        | Size: {{ item.variation_value }}
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% endif %}
+                                    </span>
+                                </td>
                                 <td class="text-center">{{ order_product.quantity }}</td>
                                 <td class="text-center">${{ order_product.product_price|floatformat:2 }}</td>
                             </tr>
