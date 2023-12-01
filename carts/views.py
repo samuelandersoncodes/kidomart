@@ -10,6 +10,8 @@ from orders.forms import OrderForm
 from orders.views import place_order
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
 import stripe
 
 
@@ -366,6 +368,14 @@ def checkout_success(request, order_number):
     cart_count = CartItem.objects.filter(user=request.user, quantity__gt=0).count()
     order.status = 'Completed'
     order.save()
+    mail_subject = 'Thanks for shopping with Kidomart'
+    message = render_to_string('order_recieved_email.html', {
+        'user': request.user,
+        'order': order,
+    })
+    to_email = request.user.email
+    send_email = EmailMessage(mail_subject, message, to=[to_email])
+    send_email.send()
     context = {
         'order': order,
         'order_products': order_products,
