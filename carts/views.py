@@ -377,6 +377,8 @@ def checkout_success(request, order_number):
         product.save()
     CartItem.objects.filter(user=request.user).delete()
     cart_count = CartItem.objects.filter(user=request.user, quantity__gt=0).count()
+    order.status = 'Completed'
+    order.save()
     context = {
         'order': order,
         'order_products': order_products,
