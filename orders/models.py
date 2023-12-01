@@ -3,20 +3,6 @@ from accounts.models import Account
 from products.models import Product, ProductVariation
 
 
-class Payment(models.Model):
-    # Payment model
-    user = models.ForeignKey(Account, on_delete=models.CASCADE)
-    payment_id = models.CharField(max_length=100)
-    payment_method = models.CharField(max_length=100)
-    amount_paid = models.CharField(max_length=100)
-    status = models.CharField(max_length=100)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        # Payment id string representation
-        return self.payment_id
-
-
 class Order(models.Model):
     # Order model
     STATUS = (
@@ -26,8 +12,6 @@ class Order(models.Model):
         ('Cancelled', 'Cancelled'),
     )
     user = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True)
-    payment = models.ForeignKey(
-        Payment, on_delete=models.SET_NULL, blank=True, null=True)
     order_number = models.CharField(max_length=20)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -64,8 +48,6 @@ class OrderProduct(models.Model):
     # Order product model
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    payment = models.ForeignKey(
-        Payment, on_delete=models.SET_NULL, blank=True, null=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     variations = models.ManyToManyField(ProductVariation, blank=True)
     quantity = models.IntegerField()
