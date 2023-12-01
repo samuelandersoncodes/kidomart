@@ -21,11 +21,11 @@
         </div>
         <div class="col-md-6">
             <div class="invoice-from">
-                <ul class="list-unstyled text-center mt-3">
+                <ul class="list-unstyled mt-3">
                     <li><strong>Invoiced To</strong></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>{{ user.first_name }} {{ user.last_name }}</li>
+                    <li>{{ order.user.email }}</li>
+                    <li>{{ order.full_address }}</li>
                     <li></li>
                 </ul>
             </div>
