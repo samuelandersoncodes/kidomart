@@ -6,4 +6,21 @@ YOUR ORDER WITH ORDER NUMBER {{ oder.order_number }} HAS BEEN RECIEVED
 
 AND WILL BE PROCESSED SOON
 
+YOUR INVOICE:
+Date : {{ order.created_at }}
+Item : {{ order_product.product.product_name }}
+{% if order_product.variations.all %}
+{% for item in order_product.variations.all %}
+{% if item.variation_category == 'color' %}
+Color: {{ item.variation_value }}
+{% endif %}
+{% if item.variation_category == 'size' %}
+Size: {{ item.variation_value }}
+{% endif %}
+{% endfor %}
+{% endif %}
+Qty : {{ order_product.quantity }}
+Tax : ${{ order.tax|floatformat:2 }}
+Grand total : ${{ order.order_total|floatformat:2 }}
+
 {% endautoescape %}
