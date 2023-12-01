@@ -366,7 +366,7 @@ def checkout_success(request, order_number):
         product.save()
     CartItem.objects.filter(user=request.user).delete()
     cart_count = CartItem.objects.filter(user=request.user, quantity__gt=0).count()
-    order.status = 'Completed'
+    order.status = 'Paid'
     order.save()
     mail_subject = 'Thanks for shopping with Kidomart'
     message = render_to_string('order_recieved_email.html', {
