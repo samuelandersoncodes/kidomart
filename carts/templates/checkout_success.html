@@ -6,12 +6,13 @@
 {% include 'includes/alerts.html' %}
 <div class="container mt-3">
     <div class="text-center">
-        <i class="fas fa-check-circle text-success" style="font-size: 72px;"></i>
+        <i class="fas fa-check-circle text-success fs-1"></i>
         <h2 class="mt-3">Payment Successful</h2>
-        <a href="{% url 'home' %}" class="btn btn-secondary mt-3" aria-label="Home">Shop more</a>
+        <p class="text-info">an email with your purchase details has been sent to {{ order.user.email }}</p>
+        <a href="{% url 'home' %}" class="btn btn-secondary mt-2" aria-label="Home">Shop more</a>
     </div>
 </div>
-<div class="container mt-5 mb-4 bg-light">
+<div class="container mt-3 mb-4 bg-light">
     <div class="row">
         <div class="col-md-6">
             <div class="invoice-logo">
