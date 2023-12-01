@@ -7,7 +7,6 @@ from orders.models import Order, OrderProduct
 import datetime
 from .models import Cart, CartItem
 from orders.forms import OrderForm
-from orders.views import place_order
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
