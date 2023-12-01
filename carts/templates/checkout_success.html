@@ -56,22 +56,22 @@
                             <tr>
                                 <td>{{ order_product.product.product_name }}</td>
                                 <td class="text-center">{{ order_product.quantity }}</td>
-                                <td class="text-center">{{ order_product.product_price }}</td>
+                                <td class="text-center">${{ order_product.product_price|floatformat:2 }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th colspan="2" class="text-right">Sub Total:</th>
-                                <th class="text-center"></th>
+                                <th colspan="2" class="text-right">Tax : </th>
+                                <th class="text-center">${{ order.tax|floatformat:2 }}</th>
                             </tr>
                             <tr>
                                 <th colspan="2" class="text-right"></th>
                                 <th class="text-center"></th>
                             </tr>
                             <tr>
-                                <th colspan="2" class="text-right">Grand Total:</th>
-                                <th class="text-center"></th>
+                                <th colspan="2" class="text-right">Grand Total: </th>
+                                <th class="text-center">${{ order.order_total|floatformat:2 }}</th>
                             </tr>
                         </tfoot>
                     </table>
