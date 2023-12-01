@@ -7,6 +7,7 @@ class Order(models.Model):
     # Order model
     STATUS = (
         ('New', 'New'),
+        ('Paid', 'Paid'),
         ('Accepted', 'Accepted'),
         ('Completed', 'Completed'),
         ('Cancelled', 'Cancelled'),
