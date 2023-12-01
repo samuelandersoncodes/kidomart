@@ -1,12 +1,11 @@
 from django.contrib import admin
-from .models import Payment, Order, OrderProduct
+from .models import Order, OrderProduct
 
 
 class OrderProductInline(admin.TabularInline):
     # Tabulates product order details
     model = OrderProduct
     readonly_fields = (
-        'payment',
         'user',
         'product',
         'quantity',
@@ -47,4 +46,3 @@ class OrderAdmin(admin.ModelAdmin):
 
 admin.site.register(Order, OrderAdmin)
 admin.site.register(OrderProduct)
-admin.site.register(Payment)
