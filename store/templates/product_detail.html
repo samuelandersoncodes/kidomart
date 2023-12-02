@@ -158,8 +158,12 @@
 								aria-label="Review"></textarea>
 							<br>
 							{% if user.is_authenticated %}
+							{% if orderproduct %}
 							<input type="submit" value="Submit Review" class="btn btn-secondary hvr-pop"
 								aria-label="Submit Review">
+							{% else %}
+							<p>To post a review on this product, you must first purchase it</p>
+							{% endif %}
 							{% else %}
 							<p>You must be logged in to post a review. <span><a href="{% url 'login' %}"
 										class="text-decoration-none" aria-label="Log in">&nbsp;Login</a></span>
