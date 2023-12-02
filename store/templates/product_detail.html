@@ -116,13 +116,12 @@
 		<!-- Customer review -->
 		<div class="row">
 			<div class="col-md-9">
-				<h5 class="fs-4">Customer Reviews</h5>
 				<div>
 					<form action="{% url 'submit_review' single_product.item_id %}" method="POST">
 						{% csrf_token %}
-						<h6 class="fs-5">
-							Write a Review
-						</h6>
+						<h5 class="fs-5">
+							Leave a Review
+						</h5>
 						<div>
 							<!-- Rating Stars -->
 							<label aria-label="Rate this product">Rate this product</label>
@@ -163,6 +162,7 @@
 						</div>
 					</form>
 				</div>
+				<h6 class="fs-4 mt-3">Customer Reviews</h6>
 				<article class="mb-2">
 					<div class="w-100">
 						<img src="" class="img-xs icon rounded-circle">
