@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Product, ReviewRating
 from .forms import ReviewForm
@@ -17,8 +17,9 @@ def submit_review(request, item_id):
     url = request.META.get('HTTP_REFERER')
     if request.method == 'POST':
         try:
+            product = get_object_or_404(Product, item_id=item_id)
             reviews = ReviewRating.objects.get(
-                user__id=request.user.id, product__id=item_id)
+                user__id=request.user.id, product=product)
             form = ReviewForm(request.POST, instance=reviews)
             form.save()
             messages.success(
@@ -32,7 +33,7 @@ def submit_review(request, item_id):
                 data.rating = form.cleaned_data['rating']
                 data.review = form.cleaned_data['review']
                 data.ip = request.META.get('REMOTE_ADDR')
-                data.product_id = item_id
+                data.product = get_object_or_404(Product, item_id=item_id)
                 data.user_id = request.user.id
                 data.save()
                 messages.success(request, 'Thanks! Your review is added.')
