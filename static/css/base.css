@@ -129,6 +129,20 @@ body {
     padding-right: 0;
 }
 
+/* Rating stars hover styles */
+input:checked~label,
+label:hover~label {
+    color: #ffb503;
+}
+
+/* Rating stars hover highlight styles */
+input:checked+label:hover,
+input:checked~label:hover,
+input:checked~label:hover~label,
+label:hover~input:checked~label {
+    color: #cc9000;
+}
+
 /*********************** Cart page styles ***********************/
 
 /* cart image style */
