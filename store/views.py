@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from products.models import Product
+from orders.models import OrderProduct
 from category.models import Category
 from carts.views import _cart_id
 from carts.models import CartItem
@@ -49,10 +50,17 @@ def product_detail(request, category_slug, product_slug):
             request), product=single_product).exists()
     except Product.DoesNotExist:
         raise Http404("Sorry! This product does not exist")
-
+    orderproduct = None
+    if request.user.is_authenticated:
+        try:
+            orderproduct = OrderProduct.objects.filter(
+                user=request.user, product_id=single_product.id)
+        except OrderProduct.DoesNotExist:
+            orderproduct = None
     context = {
         'single_product': single_product,
         'in_cart': in_cart,
+        'orderproduct': orderproduct,
     }
     return render(request, 'product_detail.html', context)
 
