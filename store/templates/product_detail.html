@@ -38,6 +38,7 @@
 								<i class="fa fa-star{% if single_product.averageReview < 4.5 %}-o{% elif single_product.averageReview >= 4.5 and single_product.averageReview < 5 %}-half-o {% endif %}"
 									aria-hidden="true"></i>
 							</span>
+							<span>{{ single_product.countReview }} reviews</span>
 						</div>
 						<div class="mb-3">
 							<!-- Product price-->
@@ -201,6 +202,7 @@
 						<i class="fa fa-star{% if single_product.averageReview < 4.5 %}-o{% elif single_product.averageReview >= 4.5 and single_product.averageReview < 5 %}-half-o {% endif %}"
 							aria-hidden="true"></i>
 					</span>
+					<span>{{ single_product.countReview }} reviews</span>
 				</div>
 				{% for review in reviews %}
 				<div class="card mb-3">
