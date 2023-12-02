@@ -5,6 +5,7 @@ from orders.models import OrderProduct
 from category.models import Category
 from carts.views import _cart_id
 from carts.models import CartItem
+from products.models import ReviewRating
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Q
 
@@ -57,10 +58,13 @@ def product_detail(request, category_slug, product_slug):
                 user=request.user, product_id=single_product.id)
         except OrderProduct.DoesNotExist:
             orderproduct = None
+    reviews = ReviewRating.objects.filter(
+        product_id=single_product.id, status=True)
     context = {
         'single_product': single_product,
         'in_cart': in_cart,
         'orderproduct': orderproduct,
+        'reviews': reviews,
     }
     return render(request, 'product_detail.html', context)
 
