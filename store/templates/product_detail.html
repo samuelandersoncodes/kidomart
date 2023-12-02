@@ -174,17 +174,22 @@
 					</form>
 				</div>
 				<h6 class="fs-4 mt-3">Customer Reviews</h6>
-				<article class="mb-2">
-					<div class="w-100">
-						<img src="" class="img-xs icon rounded-circle">
-						<div class="text">
-							<span class="date text-muted float-md-right"></span>
-							<p class="mb-1"></p>
+				{% for review in reviews %}
+				<div class="card mb-3">
+					<div class="card-body">
+						<div class="w-100">
+							<div class="text">
+								<span class="date text-muted float-md-right">{{ review.updated_at }}</span>
+								<p class="fs-4">{{ review.user.first_name }} {{ review.user.last_name }}</p>								
+							</div>
+							<div class="mt-2">
+								<p class="fs-5">{{ review.subject }}</p>
+								<p>{{ review.review }}</p>
+							</div>
 						</div>
-						<div class="mt-2">
-							<p></p>
-						</div>
-				</article>
+					</div>
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
