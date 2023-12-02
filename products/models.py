@@ -3,6 +3,7 @@ from django.db import models
 from category.models import Category
 from accounts.models import Account
 
+
 def generate_item_id():
     # Customizes a product id for each product
     prefix = 'kidoprod'  # Custom prefix for products
@@ -45,7 +46,7 @@ class VariationManager(models.Manager):
         return super(VariationManager, self).filter(variation_category='color', is_active=True)
 
     def sizes(self):
-         # Retrieves size variation
+        # Retrieves size variation
         return super(VariationManager, self).filter(variation_category='size', is_active=True)
 
 
@@ -79,6 +80,7 @@ class ReviewRating(models.Model):
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
     subject = models.CharField(max_length=100, blank=True)
     review = models.TextField(max_length=500, blank=True)
+    rating = models.FloatField()
     ip = models.CharField(max_length=20, blank=True)
     status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -86,4 +88,3 @@ class ReviewRating(models.Model):
 
     def __str__(self):
         return self.subject
-
