@@ -118,7 +118,7 @@
 			<div class="col-md-9">
 				<h5 class="fs-4">Customer Reviews</h5>
 				<div>
-					<form action="#" method="POST">
+					<form action="{% url 'submit_review' single_product.item_id %}" method="POST">
 						{% csrf_token %}
 						<h6 class="fs-5">
 							Write a Review
