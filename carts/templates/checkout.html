@@ -94,7 +94,10 @@
                         </fieldset>
                         <div class="text-center">
                             <!-- Total payment info -->
-                            <p class="text-info">You are paying for a total of ${{ order_total }}</p>
+                            <p class="text-info">
+                                With <strong>tax</strong> of $<strong>{{ tax }}</strong>
+                                you are paying for a <strong>total</strong> of $<strong>{{ order_total }}</strong>
+                            </p>
                             <!-- Submit button -->
                             <button type="submit" id="submit-button" class="btn btn-secondary hvr-pop mb-3 mt-0"
                                 aria-label="Complete payment">
