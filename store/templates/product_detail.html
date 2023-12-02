@@ -113,9 +113,30 @@
 			</div>
 		</div>
 		<br>
+		<!-- Customer review -->
 		<div class="row">
 			<div class="col-md-9">
-				<h6 class="fs-4">Customer Reviews </h6>
+				<h5 class="fs-4">Customer Reviews</h5>
+				<div>
+					<form action="#" method="POST">
+						{% csrf_token %}
+						<h6 class="fs-5">
+							Write a Review
+						</h6>
+						<div>
+							<!-- Rating Stars -->
+							<label for="subject">Review Title:</label>
+							<input type="text" class="form-control" name="subject" id="subject" aria-label="Subject">
+							<br>
+							<label for="review">Review text:</label>
+							<textarea name="review" rows="4" class="form-control" id="review"
+								aria-label="Review"></textarea>
+							<br>
+							<input type="submit" value="Submit Review" class="btn btn-secondary hvr-pop"
+								aria-label="Submit Review">
+						</div>
+					</form>
+				</div>
 				<article class="mb-2">
 					<div class="w-100">
 						<img src="" class="img-xs icon rounded-circle">
