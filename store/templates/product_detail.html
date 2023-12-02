@@ -180,7 +180,21 @@
 						<div class="w-100">
 							<div class="text">
 								<span class="date text-muted float-md-right">{{ review.updated_at }}</span>
-								<p class="fs-4">{{ review.user.first_name }} {{ review.user.last_name }}</p>								
+								<p class="fs-4">{{ review.user.first_name }} {{ review.user.last_name }}</p>
+								<div class="rating-star">
+									<span>
+										<i class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {% endif %}"
+											aria-hidden="true"></i>
+										<i class="fa fa-star{% if review.rating == 1.5 %}-half-o{% elif review.rating < 2 %}-o {% endif %}"
+											aria-hidden="true"></i>
+										<i class="fa fa-star{% if review.rating == 2.5 %}-half-o{% elif review.rating < 3 %}-o {% endif %}"
+											aria-hidden="true"></i>
+										<i class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}"
+											aria-hidden="true"></i>
+										<i class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}"
+											aria-hidden="true"></i>
+									</span>
+								</div>
 							</div>
 							<div class="mt-2">
 								<p class="fs-5">{{ review.subject }}</p>
