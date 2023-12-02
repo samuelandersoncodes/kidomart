@@ -2,7 +2,7 @@ import uuid
 from django.db import models
 from category.models import Category
 from accounts.models import Account
-
+from django.db.models import Avg
 
 def generate_item_id():
     # Customizes a product id for each product
@@ -37,6 +37,20 @@ class Product(models.Model):
     def __str__(self):
         # Returns actual product name
         return self.product_name
+
+    def averageReview(self):
+        """
+        This function filters the products
+        Finds its average rating and checks
+        if there is a rating, if ther is,
+        Rating is coverted to float
+        """
+        reviews = ReviewRating.objects.filter(
+            product=self, status=True).aggregate(average=Avg('rating'))
+        avg = 0
+        if reviews['average'] is not None:
+            avg = float(reviews['average'])
+        return avg
 
 
 class VariationManager(models.Manager):
