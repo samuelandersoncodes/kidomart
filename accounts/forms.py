@@ -61,6 +61,12 @@ class UserForm(forms.ModelForm):
             'tel'
         )
 
+    def __init__(self, *args, **kwargs):
+        # Assign form control class to user form
+        super(UserForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'form-control'
+
 
 class UserProfileForm(forms.ModelForm):
     # User profile from
