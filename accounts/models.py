@@ -96,3 +96,11 @@ class UserProfile(models.Model):
     country = models.CharField(blank=True, max_length=20)
     state = models.CharField(blank=True, max_length=20)
     city = models.CharField(blank=True, max_length=20)
+
+    def __str__(self):
+        # First name str representation
+        return self.user.first_name
+
+    def full_address(self):
+        # Full address concatenation
+        return f'{self.address_line_1} {self.address_line_2}'
