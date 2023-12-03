@@ -27,7 +27,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 {{ user_form.non_field_errors }}
-                                <form action="#" method="POST">
+                                <form action="{% url 'edit_profile' %}" method="POST" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <div class="row">
                                         <div class="form-group col-md-6 mb-3">
