@@ -39,30 +39,38 @@
                                         </div>
                                         <div class="form-group col-md-6 mb-3">
                                             {{ profile_form.profile_picture.errors }}
-                                            <label for="{{ profile_form.tel.id_for_label }}">Profile Picture</label>
+                                            <label for="{{ profile_form.profile_picture.id_for_label }}">Profile
+                                                Picture</label>
                                             {{ profile_form.profile_picture }}
                                         </div>
                                     </div>
                                     <div class="form-group mb-3">
-                                        <label for=" address-1">Address Line 1</label>
-                                        <input type="text" class="form-control" id="address-1">
+                                        {{ profile_form.address_line_1.errors }}
+                                        <label for="{{ profile_form.address_line_1.id_for_label }}">Address Line
+                                            1</label>
+                                        {{ profile_form.address_line_1 }}
                                     </div>
                                     <div class="form-group mb-3">
-                                        <label for="address-2">Address Line 2</label>
-                                        <input type="text" class="form-control" id="address-2">
+                                        {{ profile_form.address_line_2.errors }}
+                                        <label for="{{ profile_form.address_Line_2.id_for_label }}">Address Line
+                                            2</label>
+                                        {{ profile_form.address_line_2 }}
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-4 mb-3">
-                                            <label for="city">City</label>
-                                            <input type="text" class="form-control" id="city">
+                                            {{ profile_form.city.errors }}
+                                            <label for="{{ profile_form.city.id_for_label }}">City</label>
+                                            {{ profile_form.city }}
                                         </div>
                                         <div class="form-group col-md-4 mb-3">
-                                            <label for="state">State</label>
-                                            <input type="text" class="form-control" id="state">
+                                            {{ profile_form.state.errors }}
+                                            <label for="{{ profile_form.state.id_for_label }}">State</label>
+                                            {{ profile_form.state }}
                                         </div>
                                         <div class="form-group col-md-4 mb-3">
-                                            <label for="country">Country</label>
-                                            <input type="text" class="form-control" id="country">
+                                            {{ profile_form.country.errors }}
+                                            <label for="{{ profile_form.country.id_for_label }}">Country</label>
+                                            {{ profile_form.country }}
                                         </div>
                                     </div>
                                     <div class="text-center">
