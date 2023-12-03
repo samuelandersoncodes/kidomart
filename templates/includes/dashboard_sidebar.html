@@ -1,7 +1,7 @@
 <aside class="col-md-3">
     <!--   Side bar   -->
     <ul class="list-group">
-        <a class="list-group-item {% if '/accounts' == request.path %}active bg-secondary{% endif %}"
+        <a class="list-group-item {% if '/accounts/' == request.path %}active bg-secondary{% endif %}"
             href="{% url 'dashboard' %}">Dashboard</a>
         <a class="list-group-item {% if '/my_orders/' in request.path %}active bg-secondary{% endif %}"
             href="{% url 'my_orders' %}">My orders
