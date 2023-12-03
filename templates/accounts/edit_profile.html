@@ -14,6 +14,16 @@
                         <span></span>
                     </div>
                     <div class="card-body">
+                        {% if userprofile.profile_picture %}
+                        <div class="text-center mb-2">
+                            <img src="{{ userprofile.profile_picture.url }}" class="profile-img" alt="Profile picture">
+                        </div>
+                        {% else %}
+                        <div class="text-center mb-2">
+                            <img src="https://beforeigosolutions.com/wp-content/uploads/2021/12/dummy-profile-pic-300x300-1.png"
+                                class="profile-img" alt="Profile picture placeholder">
+                        </div>
+                        {% endif %}
                         <div class="row">
                             <div class="col-md-12">
                                 {{ user_form.non_field_errors }}
