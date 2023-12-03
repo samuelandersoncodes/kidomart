@@ -304,3 +304,8 @@ def edit_profile(request):
         'userprofile': userprofile,
     }
     return render(request, 'accounts/edit_profile.html', context)
+
+
+def change_password(request):
+    # Change password view
+    return render(request, 'accounts/change_password.html')
