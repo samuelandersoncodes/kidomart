@@ -8,7 +8,8 @@
         </a>
         <a class="list-group-item {% if '/edit_profile/' in request.path %}active bg-secondary{% endif %}"
             href="{% url 'edit_profile' %}">Edit Profile</a>
-        <a class="list-group-item" href="#">Change Password</a>
+        <a class="list-group-item {% if '/change_password/' in request.path %}active bg-secondary{% endif %}"
+            href="{% url 'change_password' %}">Change Password</a>
     </ul>
     <br>
     <div class="text-center mb-3">
