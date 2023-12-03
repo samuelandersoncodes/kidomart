@@ -257,3 +257,8 @@ def resetPassword(request):
             return redirect('resetPassword')
     else:
         return render(request, 'accounts/resetPassword.html')
+
+
+def my_orders(request):
+    # My orders view
+    return render(request, 'accounts/my_orders.html')
