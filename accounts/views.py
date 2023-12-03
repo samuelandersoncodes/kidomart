@@ -260,5 +260,15 @@ def resetPassword(request):
 
 
 def my_orders(request):
-    # My orders view
-    return render(request, 'accounts/my_orders.html')
+    """
+    This function retrieves a list of orders made by the currently logged-in user,
+    filters them to include only those that have been ordered, and then orders them
+    by their creation date in descending order. The resulting list of orders is then
+    passed to the my orders template
+    """
+    orders = Order.objects.filter(
+        user=request.user, is_ordered=True).order_by('-created_at')
+    context = {
+        'orders': orders,
+    }
+    return render(request, 'accounts/my_orders.html', context)
