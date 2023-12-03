@@ -3,8 +3,8 @@
     <ul class="list-group">
         <a class="list-group-item {% if '/accounts' == request.path %}active bg-secondary{% endif %}"
             href="{% url 'dashboard' %}">Dashboard</a>
-        <a class="list-group-item" href="#">My
-            orders
+        <a class="list-group-item {% if '/my_orders/' in request.path %}active bg-secondary{% endif %}"
+            href="{% url 'my_orders' %}">My orders
         </a>
         <a class="list-group-item" href="#"> Edit Profile</a>
         <a class="list-group-item" href="#">Change Password</a>
