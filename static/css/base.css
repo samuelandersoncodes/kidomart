@@ -272,6 +272,10 @@ label:hover~input:checked~label {
         width: 60%;
     }
 
+    .dashboard-card {
+        min-height: 11.3rem;
+    }
+
 }
 
 @media (max-width: 767px) {
