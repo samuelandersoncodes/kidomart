@@ -16,16 +16,19 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
+                                {{ user_form.non_field_errors }}
                                 <form action="#" method="POST">
                                     {% csrf_token %}
                                     <div class="row">
                                         <div class="form-group col-md-6 mb-3">
-                                            <label for="first_name">First Name</label>
-                                            <input type="text" class="form-control" id="first_name">
+                                            {{ user_form.first_name.errors }}
+                                            <label for="{{ user_form.first_name.id_for_label }}">First Name</label>
+                                            {{ user_form.first_name }}
                                         </div>
                                         <div class="form-group col-md-6 mb-3">
-                                            <label for="last_name">Last Name</label>
-                                            <input type="text" class="form-control" id="last_name">
+                                            {{ user_form.last_name.errors }}
+                                            <label for="{{ user_form.last_name.id_for_label }}">Last Name</label>
+                                            {{ user_form.last_name }}
                                         </div>
                                     </div>
                                     <div class="row">
