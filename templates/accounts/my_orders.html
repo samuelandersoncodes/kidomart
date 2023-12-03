@@ -27,12 +27,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {% for order in orders %}
                                         <tr>
-                                            <th scope="row"></th>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <th scope="row">{{ order.order_number }}</th>
+                                            <td>{{ order.full_name }}</td>
+                                            <td>{{ order.tel }}</td>
+                                            <td>${{ order.order_total }}</td>
+                                            <td>{{ order.created_at }}</td>
                                         </tr>
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
