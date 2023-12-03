@@ -38,8 +38,9 @@
                                             {{ user_form.tel }}
                                         </div>
                                         <div class="form-group col-md-6 mb-3">
-                                            <label for="profile-picture">Profile Picture</label>
-                                            <input type="file" class="form-control" id="profile-picture">
+                                            {{ profile_form.profile_picture.errors }}
+                                            <label for="{{ profile_form.tel.id_for_label }}">Profile Picture</label>
+                                            {{ profile_form.profile_picture }}
                                         </div>
                                     </div>
                                     <div class="form-group mb-3">
