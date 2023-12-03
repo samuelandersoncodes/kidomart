@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import RegistrationForm
+from .forms import RegistrationForm, UserForm, UserProfileFrom
 from .models import Account
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
@@ -9,6 +9,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
+from django.shortcuts import get_object_or_404
 from carts.views import _cart_id
 from carts.models import Cart, CartItem
 from orders.models import Order
@@ -275,5 +276,30 @@ def my_orders(request):
 
 
 def edit_profile(request):
-    # Edit profile
-    return render(request, 'accounts/edit_profile.html')
+    """
+    This function handles the editing of a user's profile information.
+    It retrieves the user's profile using the logged-in user's information.
+    If the request method is POST, it processes the form submissions,
+    Updates the user's information and redirects to the edit profile page
+    with a success message. If the request method is GET,
+    it renders the edit profile form with the current user information.
+    """
+    userprofile = get_object_or_404(UserProfile, user=request.user)
+    if request.method == 'POST':
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = UserProfileForm(
+            request.POST, request.FILES, instance=userprofile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(
+                request, 'Your profile has been successfully updated')
+            return redirect('edit_profile')
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = UserProfileForm(instance=userprofile)
+    context = {
+        'user_form': user_form,
+        'profile_form': profile_form,
+    }
+    return render(request, 'accounts/edit_profile.html', context)
