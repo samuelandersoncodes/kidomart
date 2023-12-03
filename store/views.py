@@ -60,6 +60,8 @@ def product_detail(request, category_slug, product_slug):
             orderproduct = None
     reviews = ReviewRating.objects.filter(
         product_id=single_product.id, status=True)
+    else:
+        order_product = None
     context = {
         'single_product': single_product,
         'in_cart': in_cart,
