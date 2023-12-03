@@ -3,11 +3,13 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 # Custom User model
 
+
 class MyAccountManager(BaseUserManager):
     """
     This class creates a custom regular user
     and a custom super user
     """
+
     def create_user(self, first_name, last_name, username, email, password=None):
         # Creates regular user and set mandatory fields for email and username
         if not email:
@@ -17,10 +19,10 @@ class MyAccountManager(BaseUserManager):
             raise ValueError('You must have a username')
 
         user = self.model(
-            email = self.normalize_email(email),
-            username = username,
-            first_name = first_name,
-            last_name = last_name,
+            email=self.normalize_email(email),
+            username=username,
+            first_name=first_name,
+            last_name=last_name,
         )
 
         user.set_password(password)
@@ -28,13 +30,13 @@ class MyAccountManager(BaseUserManager):
         return user
 
     def create_superuser(self, first_name, last_name, username, email, password):
-         # Creates super user
+        # Creates super user
         user = self.create_user(
-            email = self.normalize_email(email),
-            username = username,
-            password = password,
-            first_name = first_name,
-            last_name = last_name,
+            email=self.normalize_email(email),
+            username=username,
+            password=password,
+            first_name=first_name,
+            last_name=last_name,
         )
         user.is_admin = True
         user.is_active = True
@@ -83,3 +85,14 @@ class Account(AbstractBaseUser):
     def has_module_perms(self, add_label):
         # Grants module access permissions
         return True
+
+
+class UserProfile(models.Model):
+    # User profile model
+    user = models.OneToOneField(Account, on_delete=models.CASCADE)
+    profile_picture = models.ImageField(blank=True, upload_to='userprofile/')
+    address_line_1 = models.CharField(blank=True, max_length=100)
+    address_line_2 = models.CharField(blank=True, max_length=100)
+    country = models.CharField(blank=True, max_length=20)
+    state = models.CharField(blank=True, max_length=20)
+    city = models.CharField(blank=True, max_length=20)
