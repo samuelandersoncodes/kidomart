@@ -1,5 +1,5 @@
 from django import forms
-from .models import Account
+from .models import Account, UserProfile
 
 
 class RegistrationForm(forms.ModelForm):
@@ -49,3 +49,15 @@ class RegistrationForm(forms.ModelForm):
             raise forms.ValidationError(
                 "Sorry! Both passwords must match"
             )
+
+
+class UserForm(forms.ModelForm):
+    # User form
+    class Meta:
+        model = Account
+        fields = (
+            'first_name',
+            'last_name',
+            'phone_number'
+        )
+
