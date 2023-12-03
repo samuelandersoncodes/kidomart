@@ -4,7 +4,7 @@
 {% block content %}
 {% include 'includes/navbar.html' %}
 <section>
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <div class="row">
             {% include 'includes/dashboard_sidebar.html' %}
             <main class="col-md-9 mb-3">
@@ -16,28 +16,62 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Order</th>
-                                            <th scope="col">Full Name</th>
-                                            <th scope="col">Phone</th>
-                                            <th scope="col">Order Total</th>
-                                            <th scope="col">Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for order in orders %}
-                                        <tr>
-                                            <th scope="row">{{ order.order_number }}</th>
-                                            <td>{{ order.full_name }}</td>
-                                            <td>{{ order.tel }}</td>
-                                            <td>${{ order.order_total }}</td>
-                                            <td>{{ order.created_at }}</td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
+                                <div class="container">
+                                    <!-- Order heading -->
+                                    <div class="row d-none d-md-flex">
+                                        <div class="col-md-2">
+                                            <h6><strong>Order</strong></h6>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h6><strong>Full Name</strong></h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6><strong>Phone</strong></h6>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6><strong>Total</strong></h6>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h6><strong>Date</strong></h6>
+                                        </div>
+                                    </div>
+                                    <!-- Order details -->
+                                    {% for order in orders %}
+                                    <div class="row">
+                                        <div class="col-12 d-md-none">
+                                            <p><strong>Order: </strong>{{ order.order_number }}</p>
+                                        </div>
+                                        <div class="col-12 d-md-none">
+                                            <p><strong>Full Name: </strong>{{ order.full_name }}</p>
+                                        </div>
+                                        <div class="col-12 d-md-none">
+                                            <p><strong>Phone: </strong>{{ order.tel }}</p>
+                                        </div>
+                                        <div class="col-12 d-md-none">
+                                            <p><strong>Total: </strong>${{ order.order_total }}</p>
+                                        </div>
+                                        <div class="col-12 d-md-none">
+                                            <p><strong>Date: </strong>{{ order.created_at }}</p>
+                                        </div>
+                                        <!-- Order details on medium and larger screens -->
+                                        <div class="col-md-2 d-none d-md-block">
+                                            <p>{{ order.order_number }}</p>
+                                        </div>
+                                        <div class="col-md-3 d-none d-md-block">
+                                            <p>{{ order.full_name }}</p>
+                                        </div>
+                                        <div class="col-md-2 d-none d-md-block">
+                                            <p>{{ order.tel }}</p>
+                                        </div>
+                                        <div class="col-md-2 d-none d-md-block">
+                                            <p>${{ order.order_total }}</p>
+                                        </div>
+                                        <div class="col-md-3 d-none d-md-block">
+                                            <p>{{ order.created_at }}</p>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
                             </div>
                         </div>
                     </div>
