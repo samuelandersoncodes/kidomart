@@ -80,3 +80,9 @@ class UserProfileForm(forms.ModelForm):
             'city',
             'profile_picture'
         )
+
+    def __init__(self, *args, **kwargs):
+        # Assign form control class to user profile form
+        super(UserProfileForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'form-control'
