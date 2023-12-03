@@ -198,12 +198,17 @@ label:hover~input:checked~label {
 }
 
 /*********************** Dashboard styles ***********************/
-
+/* user profile image style */
 .profile-img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
     border: 1px dashed;
+}
+
+/* user dashboard cards style */
+.dashboard-card {
+    min-height: 10rem;
 }
 
 /*********************** Footer styles ***********************/
