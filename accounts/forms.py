@@ -62,7 +62,7 @@ class UserForm(forms.ModelForm):
         )
 
 
-class UserProfileFrom(forms.ModelForm):
+class UserProfileForm(forms.ModelForm):
     # User profile from
     class Meta:
         model = UserProfile
