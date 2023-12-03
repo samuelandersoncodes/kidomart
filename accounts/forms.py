@@ -61,3 +61,16 @@ class UserForm(forms.ModelForm):
             'phone_number'
         )
 
+
+class UserProfileFrom(form.ModelForm):
+    # User profile from
+    class Meta:
+        model = UserProfile
+        fields = (
+            'address_line_1',
+            'address_line_2',
+            'country',
+            'state',
+            'city',
+            'profile_picture'
+        )
