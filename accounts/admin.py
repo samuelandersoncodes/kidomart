@@ -20,5 +20,15 @@ class AccountAdmin(UserAdmin):
     fieldsets = ()
 
 
+class UserProfileAdmin(admin.ModelAdmin):
+    # Customizes the display of user profiles
+    def thumbnail(self, object):
+        # User profile image thumbnail
+        return format_html('<img src="{}" width="50" height="50" style="border-radius:50%;">'.format(object.profile_picture.url))
+
+    thumbnail.short_description = 'Profile Picture'
+    list_display = ('thumbnail', 'user', 'country', 'state', 'city')
+
+
 admin.site.register(Account, AccountAdmin)
 admin.site.register(UserProfile, UserProfileAdmin)
