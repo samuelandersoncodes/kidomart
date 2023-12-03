@@ -197,6 +197,15 @@ label:hover~input:checked~label {
     border: 1px solid #2b2d2fa2;
 }
 
+/*********************** Dashboard styles ***********************/
+
+.profile-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px dashed;
+}
+
 /*********************** Footer styles ***********************/
 
 /* footer style */
