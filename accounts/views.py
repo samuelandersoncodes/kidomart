@@ -294,8 +294,9 @@ def edit_profile(request):
     with a success message. If the request method is GET,
     it renders the edit profile form with the current user information.
     """
-    userprofile = get_object_or_404(UserProfile, user=request.user)
+    userprofile, created = UserProfile.objects.get_or_create(user=request.user)
     if request.method == 'POST':
+        # Process form submissions
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = UserProfileForm(
             request.POST, request.FILES, instance=userprofile)
