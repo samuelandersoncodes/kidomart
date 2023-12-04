@@ -20,7 +20,11 @@
                                     <!-- Order heading -->
                                     <div class="row d-none d-md-flex">
                                         <div class="col-md-2">
-                                            <h6><strong>Order</strong></h6>
+                                            <h6>
+                                                <strong>
+                                                    Order
+                                                </strong>
+                                            </h6>
                                         </div>
                                         <div class="col-md-3">
                                             <h6><strong>Full Name</strong></h6>
@@ -39,7 +43,12 @@
                                     {% for order in orders %}
                                     <div class="row">
                                         <div class="col-12 d-md-none">
-                                            <p><strong>Order: </strong>{{ order.order_number }}</p>
+                                            <p><strong>Order: </strong>
+                                                <a href="{% url 'order_detail' order.order_number %}"
+                                                    class="text-decoration-none text-dark" aria-label="Order detail">
+                                                    {{ order.order_number }}
+                                                </a>
+                                            </p>
                                         </div>
                                         <div class="col-12 d-md-none">
                                             <p><strong>Full Name: </strong>{{ order.full_name }}</p>
@@ -55,7 +64,11 @@
                                         </div>
                                         <!-- Order details on medium and larger screens -->
                                         <div class="col-md-2 d-none d-md-block">
-                                            <p>{{ order.order_number }}</p>
+                                            <p> <a href="{% url 'order_detail' order.order_ %}"
+                                                    class="text-decoration-none text-dark" aria-label="Order detail">
+                                                    {{ order.order_number }}
+                                                </a>
+                                            </p>
                                         </div>
                                         <div class="col-md-3 d-none d-md-block">
                                             <p>{{ order.full_name }}</p>
