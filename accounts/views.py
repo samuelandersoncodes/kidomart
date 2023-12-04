@@ -12,7 +12,7 @@ from django.core.mail import EmailMessage
 from django.shortcuts import get_object_or_404
 from carts.views import _cart_id
 from carts.models import Cart, CartItem
-from orders.models import Order
+from orders.models import Order, OrderProduct
 import requests
 
 
@@ -342,7 +342,7 @@ def change_password(request):
 
 @login_required(login_url='login')
 def order_detail(request, order_id):
-     """
+    """
     This function displays the detailed information
     of a specific order.
     """
