@@ -30,8 +30,17 @@
                             <div class="col-md-6">
                                 <div class="card text-center dashboard-card">
                                     <div class="card-body">
-                                        <img src="https://beforeigosolutions.com/wp-content/uploads/2021/12/dummy-profile-pic-300x300-1.png"
-                                            class="profile-img" alt="User profile image">
+                                        {% if userprofile.profile_picture %}
+                                        <div>
+                                            <img src="{{ userprofile.profile_picture.url }}" class="profile-img"
+                                                alt="Profile picture">
+                                        </div>
+                                        {% else %}
+                                        <div class="text-center mb-2">
+                                            <img src="https://beforeigosolutions.com/wp-content/uploads/2021/12/dummy-profile-pic-300x300-1.png"
+                                                class="profile-img" alt="Profile picture placeholder">
+                                        </div>
+                                        {% endif %}
                                         <p class="mb-0">{{ user.email }}</p>
                                         <p class="mb-1">{{ user.tel }}</p>
                                     </div>
