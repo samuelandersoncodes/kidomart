@@ -67,7 +67,7 @@ def login(request):
     This function handles user login based on provided email and password.
     It then authenticates the user using the provided email and password
     And assigns respective user cart
-    It also takes care of the product variations in adding cart item 
+    It also takes care of the product variations in adding cart item
     """
     if request.method == 'POST':
         email = request.POST['email']
@@ -342,5 +342,14 @@ def change_password(request):
 
 @login_required(login_url='login')
 def order_detail(request, order_id):
-    # Order detail view
-    return render(request, 'accounts/order_detail.html')
+     """
+    This function displays the detailed information
+    of a specific order.
+    """
+    order_detail = OrderProduct.objects.filter(order__order_number=order_id)
+    order = Order.objects.get(order_number=order_id)
+    context = {
+        'order_detail': order_detail,
+        'order': order,
+    }
+    return render(request, 'accounts/order_detail.html', context)
