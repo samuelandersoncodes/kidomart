@@ -156,22 +156,28 @@ def activate(request, uidb64, token):
         return redirect('register')
 
 
-@login_required(login_url='login')
 def dashboard(request):
     """
-    This function retrieves and displays the orders made by the logged-in user
+    This function retrieves and displays the orders made by the user
     in descending order of creation date. It also calculates and provides the
     count of the user's orders.
+    It also retrieves the user profile and passes it to the context
     """
-    orders = Order.objects.order_by(
-        '-created_at').filter(user_id=request.user.id, is_ordered=True)
-    orders_count = orders.count()
-    userprofile = UserProfile.objects.get(user_id=request.user.id)
-    context = {
-        'orders_count': orders_count,
-        'userprofile': userprofile,
-    }
-    return render(request, 'accounts/dashboard.html', context)
+    if request.user.is_authenticated:
+        try:
+            userprofile = UserProfile.objects.get(user_id=request.user.id)
+        except UserProfile.DoesNotExist:
+            userprofile = None
+        orders = Order.objects.order_by(
+            '-created_at').filter(user_id=request.user.id, is_ordered=True)
+        orders_count = orders.count()
+        context = {
+            'orders_count': orders_count,
+            'userprofile': userprofile,
+        }
+        return render(request, 'accounts/dashboard.html', context)
+    else:
+        return render(request, 'accounts/login.html')
 
 
 def forgotPassword(request):
