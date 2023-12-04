@@ -34,10 +34,14 @@ def home(request, category_slug=None):
         page = request.GET.get('page')
         paged_products = paginator.get_page(page)
         product_count = products.count()
+        for product in products:
+            reviews = ReviewRating.objects.filter(
+                product_id=product.id, status=True)
     context = {
         'products': paged_products,
         'product_count': product_count,
         'selected_category': selected_category,
+        'reviews': reviews,
     }
     return render(request, 'index.html', context)
 
