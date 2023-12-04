@@ -9,7 +9,7 @@ AND WILL BE PROCESSED SOON
 YOUR INVOICE:
 Date : {{ order.created_at }}
 {% for item in order.orderproduct_set.all %}
-Item : {{ item.product.name }}
+Item : {{ item.product.product_name }}
 {% if order_product.variations.all %}
 {% for item in order_product.variations.all %}
 {% if item.variation_category == 'color' %}
