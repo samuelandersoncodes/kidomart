@@ -338,3 +338,9 @@ def change_password(request):
             return redirect('change_password')
 
     return render(request, 'accounts/change_password.html')
+
+
+@login_required(login_url='login')
+def order_detail(request, order_id):
+    # Order detail view
+    return render(request, 'accounts/order_detail.html')
