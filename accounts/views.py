@@ -275,6 +275,7 @@ def my_orders(request):
     return render(request, 'accounts/my_orders.html', context)
 
 
+@login_required(login_url='login')
 def edit_profile(request):
     """
     This function handles the editing of a user's profile information.
