@@ -16,18 +16,50 @@
         </div>
         <div class="col-md-6">
             <div">
-                
+
         </div>
     </div>
     <div class="col-lg-12 mt-4">
         <div class="invoice-details">
             <div class="well">
-                
+
             </div>
         </div>
         <div class="invoice-items mt-4">
             <div class="table-responsive">
-                
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Item</th>
+                            <th class="text-center">Qty</th>
+                            <th class="text-center">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for detail in order_detail %}
+                        <tr>
+                            <td>{{ detail.product.product_name }}
+                            </td>
+                            <td class="text-center">{{ detail.quantity }}</td>
+                            <td class="text-center">${{ detail.product_price|floatformat:2 }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2" class="text-right">Tax : </th>
+                            <th class="text-center">${{ order.tax|floatformat:2 }}</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="text-right"></th>
+                            <th class="text-center"></th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="text-right">Grand Total: </th>
+                            <th class="text-center">${{ order.order_total|floatformat:2 }}</th>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </div>
     </div>
