@@ -276,6 +276,10 @@ label:hover~input:checked~label {
         min-height: 11.3rem;
     }
 
+    .footer {
+        height: 140px;
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -311,6 +315,10 @@ label:hover~input:checked~label {
 
     .checkout-details-headings {
         display: none;
+    }
+
+    .footer {
+        height: 220px;
     }
 
 }
