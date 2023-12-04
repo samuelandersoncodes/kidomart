@@ -260,6 +260,7 @@ def resetPassword(request):
         return render(request, 'accounts/resetPassword.html')
 
 
+@login_required(login_url='login')
 def my_orders(request):
     """
     This function retrieves a list of orders made by the currently logged-in user,
