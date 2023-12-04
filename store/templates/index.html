@@ -119,11 +119,20 @@
                 <p class="mb-0">${{ product.price }}</p>
                 {% endif %}
                 <!-- Product rating -->
-                {% if product.rating %}
-                <small class="text-muted"><i class="fas fa-star"></i>{{ product.rating }}</small>
-                {% else %}
-                <small class="text-muted">No Rating yet</small>
-                {% endif %}
+                <div class="rating-star mb-2">
+                  <span>
+                    <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}"
+                      aria-hidden="true"></i>
+                    <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}"
+                      aria-hidden="true"></i>
+                    <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}"
+                      aria-hidden="true"></i>
+                    <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}"
+                      aria-hidden="true"></i>
+                    <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}"
+                      aria-hidden="true"></i>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
