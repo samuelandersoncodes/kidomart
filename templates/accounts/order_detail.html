@@ -51,6 +51,18 @@
                         {% for detail in order_detail %}
                         <tr>
                             <td>{{ detail.product.product_name }}
+                                <span>
+                                    {% if detail.variations.all %}
+                                    {% for item in detail.variations.all %}
+                                    {% if item.variation_category == 'color' %}
+                                    | Color: {{ item.variation_value }}
+                                    {% endif %}
+                                    {% if item.variation_category == 'size' %}
+                                    | Size: {{ item.variation_value }}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                </span>
                             </td>
                             <td class="text-center">{{ detail.quantity }}</td>
                             <td class="text-center">${{ detail.product_price|floatformat:2 }}</td>
@@ -77,6 +89,5 @@
     </div>
 </div>
 </div>
-
 {% include 'includes/footer.html' %}
 {% endblock %}
