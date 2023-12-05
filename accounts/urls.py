@@ -19,4 +19,6 @@ urlpatterns = [
     path('order_detail/<str:order_id>/',
          views.order_detail, name='order_detail'),
     path('delete_account/', AccountDeleteView.as_view(), name='delete_account'),
+    path('password_change_success', views.password_change_success,
+         name='password_change_success'),
 ]
