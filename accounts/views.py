@@ -46,7 +46,6 @@ def register(request):
             )
             user.tel = tel
             user.save()
-
             current_site = get_current_site(request)
             mail_subject = 'Please activate your Kido account'
             message = render_to_string('accounts/account_verification_email.html', {
@@ -59,6 +58,9 @@ def register(request):
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.send()
             return redirect('/accounts/login/?command=verification&email='+email)
+        else:
+            messages.error(request. 'Carefully check your details and try again')
+            form = RegistrationForm()
     else:
         form = RegistrationForm()
     context = {
