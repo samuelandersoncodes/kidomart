@@ -23,7 +23,11 @@
                                     <div class="card-body">
                                         <h4 class="card-title">Your orders</h4>
                                         <p class="fs-5">{{ orders_count }}</p>
+                                        {% if orders_count > 0 %}
                                         <a href="{% url 'my_orders' %}" class="text-decoration-none">View Orders</a>
+                                        {% else %}
+                                        <p>You have no order yet</p>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
