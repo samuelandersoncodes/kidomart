@@ -318,23 +318,21 @@ def checkout(request, total=0, quantity=0, cart_items=None):
             order_form = OrderForm(request.POST or None)
             messages.error(
                 request, 'Please check your details and resubmit')
-            return redirect('checkout')
-    else:
-        try:
-            tax = round((1 * total) / 100, 2)
-            order_total = round(total + tax, 2)
-            amount_in_cents = int(grand_total * 100)
-            # Ensure the amount is at least 50 cents
-            if amount_in_cents < 50:
-                amount_in_cents = 50
-            stripe.api_key = stripe_secret_key
-            intent = stripe.PaymentIntent.create(
-                amount=amount_in_cents,
-                currency=settings.STRIPE_CURRENCY,
-                payment_method_types=['card'],
-            )
-        except ObjectDoesNotExist:
-            pass
+    try:
+        tax = round((1 * total) / 100, 2)
+        order_total = round(total + tax, 2)
+        amount_in_cents = int(grand_total * 100)
+        # Ensure the amount is at least 50 cents
+        if amount_in_cents < 50:
+            amount_in_cents = 50
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=amount_in_cents,
+            currency=settings.STRIPE_CURRENCY,
+            payment_method_types=['card'],
+        )
+    except ObjectDoesNotExist:
+        pass
     context = {
         'total': total,
         'quantity': quantity,
