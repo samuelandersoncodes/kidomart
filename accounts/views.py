@@ -1,4 +1,8 @@
 from django.shortcuts import render, redirect
+from django.views.generic.edit import DeleteView
+from django.contrib.auth import logout
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import RegistrationForm, UserForm, UserProfileForm
 from .models import Account, UserProfile
 from django.contrib import messages, auth
@@ -362,3 +366,39 @@ def order_detail(request, order_id):
         'order': order,
     }
     return render(request, 'accounts/order_detail.html', context)
+
+
+class AccountDeleteView(LoginRequiredMixin, DeleteView):
+    """
+    This class-based view extends Django's DeleteView
+    to handle user account deletion. Upon confirmation,
+    it logs the user out, deletes associated data like 
+    user profile, orders, cart items and removes the 
+    user account from the system.
+    """
+    model = Account
+    template_name = 'accounts/delete_account.html'
+    success_url = reverse_lazy('register')
+
+    def get_object(self, queryset=None):
+        # Retrieves the user account to be deleted
+        return self.request.user
+
+    def delete(self, request, *args, **kwargs):
+        """
+        This function handles the deletion of the user account.
+        It logs out the user, deletes associated data and
+        removes the user account.
+        """
+        user = self.request.user
+        logout(request)
+        try:
+            user_profile = UserProfile.objects.get(user=user)
+            user_profile.delete()
+        except UserProfile.DoesNotExist:
+            pass
+        Order.objects.filter(user=user).delete()
+        CartItem.objects.filter(user=user).delete()
+        user.delete()
+        messages.success(request, 'Your account is successfully deleted.')
+        return redirect(self.success_url)
