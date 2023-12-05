@@ -1,4 +1,5 @@
 from django.urls import path, include
+from .views import AccountDeleteView
 from . import views
 
 urlpatterns = [
@@ -17,4 +18,5 @@ urlpatterns = [
     path('change_password/', views.change_password, name='change_password'),
     path('order_detail/<str:order_id>/',
          views.order_detail, name='order_detail'),
+    path('delete_account/', AccountDeleteView.as_view(), name='delete_account'),
 ]
