@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container text-center mt-3">
+    {% include 'includes/alerts.html' %}
+    <h2 class="mb-4 mt-3 heading-font">Account Deletion Confirmation</h2>
+    <p class="fs-4">If you have any issue, we are ready to resolve it. Email us; </span><a
+            href="mailto:kidomartservice@gmail.com"
+            class="text-decoration-none text-dark">kidomartservices@gmail.com</a> or call our 24/7
+        customer service line +491756626438</p>
+    <p class="fs-4">Remember! Kidomart will really miss you</p>
+    <p class="text-danger fs-5">Are you sure you want to delete your Kido account?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger mb-3 mx-3" aria-label="Delete Account">Delete Account</button>
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary mb-3 mx-3" aria-label="Cancel">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}
