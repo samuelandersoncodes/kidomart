@@ -60,7 +60,6 @@ def register(request):
             return redirect('/accounts/login/?command=verification&email='+email)
         else:
             messages.error(request, 'Carefully check your details and try again')
-            form = RegistrationForm()
     else:
         form = RegistrationForm()
     context = {
