@@ -315,6 +315,7 @@ def checkout(request, total=0, quantity=0, cart_items=None):
             messages.success(request, 'Your order was successful!')
             return redirect('checkout_success', order_number=data.order_number)
         else:
+            order_form = OrderForm(request.POST or None)
             messages.error(
                 request, 'Please check your details and resubmit')
             return redirect('checkout')
