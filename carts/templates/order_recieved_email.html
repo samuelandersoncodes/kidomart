@@ -23,6 +23,7 @@ Size: {{ item.variation_value }}
 Qty : {{ item.quantity }}
 {% endfor %}
 Tax : ${{ order.tax|floatformat:2 }}
+
 Grand total : ${{ order.order_total|floatformat:2 }}
 
 {% endautoescape %}
