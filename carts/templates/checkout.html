@@ -25,25 +25,21 @@
                         {% csrf_token %}
                         <fieldset>
                             <div class="row">
-                                <div class="col-md-6 col-sm-12">
-                                    {{ order_form.first_name.errors }}
+                                <div class="col-md-6 col-sm-12">                              
                                     <label for="{{ form.first_name.id_for_label }}"></label>
                                     {{ order_form.first_name|as_crispy_field }}
                                 </div>
-                                <div class="col-md-6 col-sm-12">
-                                    {{ order_form.last_name.errors }}
+                                <div class="col-md-6 col-sm-12">                                 
                                     <label for="{{ form.last_name.id_for_label }}"></label>
                                     {{ order_form.last_name|as_crispy_field }}
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6 col-sm-12">
-                                    {{ order_form.email.errors }}
+                                <div class="col-md-6 col-sm-12">                                  
                                     <label for="{{ form.email.id_for_label }}"></label>
                                     {{ order_form.email|as_crispy_field }}
                                 </div>
-                                <div class="col-md-6 col-sm-12">
-                                    {{ order_form.tel.errors }}
+                                <div class="col-md-6 col-sm-12">                                  
                                     <label for="{{ form.tel.id_for_label }}"></label>
                                     {{ order_form.tel|as_crispy_field }}
                                 </div>
@@ -54,31 +50,26 @@
                                     <label for="{{ form.address_line_1.id_for_label }}"></label>
                                     {{ order_form.address_line_1|as_crispy_field }}
                                 </div>
-                                <div class="col-md-6 col-sm-12">
-                                    {{ order_form.address_line_2.errors }}
+                                <div class="col-md-6 col-sm-12">                                 
                                     <label for="{{ form.address_line_2.id_for_label }}"></label>
                                     {{ order_form.address_line_2|as_crispy_field }}
                                 </div>
                             </div>
-                            <div>
-                                {{ order_form.country.errors }}
+                            <div>                              
                                 <label for="{{ form.country.id_for_label }}"></label>
                                 {{ order_form.country|as_crispy_field }}
                             </div>
                             <div class="row">
-                                <div class="col-md-6 col-sm-12">
-                                    {{ order_form.city.errors }}
+                                <div class="col-md-6 col-sm-12">                               
                                     <label for="{{ form.city.id_for_label }}"></label>
                                     {{ order_form.city|as_crispy_field }}
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    {{ order_form.state.errors }}
                                     <label for="{{ form.state.id_for_label }}"></label>
                                     {{ order_form.state|as_crispy_field }}
                                 </div>
                             </div>
-                            <div>
-                                {{ order_form.order_note.errors }}
+                            <div>                              
                                 <label for="{{ form.order_note.id_for_label }}"></label>
                                 {{ order_form.order_note|as_crispy_field }}
                             </div>
