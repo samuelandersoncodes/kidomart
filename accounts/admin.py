@@ -25,8 +25,10 @@ class UserProfileAdmin(admin.ModelAdmin):
     # Customizes the display of user profiles
     def thumbnail(self, object):
         # User profile image thumbnail
-        return format_html('<img src="{}" width="50" height="50" style="border-radius:50%;">'.format(object.profile_picture.url))
-
+        if object.profile_picture:
+            return format_html('<img src="{}" width="50" height="50" style="border-radius:50%;">'.format(object.profile_picture.url))
+        else:
+            return format_html('<span>No image</span>')
     thumbnail.short_description = 'Profile Picture'
     list_display = ('thumbnail', 'user', 'country', 'state', 'city')
 
