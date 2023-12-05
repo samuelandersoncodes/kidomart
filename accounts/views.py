@@ -17,6 +17,7 @@ from django.shortcuts import get_object_or_404
 from carts.views import _cart_id
 from carts.models import Cart, CartItem
 from orders.models import Order, OrderProduct
+from django.urls import reverse_lazy
 import requests
 
 
@@ -341,7 +342,7 @@ def change_password(request):
                 user.save()
                 messages.success(
                     request, 'Your password has been successfully updated')
-                return redirect('change_password')
+                return redirect(reverse_lazy('password_change_success'))
             else:
                 messages.error(
                     request, 'Please enter your exact current password')
@@ -402,3 +403,8 @@ class AccountDeleteView(LoginRequiredMixin, DeleteView):
         user.delete()
         messages.success(request, 'Your account is successfully deleted.')
         return redirect(self.success_url)
+
+
+def password_change_success(request):
+    # Password change success view
+    return render(request, 'accounts/password_change_success.html')
