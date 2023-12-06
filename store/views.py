@@ -19,6 +19,7 @@ def home(request, category_slug=None):
     """
     selected_category = None
     products = None
+    reviews = None
 
     if category_slug != None:
         selected_category = get_object_or_404(Category, slug=category_slug)
