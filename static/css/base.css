@@ -236,8 +236,9 @@ label:hover~input:checked~label {
 /* mailchimp style */
 #mc_embed_signup {
     background: #fff;
-    clear: left;
-    width: 28rem;
+    width: 100%;
+    margin: 0 auto; 
+    padding: 10px; 
 }
 
 /*********************** Media queries ***********************/
