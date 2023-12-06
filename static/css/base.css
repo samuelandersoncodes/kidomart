@@ -227,10 +227,17 @@ label:hover~input:checked~label {
     font-size: 150%;
 }
 
-/* footer copyright style */
+
 .copyright {
     color: black;
     font-size: 120%;
+}
+
+/* mailchimp style */
+#mc_embed_signup {
+    background: #fff;
+    clear: left;
+    width: 28rem;
 }
 
 /*********************** Media queries ***********************/
