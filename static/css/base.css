@@ -215,7 +215,7 @@ label:hover~input:checked~label {
 
 /* footer style */
 .footer {
-    height: 115px;
+    min-height: 115px;
     margin-top: auto;
     background-color: #2b2d2f42;
     color: black;
@@ -277,7 +277,7 @@ label:hover~input:checked~label {
     }
 
     .footer {
-        height: 140px;
+        min-height: 140px;
     }
 
 }
@@ -318,7 +318,7 @@ label:hover~input:checked~label {
     }
 
     .footer {
-        height: 220px;
+        min-height: 220px;
     }
 
 }
