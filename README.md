@@ -34,3 +34,15 @@ The live link can be found here: [Live Site - KidoMart](https://kidomart-78f2589
     - [Version Control](#version-control)
     - [Heroku Deployment](#heroku-deployment)
   - [Credits](#credits)
+
+# User-Experience-Design
+
+## The-Strategy-Plane
+
+### Site-Goals
+
+The website is aimed at providing a platform for parents, wards and children themselves to easily shop online. Registered users are able to easily purchase items ranging from toys to educational essentials online.
+
+Our free inaugral and promotional nation-wide delivery ensures that ordered products with the 'paid' status are rightfully delivered to the associated billing addresses on time.
+
+We look forward to becoming the best seller for children's products.
