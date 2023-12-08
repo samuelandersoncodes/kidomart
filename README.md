@@ -872,3 +872,26 @@ In cases where there are errors in filling the registration form, the user is pr
 
 ![Register error](media/docs/readme-images/registration-error.jpg)
 
+``USER STORY - As a returning customer, I want to be able to log in quickly and securely so I can access my personalized account settings and order history.``
+
+Implementation:
+
+**Login Page**
+
+Upon clicking the log in link anywhere on the site, users are directed to the log in page to log in so that they can be able to get full access to the site's features.
+
+The login form has email address and password fields alogside a forgot password link.
+
+Below that is the login button the logs the user in upon a click or a tap.
+
+On the top of the page is a heading and text that informs the user on the page's purpose.
+
+Below the login form is a register text and link that enable users to register if they do not have an account.
+
+Upon a successful login, the user is redirected to his dashboard with a success message.
+
+![Login](media/docs/readme-images/login.jpg)
+
+In cases where user's credentials are invalid, an error message is displayed to alert the user.
+
+![Login error](media/docs/readme-images/login-error.jpg)
