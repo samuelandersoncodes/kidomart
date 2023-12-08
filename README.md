@@ -7,14 +7,14 @@ The live link can be found here: [Live Site - KidoMart](https://kidomart-78f2589
 ![Mock Up](media/docs/readme-images/mockup-kidomart.jpg)
 
 ## Table of Contents
+
 - [KidoMart](#kidomart)
   - [Table of Contents](#table-of-contents)
 - [User-Experience-Design](#user-experience-design)
   - [The-Strategy-Plane](#the-strategy-plane)
     - [Site-Goals](#site-goals)
     - [Agile Planning](#agile-planning)
-      - [Epics](#epics)
-      -[Sprints](#sprints)
+      - [Epics](#epics) -[Sprints](#sprints)
       - [User Stories](#user-stories)
   - [The-Scope-Plane](#the-scope-plane)
   - [The-Structure-Plane](#the-structure-plane)
@@ -54,12 +54,14 @@ This project was developed using agile methodologies by delivering small feature
 
 The kanban issues were assigned to epics and were labelled as 'must have' and 'could have'. They were assigned to sprints based on their level of priority. It was done this way to ensure that core requirements are first taken care of.
 
-The Kanban board was created using github projects and can be located [here](https://github.com/users/samuelandersoncodes/projects/2) Each issue within it consists of a user story, acceptance criteria and tasks that defines the required functionality and its associated tasks to be executed. In total, there were 22 issues. 
+The Kanban board was created using github projects and can be located [here](https://github.com/users/samuelandersoncodes/projects/2) Each issue within it consists of a user story, acceptance criteria and tasks that defines the required functionality and its associated tasks to be executed. In total, there were 22 issues.
 
 ### KidoMart Project Board
+
 ![Kanban project image](media/docs/readme-images/kanban-project.jpg)
 
 ### KidoMart Issues
+
 ![Kanban issues image](media/docs/readme-images/kidomart-issues.jpg)
 
 #### Epics
@@ -68,7 +70,7 @@ The project had 6 main Epics:
 
 **EPIC 1 - Deployment Epic**
 
-The app was first deployed to heroku so that the site is live for users. All dependencies were put in place and thouroughly tested to ensure that the live app is properly set up and has no problems. This epic was implemented first in order to avoid last minute deployment descrepancies. 
+The app was first deployed to heroku so that the site is live for users. All dependencies were put in place and thouroughly tested to ensure that the live app is properly set up and has no problems. This epic was implemented first in order to avoid last minute deployment descrepancies.
 
 **EPIC 2 - Base Setup**
 
@@ -148,10 +150,18 @@ As a developer, I want to configure the application to use AWS S3 so that all st
 
 #### Product Display
 
-##### User Story
+##### User Stories
+
+As a developer, I need to create a logo so that users can easily identify the site by it as a brand
+
+As a developer, I need to create the navbar so that users can navigate the website from all sizes of devices
+
 As a shopper, I want to see a list of all available products so that I can browse through and make informed purchase decisions.
 
-##### Acceptance Criteria 
+##### Acceptance Criteria
+
+- There is a navbar that has the kidomart logo which links to the home page.
+
 - The product list should display product names, images, price and rating.
 
 - There is a drop down menu that displays available categories.
@@ -159,6 +169,9 @@ As a shopper, I want to see a list of all available products so that I can brows
 - The page should include a search bar to enable users to search for specific products by name, description or category.
 
 ##### Tasks
+
+- Design a kidomart logo and navbar, fixing the logo aesthetically into the navbar.
+
 - Design and implement a responsive product list interface using HTML and CSS.
 
 - Retrieve product data from the database and display it dynamically with Python and Django on the product list page.
@@ -199,7 +212,7 @@ As a site user I want to be able to easily navigate through multiple pages of pr
 
 ##### Acceptance Criteria
 
-- When viewing products or category of products with twelve and eight  products respectively, I should see a pagination component at the bottom of the page.
+- When viewing products or category of products with twelve and eight products respectively, I should see a pagination component at the bottom of the page.
 
 - The pagination component should display page numbers and navigation controls, such as "PREV" and "NEXT."
 
@@ -209,7 +222,7 @@ As a site user I want to be able to easily navigate through multiple pages of pr
 
 - The "PREV" button should be disabled if the user is on the first page and the "NEXT." button should be disabled if the user is on the last page.
 
-Implement logic in the backend to paginate product listings based on  home page products, the selected category or search query.
+Implement logic in the backend to paginate product listings based on home page products, the selected category or search query.
 
 ##### Tasks
 
@@ -229,7 +242,7 @@ Implement logic in the backend to paginate product listings based on  home page 
 
 ### Admin Store Management
 
-#### Store Product Stocking 
+#### Store Product Stocking
 
 ##### User Story
 
@@ -246,17 +259,17 @@ As a store owner, I want to be able to easily add new items to my store so that 
 ##### Tasks
 
 - Design and implement an intuitive product addition interface for the admin, including input fields for product details and image upload functionality.
- 
+
 - Create a category and tagging system that enables the admin to organize and label products based on specific categories for efficient inventory management.
 
 - Implement input validation and error handling to ensure that the admin can only add complete and accurate product information to the store's inventory.
 
 - Test the product addition and management features thoroughly to ensure their functionality, security, and user-friendliness for the admin interface.
 
-#### Updating Products 
+#### Updating Products
 
 ##### User Story
- 
+
 As a store owner, I want to be able to update product prices, images and description so that it reflects changes in market trends or business requirements.
 
 ##### Acceptance Criteria
@@ -275,7 +288,7 @@ As a store owner, I want to be able to update product prices, images and descrip
 
 - Test the product editing and management features rigorously to ensure its intended functionality.
 
-#### Deleting Products 
+#### Deleting Products
 
 ##### User Story
 
@@ -303,7 +316,7 @@ As a shopper, I want to easily identify products on promotional sale offer so th
 
 ##### Acceptance Criteria
 
-- The website should prominently display discounted products with visible labels or tags. 
+- The website should prominently display discounted products with visible labels or tags.
 
 - The sale prices should be clearly indicated on the respective product while the initial price is cancelled out.
 
@@ -326,29 +339,42 @@ As a developer, I want the ability to create custom users and super users so tha
 ##### Acceptance Criteria
 
 - The admin can create a custom user with specified access levels and permissions.
+
 - The admin can create a super user with full access and control over the website.
+
 - Both custom users and super users should have unique login credentials.
+
 - The created users should be able to log in with email as username and a password to perform their designated actions.
+
 - Error handling should be in place for any invalid inputs or unauthorized access attempts.
+
 - Regular users should have no permisions to staff and admin operations.
+
 - The system should maintain a secure database of all users and their respective access levels.
+
 - All user should be able to update their respective user details.
 
 ##### Tasks
 
 - Design the user interface for the admin to create custom users.
+
 - Develop the backend logic to handle custom user creation requests and store them securely in the database.
+
 - Implement authentication and authorization mechanisms for login credentials.
+
 - Create fields for the admin and regular users to input their necessary details.
+
 - Define access levels and permissions for both custom users and super users.
+
 - Test the user creation functionality for both custom users and super users, ensuring all acceptance criteria are met.
+
 - Implement error handling to display appropriate messages for invalid inputs or unauthorized access attempts.
 
 #### User Registration
 
 ##### User Story
 
-As a site user, I want to easily create a personal account to access personalized features so that I can make future purchases securely and efficiently. 
+As a site user, I want to easily create a personal account to access personalized features so that I can make future purchases securely and efficiently.
 
 ##### Acceptance Criteria
 
@@ -450,12 +476,12 @@ As a user, I want the option to reset my password easily if I forget it, so that
 
 ##### User Story
 
-As a site user, I want to create a personal profile so that I can easily view my  order confirmation and history as well as save my billing information.
+As a site user, I want to create a personal profile so that I can easily view my order confirmation and history as well as save my billing information.
 
 ##### Acceptance Criteria
 
 - The profile creation process should include fields for users to input their personal details, such as first and last names, email address, profile picture, address lines, phone number, country, state and city.
- 
+
 - The system should allow users to edit and modify their profile information, with appropriate validation and error handling.
 
 - Only registered users have access to create a user profile by editing their profile on the dashboard sidebar.
@@ -510,7 +536,7 @@ As a shopper, I want to be able to search for products by their names or descrip
 
 - The system should return accurate search results that matches the keywords found in the product descriptions and or name.
 
-- In exceptions where the search found no result, The user should be informed of that no results was found for their respective search.  
+- In exceptions where the search found no result, The user should be informed of that no results was found for their respective search.
 
 - The search functionality should be responsive and provide users with a seamless experience across different devices and screen sizes.
 
@@ -538,13 +564,13 @@ As a shopper, I want to be able to select the size and or quantity of a product 
 
 - The product coluor and size options should be clearly presented on the product detail page.
 
-- Users should be able to select the desired  quantity, color and size of the product from the available sizes and colour options provided by the system.
+- Users should be able to select the desired quantity, color and size of the product from the available sizes and colour options provided by the system.
 
 - The product selection interface should enable users to increment and or reduce their desired quantity of the product and display the updated tax and total price based on the selected quantity.
 
 ##### Tasks
 
-- Design and implement a user-friendly product customization that retrieves and displays available quantity colour and size options and enables users to select their preferred  quantity, colour and size before checking out.
+- Design and implement a user-friendly product customization that retrieves and displays available quantity colour and size options and enables users to select their preferred quantity, colour and size before checking out.
 
 - Integrate input validation and error handling to ensure that users can only select valid size options and input a valid quantity within the specified range.
 
@@ -610,7 +636,7 @@ As a shopper, I want to view the tax and total purchase amount before proceeding
 
 ##### Acceptance Criteria
 
-- The checkout summary should in detail display a breakdown of all the items in the cart along with their individual prices, quantities and subtotal for each item in the cart and the total amount,  inclusive of taxes.
+- The checkout summary should in detail display a breakdown of all the items in the cart along with their individual prices, quantities and subtotal for each item in the cart and the total amount, inclusive of taxes.
 
 - The system should update the total purchase amount dynamically when items are added or removed from the shopping cart.
 
@@ -649,7 +675,7 @@ As a site user, I want to view clear and detailed order confirmation after compl
 - Develop an order management system that generates and populates the order confirmation page with accurate and up-to-date information after a successful checkout.
 
 - Test the order confirmation feature thoroughly to ensure its accuracy, responsiveness, and compatibility across different devices and screen sizes.
- 
+
 #### Order Confirmation Email
 
 ##### User Story
@@ -668,7 +694,7 @@ As a shopper, I want to receive an email confirmation immediately after making a
 
 - Design an email template that includes a detailed summary of the purchased items, tax and the total cost.
 
-- Ensure that the email is sent from kidomarts official email address for trustworthiness. 
+- Ensure that the email is sent from kidomarts official email address for trustworthiness.
 
 - Integrate a secure and reliable email delivery system that ensures the timely delivery of email confirmations to users' inboxes.
 
@@ -736,8 +762,44 @@ As a developer, I want to provide a comprehensive documentation on my project so
 
 ##### Tasks
 
-- Set up a documentation table of content, dividing it into logical sections for clarity. 
+- Set up a documentation table of content, dividing it into logical sections for clarity.
 
 - Write up a clear concise and comprehensive documentation on the introduction, architecture, planes, agile planning, features, testing, deployment and used technologies of the project.
 
--  Make use of comprehensive diagrams and charts like ERD to visualize complex concepts like database the schema.
+- Make use of comprehensive diagrams and charts like ERD to visualize complex concepts like database the schema.
+
+## The-Structure-Plane
+
+### Features
+
+`USER STORY - As a developer, I need to create a logo so that users can easily identify the site by it as a brand`
+
+Implementation:
+
+**Logo**
+
+A logo has been added to the top left corner of the site which is seen on all site pages. This helps users to easily identify the site.
+
+![Logo](media/docs/readme-images/logo-kidomart.jpg)
+
+`USER STORY - As a developer, I need to create the navbar so that users can navigate the website from all sizes of devices`
+
+Implementation:
+
+**Navigation Menu**
+
+The Navigation contains links for the logo, categories dropdown menu, search bar, user first name display, dashboard and logout links for logged in users and login and register links for unauthenticated users. It also has the cart button on the right corner and a free delivery promotional text at the center bottom of it.
+
+The following navigation items are available on all pages:
+
+- Logo -> index.html - Visible to all
+- Searchbar -> search - Visible to all
+- Dropdown menu -> category.geturl - Visible to all
+- Dashboard -> dashboard.html - Visible to logged in users
+- Login -> login.html - Visible to logged out users
+- Register -> register.html - Visible to logged out users
+- Logout -> logout - Visible to logged in users
+
+The navigation menu is displayed on all pages and is reponsive on all devices. This will allow users to view the site from any device without difficulty.
+
+![Navbar](media/docs/readme-images/navbar-kidomart.jpg)
