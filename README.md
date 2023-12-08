@@ -798,6 +798,12 @@ Implementation:
 
 The Navigation contains links for the logo, categories dropdown menu, search bar, user first name display, dashboard and logout links for logged in users and login and register links for unauthenticated users. It also has the cart button on the right corner and a free delivery promotional text at the center bottom of it.
 
+The category dropdown button that helps users to sort the products by category.
+There is also a search bar that allows users to easily look for specific products.
+The cart button that displays the users cart count also and leads autheticated users to their cart items and keeps record of their carts as well.
+When logged in, there is a user dashboard link that leads the user to his profile for order views, profile editing and deletion as well as password change.
+Beside it is a logout link that logs out logged in users.
+
 The following navigation items are available on all pages:
 
 - Logo -> index.html - Visible to all
