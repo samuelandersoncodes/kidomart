@@ -895,3 +895,7 @@ Upon a successful login, the user is redirected to his dashboard with a success 
 In cases where user's credentials are invalid, an error message is displayed to alert the user.
 
 ![Login error](media/docs/readme-images/login-error.jpg)
+
+Upon clicking the logout link on the navbar or on the dashboard sidebar, users are directly logged and redirected to the login page with a logout success message.
+
+![Logout](media/docs/readme-images/logout.jpg)
