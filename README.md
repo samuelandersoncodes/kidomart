@@ -208,3 +208,32 @@ Implement logic in the backend to paginate product listings based on  home page 
 - Ensure that clicking on a page number triggers the appropriate calls to retrieve and display the corresponding products.
 
 - Conduct a thorough test to ensure the pagination component works well without errors.
+
+**Sprint 3**
+
+#### Admin Store Management
+
+#### Store Product Stocking 
+
+##### User Story
+
+As a store owner, I want to be able to easily add new items to my store so that I can efficiently keep the product inventory up-to-date.
+
+##### Acceptance Criteria
+
+- The product addition process should include fields for product details, such as name, description, price, images, category, availability status, stock count, color and size variations.
+
+- As an administrator, I want to have the option to categorize the newly added products and assign relevant tags for improved organization and searchability.
+
+- The system should allow the admin to assign categories, color and size variations to the new products for streamlined inventory management.
+
+##### Tasks
+
+- Design and implement an intuitive product addition interface for the admin, including input fields for product details and image upload functionality.
+ 
+- Create a category and tagging system that enables the admin to organize and label products based on specific categories for efficient inventory management.
+
+- Implement input validation and error handling to ensure that the admin can only add complete and accurate product information to the store's inventory.
+
+- Test the product addition and management features thoroughly to ensure their functionality, security, and user-friendliness for the admin interface.
+ 
