@@ -130,6 +130,8 @@ As a developer, I want to configure the application to use AWS S3 so that all st
 
 **Sprint 2**
 
+### Product Viewing and Navigation
+
 #### Product Display
 
 ##### User Story
@@ -211,7 +213,7 @@ Implement logic in the backend to paginate product listings based on  home page 
 
 **Sprint 3**
 
-#### Admin Store Management
+### Admin Store Management
 
 #### Store Product Stocking 
 
@@ -236,4 +238,25 @@ As a store owner, I want to be able to easily add new items to my store so that 
 - Implement input validation and error handling to ensure that the admin can only add complete and accurate product information to the store's inventory.
 
 - Test the product addition and management features thoroughly to ensure their functionality, security, and user-friendliness for the admin interface.
+
+#### Updating Products 
+
+##### User Story
  
+As a store owner, I want to be able to update product prices, images and description so that it reflects changes in market trends or business requirements.
+
+##### Acceptance Criteria
+
+- The admin should be able to access a user-friendly product editing page with editable fields for product prices, images, and descriptions.
+
+- Updates should reflect on the respective products accordingly.
+
+##### Tasks
+
+- Design and implement an intuitive product editing interface for the admin, including editable fields for product prices, image uploads and description updates.
+
+- Develop a product management system that securely stores and retrieves product information, allowing the admin to update and revise product details as needed.
+
+- Implement input validation and error handling to ensure that the admin can only make valid and accurate changes to product details within the system.
+
+- Test the product editing and management features rigorously to ensure its intended functionality.
