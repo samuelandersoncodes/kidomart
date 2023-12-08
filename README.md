@@ -612,3 +612,27 @@ As a shopper, I want to view the tax and total purchase amount before proceeding
 
 - Conduct comprehensive testing to ensure that the purchase total is accurately calculated and displayed throughout the checkout process.
 
+#### Order Confirmation Management
+
+##### User Story
+
+As a site user, I want to view clear and detailed order confirmation after completing my purchase so that I can be sure of an accurate and processed order.
+
+##### Acceptance Criteria
+
+- The order confirmation page should display a summary of the purchased items, the total cost, and the tax details.
+
+- The order confirmation page should provide clear invoice of the pruchase details.
+
+- Shoppers should be able to view a detailed summary of their purchased items, including names, email address quantity, tax and total amount in their order history.
+
+##### Tasks
+
+- Design and implement a visually appealing order confirmation page that displays a comprehensive summary of the purchased items and its details.
+
+- Implement an order confirmation page that provides a clear invoice of the pruchase details.
+
+- Develop an order management system that generates and populates the order confirmation page with accurate and up-to-date information after a successful checkout.
+
+- Test the order confirmation feature thoroughly to ensure its accuracy, responsiveness, and compatibility across different devices and screen sizes.
+ 
