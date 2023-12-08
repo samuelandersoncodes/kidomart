@@ -280,3 +280,21 @@ As a store owner, I want to be able to remove outdated or discontinued products 
 - Implement confirmation prompts and safeguards to prevent accidental deletion of products, ensuring that the store owner confirms the deletion action before it is executed.
 
 - Test the product deletion and management features rigorously to ensure the functionality works as expected.
+
+#### Sales Highlighting
+
+##### User Story
+
+As a shopper, I want to easily identify products on promotional sale offer so that I can take advantage of discounted prices.
+
+##### Acceptance Criteria
+
+- The website should prominently display discounted products with visible labels or tags. 
+
+- The sale prices should be clearly indicated on the respective product while the initial price is cancelled out.
+
+##### Tasks
+
+- Design and implement a visually distinct labelling badge for products on sale.
+
+- Test the visibility and effectiveness of the highlighting system with a diverse group of users to ensure its clarity and user-friendliness.
