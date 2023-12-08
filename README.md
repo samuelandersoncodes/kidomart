@@ -377,3 +377,29 @@ As a returning customer, I want to be able to log in quickly and securely so I c
 - Configure the system to clear any active user sessions and remove any locally stored user data upon successful logout.
 
 - Test the login and logout processes rigorously to ensure their security, usability, and responsiveness across various devices and browsers.
+
+#### Password Recovery
+
+##### User Story
+
+As a user, I want the option to reset my password easily if I forget it, so that I can regain access to my account and protect my profile and data.
+
+##### Acceptance Criteria
+
+- The password recovery process should involve verifying the user's identity through a secure method such as email verification.
+
+- The system should send an email verification link through which the respective user can change their password while they concurrently verify their identity.
+
+- The password reset process should prompt the user to create a new password and provide confirmation upon successful password update.
+
+##### Tasks
+
+- Design and implement a user-friendly password recovery link on the login page with HTML and CSS.
+
+- Develop a secure password reset system that sends a reset link to the user's registered email address.
+
+- Configure the system to validate user input and ensure that the provided information matches the account details before allowing a password reset.
+
+- Implement necessary security measures, such as expiration links for reset requests and limitations on the number of password reset attempts within a specific time frame.
+
+- Test the password recovery process rigorously to ensure its reliability, security, and user-friendliness across different devices and browsers.
