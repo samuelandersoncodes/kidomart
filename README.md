@@ -483,3 +483,29 @@ As a shopper, I want the ability to sort the list of products by category so tha
 - Integrate a responsive design approach to ensure that the product sorting functionality is user-friendly and responsive on all screen sizes.
 
 - Conduct comprehensive testing to validate the accuracy and efficiency of the product sorting feature, checking for any potential bugs or performance issues.
+
+#### Product Search Functionality
+
+##### User Story
+
+As a shopper, I want to be able to search for products by their names or description so that I can easily find specific products of my preference.
+
+##### Acceptance Criteria
+
+- The search functionality should provide relevant product results and search item counts based on the user's input.
+
+- The system should return accurate search results that matches the keywords found in the product descriptions and or name.
+
+- In exceptions where the search found no result, The user should be informed of that no results was found for their respective search.  
+
+- The search functionality should be responsive and provide users with a seamless experience across different devices and screen sizes.
+
+##### Tasks
+
+- Design and implement a user-friendly search bar interface that allows users to enter search queries.
+
+- Develop a search mechanism that retrieves and displays relevant products based on the user's input and matches the search query with product names and descriptions.
+
+- Integrate a responsive design approach to ensure that the search functionality is accessible and user-friendly on all screen sizes.
+
+- Conduct a comprehensive testing to validate the accuracy and efficiency of the product search feature, checking for any potential bugs or performance issues.
