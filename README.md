@@ -457,3 +457,29 @@ As a site user, I want to create a personal profile so that I can easily view my
 - Implement data validation and error handling to ensure that the user-provided information is accurate and meets the required criteria.
 
 - Test the user profile feature thoroughly to ensure its functionality, security, responsiveness and user-friendliness across different devices.
+
+**EPIC 4 - Product Sorting and Searching**
+
+**Sprint 6**
+
+#### Product Sorting functionality
+
+##### User Story
+
+As a shopper, I want the ability to sort the list of products by category so that I can easily find products in my preferred category.
+
+##### Acceptance Criteria
+
+- The product sorting functionality should enable users to arrange products by category.
+
+- The product sorting functionality should be responsive and provide users with a seamless experience across different devices and screen sizes.
+
+##### Tasks
+
+- Design and implement a user-friendly product sorting interface that allows users to from various categories.
+
+- Develop a sorting mechanism that rearranges the product list based on the selected category.
+
+- Integrate a responsive design approach to ensure that the product sorting functionality is user-friendly and responsive on all screen sizes.
+
+- Conduct comprehensive testing to validate the accuracy and efficiency of the product sorting feature, checking for any potential bugs or performance issues.
