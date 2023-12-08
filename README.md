@@ -330,3 +330,24 @@ As a developer, I want the ability to create custom users and super users so tha
 - Test the user creation functionality for both custom users and super users, ensuring all acceptance criteria are met.
 - Implement error handling to display appropriate messages for invalid inputs or unauthorized access attempts.
 
+#### User Registration
+
+##### User Story
+
+As a site user, I want to easily create a personal account to access personalized features so that I can make future purchases securely and efficiently. 
+
+##### Acceptance Criteria
+
+- The registration process should require basic information such as name, email address, phone number, address lines 1 and 2, country, state, city, password and confirm password.
+
+- The registration process should include input validation and error handling to ensure that all required fields are filled out correctly.
+
+##### Tasks
+
+- Design and implement a user-friendly registration interface with clear and responsive input fields using HTML and CSS.
+
+- Develop a secure authentication system to store user credentials and encrypt sensitive information, such as passwords.
+
+- Implement input validation and error handling to prompt users to correct any incomplete or inaccurate information during the registration process.
+
+- Conduct thorough testing to ensure that the registration process is smooth, secure, and user-friendly across different devices and platforms.
