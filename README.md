@@ -14,6 +14,7 @@ The live link can be found here: [Live Site - KidoMart](https://kidomart-78f2589
     - [Site-Goals](#site-goals)
     - [Agile Planning](#agile-planning)
       - [Epics](#epics)
+      -[Sprints](#sprints)
       - [User Stories](#user-stories)
   - [The-Scope-Plane](#the-scope-plane)
   - [The-Structure-Plane](#the-structure-plane)
@@ -49,7 +50,7 @@ We look forward to becoming the best seller for children's products.
 
 ### Agile Planning
 
-This project was developed using agile methodologies by delivering small features in incremental sprints. There were 9 sprints in total, spaced out evenly over eight weeks.
+This project was developed using agile methodologies by delivering small features in incremental sprints. There were 10 sprints in total, spaced out evenly over eight weeks.
 
 The kanban issues were assigned to epics and were labelled as 'must have' and 'could have'. They were assigned to sprints based on their level of priority. It was done this way to ensure that core requirements are first taken care of.
 
@@ -89,7 +90,7 @@ The purchasing and checkout epic is for all stories that relate to product purch
 
 This epic is for all documentation related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
 
-#### Sprints
+### Sprints
 
 **EPIC 1 - Deployment Epic**
 
@@ -108,22 +109,35 @@ As a developer, I want to configure the application to use AWS S3 so that all st
 ##### Acceptance Criteria
 
 - The application is successfully deployed on Heroku. The deployed application must be accessible through a Heroku domain.
+
 - All necessary environment variables are configured on Heroku.
+
 - The application seamlessly interacts with the ElephantSQL database on Heroku.
+
 - Static and media files are stored and served from the configured AWS S3 bucket.
+
 - The DEBUG setting is finally set to False.
 
 ##### Tasks
 
 - Create a kidomart Github repository.
+
 - Create a Heroku app for kidomart and link it to the kidomart repository on Github.
+
 - Install Django and create the kidomart project.
+
 - Wire up the settings for database, wsgi procfile, middleware, static and media file setups.
+
 - Make the initial commit when the app is set and live.
+
 - Set all necessary environment variables both in the gitpod workspace and in the Heroku settings.
+
 - Ensure that no secret key is commited to the kidomart repository.
-- Set up all dependecies for Django, AWS s3 bucket, elephant postgresql, whitenoise, stripe and email host.   
+
+- Set up all dependecies for Django, AWS s3 bucket, elephant postgresql, whitenoise, stripe and email host.
+
 - Ensure the project's dependencies and configurations are compatible with Heroku and all other used dependencies.
+
 - Make regular commits after every bit of significant increment.
 
 **EPIC 2 - Base Setup**
@@ -701,3 +715,29 @@ As a site user of the e-commerce website, I want to be able to read and submit r
 - Conduct integration testing for frontend components.
 
 - Test the end-to-end flow of submitting, editing, and editing reviews.
+
+**EPIC 6 - Documentation Epic**
+
+**Sprint 10**
+
+#### Documentation
+
+##### User Story
+
+As a developer, I want to provide a comprehensive documentation on my project so that other developers and users are able to know about the project's building process, how the website works and all the details involved in its use and functionality.
+
+##### Acceptance Criteria
+
+- The project documentation is organized into clear sections, such as introduction, architecture, planes, agile planning, features, testing, deployment and used technologies.
+
+- Each section is well-detailed, providing comprehensive information about its respective topic.
+
+- Use diagrams and charts to visualize complex concepts.
+
+##### Tasks
+
+- Set up a documentation table of content, dividing it into logical sections for clarity. 
+
+- Write up a clear concise and comprehensive documentation on the introduction, architecture, planes, agile planning, features, testing, deployment and used technologies of the project.
+
+-  Make use of comprehensive diagrams and charts like ERD to visualize complex concepts like database the schema.
