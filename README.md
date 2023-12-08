@@ -351,3 +351,29 @@ As a site user, I want to easily create a personal account to access personalize
 - Implement input validation and error handling to prompt users to correct any incomplete or inaccurate information during the registration process.
 
 - Conduct thorough testing to ensure that the registration process is smooth, secure, and user-friendly across different devices and platforms.
+
+#### User Authentication
+
+##### User Story
+
+As a returning customer, I want to be able to log in quickly and securely so I can access my personalized account settings and order history.
+
+##### Acceptance Criteria
+
+- The login process should require a valid email address and password.
+
+- Given the login page, the user should be able to enter their valid credentials and access their account dashboard upon successful authentication.
+
+- The logout process should clear any active user sessions and provide a confirmation message to the user upon successful logout.
+
+##### Tasks
+
+- Design and implement a visually appealing and user-friendly login page with input fields for email and password using HTML and CSS.
+
+- Develop a secure authentication system to verify user credentials and grant access to the account dashboard upon successful login.
+
+- Implement a clear and straightforward logout button all pages to enable users to log out from any page of the website.
+
+- Configure the system to clear any active user sessions and remove any locally stored user data upon successful logout.
+
+- Test the login and logout processes rigorously to ensure their security, usability, and responsiveness across various devices and browsers.
