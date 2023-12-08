@@ -811,3 +811,26 @@ The following navigation items are available on all pages:
 The navigation menu is displayed on all pages and is reponsive on all devices. This will allow users to view the site from any device without difficulty.
 
 ![Navbar](media/docs/readme-images/navbar-kidomart.jpg)
+
+``USER STORY - As a shopper, I want to see a list of all available products so that I can browse through and make informed purchase decisions.``
+
+Implementation:
+
+**Home Page**
+
+The home page contains a logo that is informative enough to let users know that the site Kiod Mart is  Mart for Kids.
+The displayed products also throws more light on the type of products we sell.
+
+Below the navbar is a nice carousel that slides images of three children with left and right arrows that could manually do the sliding as well.
+In the middle of the page, are list of products.
+Each product has an image, name, price and its associated rating below it.
+
+The page takes twelve products at a go in pagination. Therefore at the bottom of each twelfth post is the 'next' button that takes users to subsequent pages. When users are on older posts, they can easily come back to fresher posts by clicking the 'prev' button.
+Then come the footer which is found also on all pages.
+
+``Logged in``
+![Home page logged in](media/docs/readme-images/home-logged-in.jpg)
+
+``Default``
+![Home page default](media/docs/readme-images/home-logged-out.jpg)
+
