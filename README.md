@@ -260,3 +260,23 @@ As a store owner, I want to be able to update product prices, images and descrip
 - Implement input validation and error handling to ensure that the admin can only make valid and accurate changes to product details within the system.
 
 - Test the product editing and management features rigorously to ensure its intended functionality.
+
+#### Deleting Products 
+
+##### User Story
+
+As a store owner, I want to be able to remove outdated or discontinued products from the store's inventory so that only up-to-date and relevant products are left in the store.
+
+##### Acceptance Criteria
+
+- The store owner should be able to access a product management page with an option to delete products from the store's inventory.
+
+- The product deletion process should include confirmation prompts to prevent accidental deletion of products.
+
+##### Tasks
+
+- Design and implement an intuitive product management interface for the store owner, including a delete option for removing products from the inventory.
+
+- Implement confirmation prompts and safeguards to prevent accidental deletion of products, ensuring that the store owner confirms the deletion action before it is executed.
+
+- Test the product deletion and management features rigorously to ensure the functionality works as expected.
