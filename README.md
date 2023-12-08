@@ -768,6 +768,14 @@ As a developer, I want to provide a comprehensive documentation on my project so
 
 - Make use of comprehensive diagrams and charts like ERD to visualize complex concepts like database the schema.
 
+## The-Scope-Plane
+
+- Responsive Design - Site should be fully functional on all devices above 320px.
+- Dropdown menu for product categories.
+- Ability to perform CRUD functionality on user profile.
+- Restricted role based features.
+- Home page with site information.
+
 ## The-Structure-Plane
 
 ### Features
