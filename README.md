@@ -298,3 +298,35 @@ As a shopper, I want to easily identify products on promotional sale offer so th
 - Design and implement a visually distinct labelling badge for products on sale.
 
 - Test the visibility and effectiveness of the highlighting system with a diverse group of users to ensure its clarity and user-friendliness.
+
+**EPIC 3 - Registration and User Account**
+
+**Sprint 4**
+
+#### Custom User and Super User Accounts Creation and Management
+
+##### User Story
+
+As a developer, I want the ability to create custom users and super users so that I can manage the website's access efficiently to my liking.
+
+##### Acceptance Criteria
+
+- The admin can create a custom user with specified access levels and permissions.
+- The admin can create a super user with full access and control over the website.
+- Both custom users and super users should have unique login credentials.
+- The created users should be able to log in with email as username and a password to perform their designated actions.
+- Error handling should be in place for any invalid inputs or unauthorized access attempts.
+- Regular users should have no permisions to staff and admin operations.
+- The system should maintain a secure database of all users and their respective access levels.
+- All user should be able to update their respective user details.
+
+##### Tasks
+
+- Design the user interface for the admin to create custom users.
+- Develop the backend logic to handle custom user creation requests and store them securely in the database.
+- Implement authentication and authorization mechanisms for login credentials.
+- Create fields for the admin and regular users to input their necessary details.
+- Define access levels and permissions for both custom users and super users.
+- Test the user creation functionality for both custom users and super users, ensuring all acceptance criteria are met.
+- Implement error handling to display appropriate messages for invalid inputs or unauthorized access attempts.
+
