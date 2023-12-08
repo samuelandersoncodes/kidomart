@@ -60,3 +60,31 @@ The Kanban board was created using github projects and can be located [here](htt
 
 ### KidoMart Issues
 ![Kanban issues image](media/docs/readme-images/kidomart-issues.jpg)
+
+#### Epics
+
+The project had 6 main Epics:
+
+**EPIC 1 - Deployment Epic**
+
+The app was first deployed to heroku so that the site is live for users. All dependencies were put in place and thouroughly tested to ensure that the live app is properly set up and has no problems. This epic was implemented first in order to avoid last minute deployment descrepancies. 
+
+**EPIC 2 - Base Setup**
+
+The base setup epic is for all stories needed for the base set up of the application. Without the base setup, the app would not be possible so it was the next epic to be delivered after deployment as all other features depend on it. Here, the home page view, page navigation, product detail views and admin store management were executed.
+
+**EPIC 3 - Registration and User Account**
+
+In the registration and user account epic, user and super user accounts management, user registration, user authentication, password recovery, password recovery email confirmation and user profile management were executed. This epic was very important because shoppers can only make a purchase if they are authenticated. It was therefore considered as the next epic after the base setup.
+
+**EPIC 4 - Product Sorting and Searching Epic**
+
+The Product sorting and searching epic is for all stories related to the product sorting functionality, product categories and the product search functionality. This is very crucial for the grouping of products for easy identification and user search.
+
+**EPIC 5 - Purchasing and Checkout**
+
+The purchasing and checkout epic is for all stories that relate to product purchasing customization, shopping cart management, cart quantity management, checkout summary, order confirmation management, order confirmation email as well as rating and reviews.
+
+**EPIC 6 - Documentation**
+
+This epic is for all documentation related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
