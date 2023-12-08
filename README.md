@@ -564,3 +564,27 @@ As a shopper, I want to view all the items in my shopping cart so that I can ens
 
 - Test the shopping cart functionality rigorously to ensure its accuracy and compatibility across different devices and screen sizes.
 
+#### Cart Quantity Management
+
+##### User Story
+
+As a shopper, I want the option to increase or decrease the quantity of individual items in my cart so that I can make quantity adjustments before purchase.
+
+##### Acceptance Criteria
+
+- The shopping cart should include intuitive controls for users to adjust item quantity with clear visual feedback.
+
+- The system should allow users to easily remove specific items from their cart with a single click or tap.
+
+- Users should be able to adjust the quantity of individual items by using increment and decrement buttons.
+
+##### Tasks
+
+- Design and implement an intuitive quantity adjustment interface within the shopping cart that allows users to modify item quantities.
+
+- Develop a cart management system that updates the total cost dynamically based on the adjusted quantities of individual items in the shopping cart.
+
+- Implement a streamlined process for users to remove specific items from their cart with minimal effort, ensuring a smooth and efficient shopping experience.
+
+- Conduct comprehensive testing to validate the accuracy and responsiveness of the quantity adjustment feature, checking for any potential bugs or performance issues.
+
