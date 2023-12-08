@@ -509,3 +509,29 @@ As a shopper, I want to be able to search for products by their names or descrip
 - Integrate a responsive design approach to ensure that the search functionality is accessible and user-friendly on all screen sizes.
 
 - Conduct a comprehensive testing to validate the accuracy and efficiency of the product search feature, checking for any potential bugs or performance issues.
+
+**EPIC 5 - Purchasing and Checkout**
+
+**Sprint 7**
+
+#### Product Purchasing Customization
+
+##### User Story
+
+As a shopper, I want to be able to select the size and or quantity of a product to ensure that it fits my preferences and needs.
+
+##### Acceptance Criteria
+
+- The product coluor and size options should be clearly presented on the product detail page.
+
+- Users should be able to select the desired  quantity, color and size of the product from the available sizes and colour options provided by the system.
+
+- The product selection interface should enable users to increment and or reduce their desired quantity of the product and display the updated tax and total price based on the selected quantity.
+
+##### Tasks
+
+- Design and implement a user-friendly product customization that retrieves and displays available quantity colour and size options and enables users to select their preferred  quantity, colour and size before checking out.
+
+- Integrate input validation and error handling to ensure that users can only select valid size options and input a valid quantity within the specified range.
+
+- Test the product customization feature thoroughly to ensure its functionality, responsiveness and compatibility across different devices and screen sizes.
