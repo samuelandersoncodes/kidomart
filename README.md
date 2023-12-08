@@ -174,3 +174,37 @@ As a shopper, I want to view detailed product information, including description
 - Develop a feature to enable customers to leave reviews and ratings for purchased products and display them on the product details page.
 
 - Ensure that the product details page is responsive and compatible with various devices and screen sizes.
+
+#### Home Page Pagination
+
+##### User Story
+
+As a site user I want to be able to easily navigate through multiple pages of product listings so that I can find and view the products I am interested in.
+
+##### Acceptance Criteria
+
+- When viewing products or category of products with twelve and eight  products respectively, I should see a pagination component at the bottom of the page.
+
+- The pagination component should display page numbers and navigation controls, such as "PREV" and "NEXT."
+
+- Clicking on a page number should load and display the corresponding set of products on the page.
+
+- The current page should be visually highlighted for good user experience.
+
+- The "PREV" button should be disabled if the user is on the first page and the "NEXT." button should be disabled if the user is on the last page.
+
+Implement logic in the backend to paginate product listings based on  home page products, the selected category or search query.
+
+##### Tasks
+
+- Utilize Django's Paginator mechanism to handle the pagination logic efficiently.
+
+- Create a reusable frontend component for pagination. Ensure the component can dynamically render the page numbers and adjust the display based on the current page and total number of pages.
+
+- Apply appropriate styles to the pagination component for a cohesive and visually appealing design.
+
+- Ensure the pagination is responsive and works well on various screen sizes and devices.
+
+- Ensure that clicking on a page number triggers the appropriate calls to retrieve and display the corresponding products.
+
+- Conduct a thorough test to ensure the pagination component works well without errors.
