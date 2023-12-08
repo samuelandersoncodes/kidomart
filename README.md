@@ -146,3 +146,31 @@ As a shopper, I want to see a list of all available products so that I can brows
 - Design and implement a responsive product list interface using HTML and CSS.
 
 - Retrieve product data from the database and display it dynamically with Python and Django on the product list page.
+
+#### Product Detail Page
+
+##### User Story
+
+As a shopper, I want to view detailed product information, including descriptions, images, ratings, reviews and pricing, so that I can make informed purchase decisions.
+
+##### Acceptance Criteria
+
+- The product details page should display the product name, description, images, price, ratings, reviews and any available variations of colour and or size.
+
+- The product details page should include a section for customer reviews and ratings.
+
+- Given the product details page, the user should be able to see high-resolution images of the product.
+
+- The product details page should display the product's stock information. Shopper should be informed if a particular product is out of stock.
+
+##### Tasks
+
+- Design and implement a product details page template with a user-friendly layout using HTML and CSS.
+
+- Retrieve and display detailed product information dynamically on the product details page, including product description, images, average rating, reviews and pricing.
+
+- Implement a system to display product variations, if applicable. For instance, size, color and quantity to choose from.
+
+- Develop a feature to enable customers to leave reviews and ratings for purchased products and display them on the product details page.
+
+- Ensure that the product details page is responsive and compatible with various devices and screen sizes.
