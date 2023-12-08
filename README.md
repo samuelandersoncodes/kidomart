@@ -429,3 +429,31 @@ As a user, I want the option to reset my password easily if I forget it, so that
 - Implement necessary security measures, such as expiration links for reset requests and limitations on the number of password reset attempts within a specific time frame.
 
 - Test the password recovery process rigorously to ensure its reliability, security, and user-friendliness across different devices and browsers.
+
+**Sprint 5**
+
+#### User Profile Management
+
+##### User Story
+
+As a site user, I want to create a personal profile so that I can easily view my  order confirmation and history as well as save my billing information.
+
+##### Acceptance Criteria
+
+- The profile creation process should include fields for users to input their personal details, such as first and last names, email address, profile picture, address lines, phone number, country, state and city.
+ 
+- The system should allow users to edit and modify their profile information, with appropriate validation and error handling.
+
+- Only registered users have access to create a user profile by editing their profile on the dashboard sidebar.
+
+##### Tasks
+
+- Design and implement a user-friendly profile creation interface with input fields for first and last names, email address, profile picture, address lines, phone number, country, state and city.
+
+- Develop a user profile management system that stores and retrieves user data securely and efficiently into the database.
+
+- Create a an edit button on the dasboard that will enable users to update their profile information.
+
+- Implement data validation and error handling to ensure that the user-provided information is accurate and meets the required criteria.
+
+- Test the user profile feature thoroughly to ensure its functionality, security, responsiveness and user-friendliness across different devices.
