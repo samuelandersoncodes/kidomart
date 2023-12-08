@@ -59,4 +59,4 @@ The Kanban board was created using github projects and can be located [here](htt
 ![Kanban project image](media/docs/readme-images/kanban-project.jpg)
 
 ### KidoMart Issues
-![Kanban issues image](media/docs/readme-images/kanban-issues.jpg)
+![Kanban issues image](media/docs/readme-images/kidomart-issues.jpg)
