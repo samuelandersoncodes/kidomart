@@ -840,3 +840,35 @@ Then come the footer which is found also on all pages.
 ``Default``
 ![Home page default](media/docs/readme-images/home-logged-out.jpg)
 
+``USER STORY - As a site user, I want to easily create a personal account to access personalized features so that I can make future purchases securely and efficiently.``
+
+Implementation:
+
+**Register Page**
+
+Upon clicking the register link anywhere on the site, users are directed to the registration page to make a registration in order for them to be able to get full access to the site's features and most especially place orders.
+
+On the top of the page is a heading and text that informs the user on the page's purpose.
+
+Below that is the form for username, email address, phone number, password and password confirmation fields. Beneath that is the register button that enables users to register on the site.
+
+Then comes the login alternative text and link for users who are already registered.
+
+![Register](media/docs/readme-images/register.jpg)
+
+After a successful registration, a success message is displayed to the user.
+
+![Registration success](media/docs/readme-images/registration-alert.jpg)
+
+An activation email is then sent to the user with a secure link to activate their account.
+
+![Register](media/docs/readme-images/register-activation-email.jpg)
+
+Upon clicking the link in the email, user is taken to the login page with an activation success message.
+
+![Register](media/docs/readme-images/registration-successful.jpg)
+
+In cases where there are errors in filling the registration form, the user is prompted by an error message on the specific error.
+
+![Register error](media/docs/readme-images/registration-error.jpg)
+
