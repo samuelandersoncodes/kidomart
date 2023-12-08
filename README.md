@@ -588,3 +588,27 @@ As a shopper, I want the option to increase or decrease the quantity of individu
 
 - Conduct comprehensive testing to validate the accuracy and responsiveness of the quantity adjustment feature, checking for any potential bugs or performance issues.
 
+#### Checkout Summary
+
+##### User Story
+
+As a shopper, I want to view the tax and total purchase amount before proceeding to checkout so that I can verify the accuracy of the billing details.
+
+##### Acceptance Criteria
+
+- The checkout summary should in detail display a breakdown of all the items in the cart along with their individual prices, quantities and subtotal for each item in the cart and the total amount,  inclusive of taxes.
+
+- The system should update the total purchase amount dynamically when items are added or removed from the shopping cart.
+
+##### Tasks
+
+- Design and implement a visually clear and concise checkout summary section displaying the breakdown of the total purchase amount.
+
+- Develop a mechanism to update the purchase total in real time when items are added, removed or updated in the shopping cart.
+
+- Integrate a tax calculation system to accurately calculate applicable taxes based on the customer's items in the cart.
+
+- Implement a feature that allows customers to modify the quantity or remove items directly from the checkout summary.
+
+- Conduct comprehensive testing to ensure that the purchase total is accurately calculated and displayed throughout the checkout process.
+
