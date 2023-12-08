@@ -535,3 +535,32 @@ As a shopper, I want to be able to select the size and or quantity of a product 
 - Integrate input validation and error handling to ensure that users can only select valid size options and input a valid quantity within the specified range.
 
 - Test the product customization feature thoroughly to ensure its functionality, responsiveness and compatibility across different devices and screen sizes.
+
+**Sprint 8**
+
+#### Shopping Cart Management
+
+##### User Story
+
+As a shopper, I want to view all the items in my shopping cart so that I can ensure that my order is accurate before making a purchase.
+
+##### Acceptance Criteria
+
+- The shopping cart page should display a comprehensive list of all the items added to the cart, including their names, prices, quantity, colour and size variations if applicable.
+
+- The shopping cart page should include options to update quantities, remove items, or continue shopping.
+
+- The shopping cart page should provide clear instructions and options for users to edit quantities, remove items, or proceed to checkout as needed.
+
+##### Tasks
+
+- Design and implement a user-friendly shopping cart interface that displays a list of all added items and their corresponding details.
+
+- Develop a shopping cart management system that allows users to update quantities, remove items or continue shopping seamlessly.
+
+- Implement a tax and total cost calculation feature that dynamically updates the total cost based on the selected items and quantities in the shopping cart.
+
+- Integrate a responsive design approach to ensure that the shopping cart interface is accessible, responsive and user-friendly on all screen sizes.
+
+- Test the shopping cart functionality rigorously to ensure its accuracy and compatibility across different devices and screen sizes.
+
