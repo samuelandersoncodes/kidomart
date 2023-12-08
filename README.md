@@ -49,7 +49,7 @@ We look forward to becoming the best seller for children's products.
 
 ### Agile Planning
 
-This project was developed using agile methodologies by delivering small features in incremental sprints. There were 8 sprints in total, spaced out evenly over eight weeks.
+This project was developed using agile methodologies by delivering small features in incremental sprints. There were 9 sprints in total, spaced out evenly over eight weeks.
 
 The kanban issues were assigned to epics and were labelled as 'must have' and 'could have'. They were assigned to sprints based on their level of priority. It was done this way to ensure that core requirements are first taken care of.
 
@@ -88,3 +88,40 @@ The purchasing and checkout epic is for all stories that relate to product purch
 **EPIC 6 - Documentation**
 
 This epic is for all documentation related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
+
+#### Sprints
+
+**EPIC 1 - Deployment Epic**
+
+**Sprint 1**
+
+##### User Stories
+
+As a developer I want the application to be deployed on Heroku successfully so that is live and accessible through the Heroku domain.
+
+As a developer, I want the necessary environment variables to be configured on Heroku so that I am sure that all dependencies like AWS s3 bucket, postgresql, stripe and django are properly wired up for the full and overall functionality of the deployed app.
+
+As a developer, I want the application to make use of the ElephantSQL database in the production environment so that all my database schema, tables and its associated data are well structured for data storage and display.
+
+As a developer, I want to configure the application to use AWS S3 so that all static files are safely stored and served.
+
+##### Acceptance Criteria
+
+- The application is successfully deployed on Heroku. The deployed application must be accessible through a Heroku domain.
+- All necessary environment variables are configured on Heroku.
+- The application seamlessly interacts with the ElephantSQL database on Heroku.
+- Static and media files are stored and served from the configured AWS S3 bucket.
+- The DEBUG setting is finally set to False.
+
+##### Tasks
+
+- Create a kidomart Github repository.
+- Create a Heroku app for kidomart and link it to the kidomart repository on Github.
+- Install Django and create the kidomart project.
+- Wire up the settings for database, wsgi procfile, middleware, static and media file setups.
+- Make the initial commit when the app is set and live.
+- Set all necessary environment variables both in the gitpod workspace and in the Heroku settings.
+- Ensure that no secret key is commited to the kidomart repository.
+- Set up all dependecies for Django, AWS s3 bucket, elephant postgresql, whitenoise, stripe and email host.   
+- Ensure the project's dependencies and configurations are compatible with Heroku and all other used dependencies.
+- Make regular commits after every bit of significant increment.
