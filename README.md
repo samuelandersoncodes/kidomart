@@ -352,6 +352,32 @@ As a site user, I want to easily create a personal account to access personalize
 
 - Conduct thorough testing to ensure that the registration process is smooth, secure, and user-friendly across different devices and platforms.
 
+#### Registration Email Activation
+
+##### User Story
+
+As a site user, I want to receive an email confirmation upon registration to verify my account so that I can ensure registration success.
+
+##### Acceptance Criteria:
+
+- The system should send an automated email with a secure account activation link to the user's registered email address.
+
+- The email should contain a user-friendly message with a prominent call-to-action link for account activation.
+
+- The email confirmation should provide clear instructions and guidance on how to verify the account and complete the registration process.
+
+##### Tasks
+
+- Configure the system to trigger an automated email with a secure account activation link to the user's registered email address upon successful registration.
+
+- Design and create an email template that includes clear instructions and a user-friendly interface for account verification and actvation.
+
+- Implement a mechanism to track the status of email confirmations and update the user account status upon successful verification.
+
+- Conduct rigorous testing to ensure that the email activation system functions correctly and that users can verify their accounts seamlessly.
+
+- Provide appropriate error handling to assist users who encounter issues with the email activation process.
+
 #### User Authentication
 
 ##### User Story
