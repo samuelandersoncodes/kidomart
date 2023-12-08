@@ -662,3 +662,42 @@ As a shopper, I want to receive an email confirmation immediately after making a
 
 - Gather user feedback and monitor email delivery metrics to identify any potential improvements or adjustments that would enhance the overall user experience.
 
+**Sprint 9**
+
+#### Rating and Reviews
+
+##### User Story
+
+As a site user of the e-commerce website, I want to be able to read and submit reviews for products, as well as provide ratings based on my experience with the products, so that I can make informed purchasing decisions.
+
+##### Acceptance Criteria
+
+- When I visit a product page, I can see existing reviews and ratings for that product.
+
+- I can submit a review for a product, including a title, text and a rating (1 to 5 stars) after i purchase that product.
+
+- Review text should support multi-line and basic formatting.
+
+- I can edit reviews that I have submitted. Only the user who submitted the review should have the ability to edit it.
+
+- The product page should display the average rating based on all submitted reviews.
+
+- Admin can moderate and remove inappropriate reviews.
+
+##### Tasks
+
+- Set up a database model for reviews and ratings.
+
+- Implement logic for calculating and updating the average rating for each product.
+
+- Design and implement a responsive UI component for displaying reviews on product pages.
+
+- Create a form for submitting reviews. Integrate the form and review display components on product pages.
+
+- Implement user authentication to track the user submitting the review. Ensure that only authenticated users who bought that specific product can submit or edit reviews and ratings on it.
+
+- Implement admin functionality to moderate and remove reviews.
+
+- Conduct integration testing for frontend components.
+
+- Test the end-to-end flow of submitting, editing, and editing reviews.
