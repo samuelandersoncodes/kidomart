@@ -636,3 +636,29 @@ As a site user, I want to view clear and detailed order confirmation after compl
 
 - Test the order confirmation feature thoroughly to ensure its accuracy, responsiveness, and compatibility across different devices and screen sizes.
  
+#### Order Confirmation Email
+
+##### User Story
+
+As a shopper, I want to receive an email confirmation immediately after making a purchase so that I can have a record of my transaction for future reference.
+
+##### Acceptance Criteria
+
+- Users should receive an email confirmation of their purchase in their registered email inbox right after a purchase.
+
+- The email confirmation should include a comprehensive summary of the purchased items, quantity, tax and total amount.
+
+##### Tasks
+
+- Configure the system to automatically send an email confirmation to users' registered email addresses immediately after a successful checkout.
+
+- Design an email template that includes a detailed summary of the purchased items, tax and the total cost.
+
+- Ensure that the email is sent from kidomarts official email address for trustworthiness. 
+
+- Integrate a secure and reliable email delivery system that ensures the timely delivery of email confirmations to users' inboxes.
+
+- Conduct thorough testing to validate the accuracy and delivery of the email confirmation feature, checking for any potential issues with email formatting, content or delivery.
+
+- Gather user feedback and monitor email delivery metrics to identify any potential improvements or adjustments that would enhance the overall user experience.
+
