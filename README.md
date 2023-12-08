@@ -125,3 +125,24 @@ As a developer, I want to configure the application to use AWS S3 so that all st
 - Set up all dependecies for Django, AWS s3 bucket, elephant postgresql, whitenoise, stripe and email host.   
 - Ensure the project's dependencies and configurations are compatible with Heroku and all other used dependencies.
 - Make regular commits after every bit of significant increment.
+
+**EPIC 2 - Base Setup**
+
+**Sprint 2**
+
+#### Product Display
+
+##### User Story
+As a shopper, I want to see a list of all available products so that I can browse through and make informed purchase decisions.
+
+##### Acceptance Criteria 
+- The product list should display product names, images, price and rating.
+
+- There is a drop down menu that displays available categories.
+
+- The page should include a search bar to enable users to search for specific products by name, description or category.
+
+##### Tasks
+- Design and implement a responsive product list interface using HTML and CSS.
+
+- Retrieve product data from the database and display it dynamically with Python and Django on the product list page.
