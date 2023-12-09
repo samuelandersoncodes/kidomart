@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+{% include 'includes/navbar.html' %}
 <div class="d-flex flex-column align-items-center text-center mt-5">
     <h1>500 Internal Server Error</h1>
     <p class="fs-4">Sorry! the server encountered an internal error.</p>
@@ -10,4 +11,5 @@
         <a class="text-decoration-none text-white" href="{% url 'home' %}">Back</a>
     </button>
 </div>
+{% include 'includes/footer.html' %}
 {% endblock %}
