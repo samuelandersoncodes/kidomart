@@ -1074,3 +1074,31 @@ Then comes the 'complete order' button for placing the order.
 Below the 'complete order' button is a warning message that asks users to stay on the page while their order is been processed.
 
 ![Checkout Page](media/docs/readme-images/checkout-page.jpg)
+
+``USER STORY - As a site user, I want to view clear and detailed order confirmation after completing my purchase so that I can be sure of an accurate and processed order.``
+
+Implementation:
+
+**Checkout Success Page**
+
+After a user has filled out the form fields and card details on the checkout page above, he or she is redirected to the checkout success page with a payment success message.
+
+The checkout success page contains the invoice of the user's purchase details viz; order number, transaction id, order status, order date, item name, item quantity, item variation(if applicable), grand total and the users billing address.
+
+On top of the page is a heading that tells the purpose of the page and a message below it that informs the user about an email sent to him or her. Below it is a button that takes the user back to the home page if they want.
+
+![Checkout Success Page](media/docs/readme-images/payment-success.jpg)
+
+Error handling has been fully implemented to take care of all possible errors during the payment process. So in cases where there are hitchtes or interruption during the payment process, the user is assured of accurate updates on their payment status and they are informed about what precisely transpired during the payment process. 
+
+![Checkout Error](media/docs/readme-images/checkout-error.PNG)
+
+``USER STORY - As a shopper, I want to receive an email confirmation immediately after making a purchase so that I can have a record of my transaction for future reference.``
+
+Implementation:
+
+**Checkout Success Email**
+
+An email is also automatically sent to the user with details to confirm and provide purchase details. 
+
+![Checkout Success Email](media/docs/readme-images/checkout-success-email.png)
