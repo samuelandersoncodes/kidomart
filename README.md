@@ -1196,6 +1196,14 @@ A 500 error page has also been implemented to alert users when an internal serve
 
 ![Login Page sm](media/docs/readme-images/wireframe-login-sm.jpeg)
 
+- Change Password page
+
+![Change Password page lg](media/docs/readme-images/wireframe-change-password-lg.png)
+
+![Change Password page md](media/docs/readme-images/wireframe-change-password-md.png)
+
+![Change Password page sm](media/docs/readme-images/wireframe-change-password-sm.png)
+
 - Checkout Page
 
 ![Checkout Page lg](media/docs/readme-images/wireframe-checkout-lg.jpeg)
