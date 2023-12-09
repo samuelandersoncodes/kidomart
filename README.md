@@ -558,7 +558,7 @@ As a shopper, I want to be able to search for products by their names or descrip
 
 ##### User Story
 
-As a shopper, I want to be able to select the size and or quantity of a product to ensure that it fits my preferences and needs.
+As a shopper, I want to be able to select the size, colour and or quantity of a product to ensure that it fits my preferences and needs.
 
 ##### Acceptance Criteria
 
@@ -1025,3 +1025,25 @@ On the dashboard, when the user clicks on the 'Delete Account' menu, he or she i
 After the user confirms the deletion of their account, he or she is first logged out automatically by the system and redirected to the resgister page with a log out and an account deletion succces message. 
 
 ![Account Deletion success](media/docs/readme-images/acc-delete-success.jpg)
+
+``As a shopper, I want to be able to select the size, colour and or quantity of a product to ensure that it fits my preferences and needs.``
+
+Implementation:
+
+**Cart**
+
+Users are given the option to select the colour and or sizes of the product(s) they want to buy on the product detail page before they add the item(s) to their cart (that is if the product has colour or size or both).
+
+![Product detail variation selection](media/docs/readme-images/item-variation.jpg)
+
+After the user has selected item(s) from the post detail page and clicked on the add to cart button, They are redirected to the cart page where their slected item(s) are displayed with its coresponding tax, quantity, price, item and its variation details. The total amonut is also displayed on the cart page side bar. In this side bar is the checkout button that leads to the checkout page and the continue shopping button that leads to the home page.
+
+If the user already has cart item(s), the cart button on the navbar can also take the user to the cart page where they will find the items in their cart.
+
+On the cart page, they can increase the quantity of any of the item(s) by clicking or taping the '+' button below the quantity section, decrease the quantity of any of the item(s) by clicking or taping the '-' button below the quantity section or click on the 'Remove' button to take off that particular item from their cart.
+
+When the cart item quantity is 1, and the decrease button is clicked, the cart item will be removed from the cart meaning it is decreased to 0 which should be nothing or 0.
+
+Before an item is removed from the cart, the user is alerted to confirm the item removal and when they consent to it, the item is successfully removed from the cart.
+
+![Cart Page](media/docs/readme-images/cart.jpg)
