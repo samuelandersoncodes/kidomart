@@ -1196,6 +1196,14 @@ A 500 error page has also been implemented to alert users when an internal serve
 
 ![Login Page sm](media/docs/readme-images/wireframe-login-sm.jpeg)
 
+- Checkout Page
+
+![Checkout Page lg](media/docs/readme-images/wireframe-checkout-lg.jpeg)
+
+![Checkout Page md](media/docs/readme-images/wireframe-checkout-md.jpeg)
+
+![Checkout Page sm](media/docs/readme-images/wireframe-checkout-sm.jpeg)
+
 - Checkout Success Page / Invoice
 
 ![Checkout Success Page lg](media/docs/readme-images/wireframe-invoice-lg.png)
