@@ -568,7 +568,6 @@ As a shopper, I want to be able to select the size and colour of a product to en
 
 - Users should be able to select the desired colour and size of the product from the available sizes and colour options provided by the system.
 
-
 ##### Tasks
 
 - Design and implement a user-friendly product customization that retrieves and displays available colour and size options and enables users to select their preferred quantity, colour and size before checking out.
@@ -819,7 +818,7 @@ The navigation menu is displayed on all pages and is reponsive on all devices. T
 
 ![Navbar](media/docs/readme-images/navbar-kidomart.jpg)
 
-``USER STORY - As a developer, I need to create a footer with my social media business handles, contact details and newsletter subscription so that I can market my brand and communicate with my users``
+`USER STORY - As a developer, I need to create a footer with my social media business handles, contact details and newsletter subscription so that I can market my brand and communicate with my users`
 
 Implementation:
 
@@ -827,11 +826,11 @@ Implementation:
 
 A footer has been added to the bottom of the site which is seen on all site pages. This helps me to communicate to my site users and market my brand.
 
-In the footer, I have provided the shops customer care number and email address for shoppers to be able to contact me on business related issues. I have also provided my social media business handles to market my brand and also for users to interact and communicate with my brand. In the middle is a newsletter form that helps me market my brand as well. 
+In the footer, I have provided the shops customer care number and email address for shoppers to be able to contact me on business related issues. I have also provided my social media business handles to market my brand and also for users to interact and communicate with my brand. In the middle is a newsletter form that helps me market my brand as well.
 
 ![Footer](media/docs/readme-images)
 
-``As a shopper, I want the ability to sort the list of products by category so that I can easily find products in my preferred category.``
+`As a shopper, I want the ability to sort the list of products by category so that I can easily find products in my preferred category.`
 
 Implementation:
 
@@ -845,7 +844,7 @@ When the user clicks on any of the menu items, the respective category opens.
 
 ![Clothing Category](media/docs/readme-images/clothing-category.jpg)
 
-``As a shopper, I want to be able to search for products by their names or description so that I can easily find specific products of my preference.``
+`As a shopper, I want to be able to search for products by their names or description so that I can easily find specific products of my preference.`
 
 Implementation:
 
@@ -859,13 +858,13 @@ If there is no search result found, a message is displayed to let the user know 
 
 ![Search Not Found](media/docs/readme-images/search-not-found.jpg)
 
-``USER STORY - As a shopper, I want to see a list of all available products so that I can browse through and make informed purchase decisions.``
+`USER STORY - As a shopper, I want to see a list of all available products so that I can browse through and make informed purchase decisions.`
 
 Implementation:
 
 **Home Page**
 
-The home page contains a logo that is informative enough to let users know that the site Kiod Mart is  Mart for Kids.
+The home page contains a logo that is informative enough to let users know that the site Kiod Mart is Mart for Kids.
 The displayed products also throws more light on the type of products we sell.
 
 Below the navbar is a nice carousel that slides images of three children with left and right arrows that could manually do the sliding as well.
@@ -875,13 +874,13 @@ Each product has an image, name, price and its associated rating below it.
 The page takes twelve products at a go in pagination. Therefore at the bottom of each twelfth post is the 'next' button that takes users to subsequent pages. When users are on older posts, they can easily come back to fresher posts by clicking the 'prev' button.
 Then come the footer which is found also on all pages.
 
-``Logged in``
+`Logged in`
 ![Home page logged in](media/docs/readme-images/home-logged-in.jpg)
 
-``Default``
+`Default`
 ![Home page default](media/docs/readme-images/home-logged-out.jpg)
 
-``As a shopper, I want to view detailed product information, including descriptions, images, ratings, reviews and pricing, so that I can make informed purchase decisions.``
+`As a shopper, I want to view detailed product information, including descriptions, images, ratings, reviews and pricing, so that I can make informed purchase decisions.`
 
 Implementation:
 
@@ -897,7 +896,7 @@ Below the card is the review and rating section with five empty rating stars and
 
 ![Product details](media/docs/readme-images/product-details.jpg)
 
-``USER STORY - As a site user, I want to easily create a personal account to access personalized features so that I can make future purchases securely and efficiently.``
+`USER STORY - As a site user, I want to easily create a personal account to access personalized features so that I can make future purchases securely and efficiently.`
 
 Implementation:
 
@@ -929,7 +928,7 @@ In cases where there are errors in filling the registration form, the user is pr
 
 ![Register error](media/docs/readme-images/registration-error.jpg)
 
-``USER STORY - As a returning customer, I want to be able to log in quickly and securely so I can access my personalized account settings and order history.``
+`USER STORY - As a returning customer, I want to be able to log in quickly and securely so I can access my personalized account settings and order history.`
 
 Implementation:
 
@@ -957,7 +956,7 @@ Upon clicking the logout link on the navbar or on the dashboard sidebar, users a
 
 ![Logout](media/docs/readme-images/logout.jpg)
 
-``USER STORY - As a user, I want the option to reset my password easily if I forget it, so that I can regain access to my account and protect my profile and data.``
+`USER STORY - As a user, I want the option to reset my password easily if I forget it, so that I can regain access to my account and protect my profile and data.`
 
 Implementation:
 
@@ -995,7 +994,7 @@ The password reset link is also secured with expiration for user accout security
 
 ![Password Reset link](media/docs/readme-images/expired-reset-link.jpg)
 
-``USER STORY - As a site user, I want to create a personal profile so that I can easily view my order confirmation and history as well as save and manage my profile.``
+`USER STORY - As a site user, I want to create a personal profile so that I can easily view my order confirmation and history as well as save and manage my profile.`
 
 Implementation:
 
@@ -1035,11 +1034,11 @@ On the dashboard, when the user clicks on the 'Delete Account' menu, he or she i
 
 ![Account Deletion Page](media/docs/readme-images/delete-account.jpg)
 
-After the user confirms the deletion of their account, he or she is first logged out automatically by the system and redirected to the resgister page with a log out and an account deletion succces message. 
+After the user confirms the deletion of their account, he or she is first logged out automatically by the system and redirected to the resgister page with a log out and an account deletion succces message.
 
 ![Account Deletion success](media/docs/readme-images/acc-delete-success.jpg)
 
-``USER STORY - As a shopper, I want to be able to select the size and colour of a product to ensure that it fits my preferences and needs.``
+`USER STORY - As a shopper, I want to be able to select the size and colour of a product to ensure that it fits my preferences and needs.`
 
 Implementation:
 
@@ -1049,7 +1048,7 @@ Users are given the option to select the colour and or sizes of the product(s) t
 
 ![Product detail variation selection](media/docs/readme-images/item-variation.jpg)
 
-``USER STORY - As a shopper, I want to view all the items in my shopping cart so that I can ensure that my order is accurate before making a purchase.``
+`USER STORY - As a shopper, I want to view all the items in my shopping cart so that I can ensure that my order is accurate before making a purchase.`
 
 Implementation:
 
@@ -1059,7 +1058,7 @@ After the user has selected item(s) from the post detail page and clicked on the
 
 If the user already has cart item(s), the cart button on the navbar can also take the user to the cart page where they will find the items in their cart.
 
-``USER STORY - As a shopper, I want the option to increase or decrease the quantity of individual items in my cart so that I can make quantity adjustments before purchase.``
+`USER STORY - As a shopper, I want the option to increase or decrease the quantity of individual items in my cart so that I can make quantity adjustments before purchase.`
 
 Implementation:
 
@@ -1073,7 +1072,7 @@ Before an item is removed from the cart, the user is alerted to confirm the item
 
 ![Cart Page](media/docs/readme-images/cart.jpg)
 
-``USER STORY - As a shopper, I want to view the tax and total purchase amount before proceeding to checkout so that I can verify the accuracy of the billing details.``
+`USER STORY - As a shopper, I want to view the tax and total purchase amount before proceeding to checkout so that I can verify the accuracy of the billing details.`
 
 Implementation:
 
@@ -1081,7 +1080,7 @@ Implementation:
 
 On the right hand side of the checkout page on big screens and below the checkout form on small screens, there is a card that contains the product details of the item(s) a user is about to purchase viz; product name, image, variations (if applicable), quantity and price. Below that are the 'check cart' and 'continue shopping' buttons.
 
-At the bottom of the checkout form is the calculated total tax and grand total of the potential purchase which informs the user on the total amount they will be paying for and its corresponding tax. 
+At the bottom of the checkout form is the calculated total tax and grand total of the potential purchase which informs the user on the total amount they will be paying for and its corresponding tax.
 
 Then comes the 'complete order' button for placing the order.
 
@@ -1089,7 +1088,7 @@ Below the 'complete order' button is a warning message that asks users to stay o
 
 ![Checkout Page](media/docs/readme-images/checkout-page.jpg)
 
-``USER STORY - As a site user, I want to view clear and detailed order confirmation after completing my purchase so that I can be sure of an accurate and processed order.``
+`USER STORY - As a site user, I want to view clear and detailed order confirmation after completing my purchase so that I can be sure of an accurate and processed order.`
 
 Implementation:
 
@@ -1103,16 +1102,48 @@ On top of the page is a heading that tells the purpose of the page and a message
 
 ![Checkout Success Page](media/docs/readme-images/payment-success.jpg)
 
-Error handling has been fully implemented to take care of all possible errors during the payment process. So in cases where there are hitchtes or interruption during the payment process, the user is assured of accurate updates on their payment status and they are informed about what precisely transpired during the payment process. 
+Error handling has been fully implemented to take care of all possible errors during the payment process. So in cases where there are hitchtes or interruption during the payment process, the user is assured of accurate updates on their payment status and they are informed about what precisely transpired during the payment process.
 
 ![Checkout Error](media/docs/readme-images/checkout-error.PNG)
 
-``USER STORY - As a shopper, I want to receive an email confirmation immediately after making a purchase so that I can have a record of my transaction for future reference.``
+`USER STORY - As a shopper, I want to receive an email confirmation immediately after making a purchase so that I can have a record of my transaction for future reference.`
 
 Implementation:
 
 **Checkout Success Email**
 
-An email is also automatically sent to the user with details to confirm and provide purchase details. 
+An email is also automatically sent to the user with details to confirm and provide purchase details.
 
 ![Checkout Success Email](media/docs/readme-images/checkout-success-email.png)
+
+**Error Pages**
+
+`USER STORY - As a developer, I need to implement a 404 error page to alert users when they have accessed a page that does not exist`
+
+Implementation:
+
+**404 Page**
+
+As a developer, I need to implement a 404 error page so that users are redirected there when they try to access a page that is not available to them.
+
+A 404 page has been implemented and will display if a user navigates to a broken link or a page they are not suppose to have access to.
+
+The 404 page will allow the user to easily navigate back to the Home page through the 'back' button
+
+![404 error page](media/docs/readme-images/404.jpg)
+
+`USER STORY - As a developer, I need to implement a 403 error page to alert users when accessing a page or view that they do not have permission to view`
+
+Implementation:
+
+**403 Page**
+
+Likewise, a 403 error page has been implemented to provide feedback to the user when they try to access unauthorized content. Users will be directed to this page if they alter the URL's and attempt to edit, delete or access pages that are restricted.
+
+`USER STORY - As a developer, I need to implement a 500 error page to alert users when an internal server error occurs`
+
+Implementation:
+
+**500 Page**
+
+A 500 error page has also been implemented to alert users when an internal server error occurs.
