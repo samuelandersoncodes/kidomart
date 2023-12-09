@@ -1211,3 +1211,11 @@ A 500 error page has also been implemented to alert users when an internal serve
 ![Checkout Success Page md](media/docs/readme-images/wireframe-invoice-md.png)
 
 ![Checkout Success Page sm](media/docs/readme-images/wireframe-invoice-sm.png)
+
+- Dashboard page
+
+![Dashboard page lg](media/docs/readme-images/wireframe-dashboard-lg%20.png)
+
+![Dashboard page md](media/docs/readme-images/wireframe-dashboard-md.png)
+
+![Dashboard page sm](media/docs/readme-images/wireframe-dashboard-sm.png)
