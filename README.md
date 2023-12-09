@@ -1235,3 +1235,11 @@ A 500 error page has also been implemented to alert users when an internal serve
 ![Empty Cart page md](media/docs/readme-images/wireframe-empty-cart-md.jpeg)
 
 ![Empty Cart page sm](media/docs/readme-images/wireframe-cart-empty-sm.jpeg)
+
+- Account Delete Confirmation page
+
+![Account Delete Confirmation page lg](media/docs/readme-images/wireframe-account-delete-lg.png)
+
+![Account Delete Confirmation page md](media/docs/readme-images/wireframe-account-delete-confirm-md.png)
+
+![Account Delete Confirmation page sm](media/docs/readme-images/wireframe-account-delete-confirm-sm.png)
