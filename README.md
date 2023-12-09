@@ -1147,3 +1147,10 @@ Implementation:
 **500 Page**
 
 A 500 error page has also been implemented to alert users when an internal server error occurs.
+
+**Favicon**
+
+    * A site wide favicon was implemented.
+    * This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs opened.
+
+![Favicon](static/favicon.ico/favicon.ico)
