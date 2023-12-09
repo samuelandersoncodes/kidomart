@@ -1159,3 +1159,16 @@ A 500 error page has also been implemented to alert users when an internal serve
 
 - In a future release I would like to implement the address field with the use of django's AddressField. This will make it easier for users to input their addresses.
 - I will also want to provide a variety of payment methods like paypal for user's payment convenience.
+
+## The-Skeleton-Plane
+
+### Wireframes
+
+- Home page
+
+![Home Page lg](media/docs/readme-images/wireframe-home-lg.jpeg)
+
+![Home Page md](media/docs/readme-images/wireframe-home-md.jpeg)
+
+![Home Page sm](media/docs/readme-images/wireframe-home-sm.jpeg)
+
