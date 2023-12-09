@@ -1227,3 +1227,11 @@ A 500 error page has also been implemented to alert users when an internal serve
 ![Cart page md](media/docs/readme-images/wireframe-cart-md.jpeg)
 
 ![Cart page sm](media/docs/readme-images/wireframe-cart-sm.jpeg)
+
+- Empty Cart page
+
+![Empty Cart page lg](media/docs/readme-images/wireframe-empty-cart-lg.jpeg)
+
+![Empty Cart page md](media/docs/readme-images/wireframe-empty-cart-md.jpeg)
+
+![Empty Cart page sm](media/docs/readme-images/wireframe-cart-empty-sm.jpeg)
