@@ -899,3 +899,42 @@ In cases where user's credentials are invalid, an error message is displayed to 
 Upon clicking the logout link on the navbar or on the dashboard sidebar, users are directly logged and redirected to the login page with a logout success message.
 
 ![Logout](media/docs/readme-images/logout.jpg)
+
+``USER STORY - As a user, I want the option to reset my password easily if I forget it, so that I can regain access to my account and protect my profile and data.``
+
+Implementation:
+
+**Reset Password Page**
+
+When the user clicks on the forgot password link within the login form, right on top of the login button, he is taken to the reset password page. On this page, he or she only needs to fill in the email address he registered with and click on submit.
+
+On the top of this page is a heading that informs users on the page's purpose and a text that provides clear instructions for resetting password.
+
+Below the email field is a login link that provides easy login access to the user in case he or she remembers his or her password before the reset action.
+
+![Password reset page](media/docs/readme-images/password-reset.jpg)
+
+After the user inputs his or her email (the one he registered with), a verification email is sent to this email address.
+
+![Password reset email](media/docs/readme-images/password-reset-email.jpg)
+
+The user is then redirected to the login page with a message that informs him or her on the sent email for password reset.
+
+![Password reset message](media/docs/readme-images/password-reset-msg.jpg)
+
+When the user is verified upon clicking the link in the email, the user is redirected to the password reset page and allowed to reset his or her password.
+
+![Reset Password Page](media/docs/readme-images/reset-password.jpg)
+
+After the user has successfully changed their password, he or she is redirected to the login page with a success message informing them on the success of the password reset. Then he or she can login with the new password.
+
+![Password Reset success](media/docs/readme-images/password-reset-success.jpg)
+
+Error handling has been implemented solidly to take care of all steps within the password reset process. Right from the beginning of the process, if the user is not registered, he or she is not allowed to start the process at all. Very strict and secured mechanisms has been implemented with the custom user model to secure user accounts.
+
+![Password Reset success](media/docs/readme-images/Reset-error.jpg)
+
+The password reset link is also secured with expiration for user accout security. If the link is expired, the user is alerted wth an error message to restart the verification process. User account with multiple password reset trials within a short range of time might be suspended for stricter verification.
+
+![Password Reset link](media/docs/readme-images/expired-reset-link.jpg)
+
