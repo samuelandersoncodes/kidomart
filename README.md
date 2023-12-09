@@ -1219,3 +1219,11 @@ A 500 error page has also been implemented to alert users when an internal serve
 ![Dashboard page md](media/docs/readme-images/wireframe-dashboard-md.png)
 
 ![Dashboard page sm](media/docs/readme-images/wireframe-dashboard-sm.png)
+
+- Cart page
+
+![Cart page lg](media/docs/readme-images/wireframe-cart-lg.jpeg)
+
+![Cart page md](media/docs/readme-images/wireframe-cart-md.jpeg)
+
+![Cart page sm](media/docs/readme-images/wireframe-cart-sm.jpeg)
