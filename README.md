@@ -818,6 +818,20 @@ The navigation menu is displayed on all pages and is reponsive on all devices. T
 
 ![Navbar](media/docs/readme-images/navbar-kidomart.jpg)
 
+``As a shopper, I want the ability to sort the list of products by category so that I can easily find products in my preferred category.``
+
+Implementation:
+
+**Product categories menu**
+
+On the top of the navabar, there is a category dropdown menu that drops with the All, Clothing, Dolls, Electronics and Education, Other, Toys and Lego, Beauty and accessories menu.
+
+![Categories Menu](media/docs/readme-images/category-dropdown.jpg)
+
+When the user clicks on any of the menu items, the respective category opens.
+
+![Clothing Category](media/docs/readme-images/clothing-category.jpg)
+
 ``USER STORY - As a shopper, I want to see a list of all available products so that I can browse through and make informed purchase decisions.``
 
 Implementation:
