@@ -1154,3 +1154,8 @@ A 500 error page has also been implemented to alert users when an internal serve
     * This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs opened.
 
 ![Favicon](static/favicon.ico/favicon.ico)
+
+### Features Left To Implement
+
+- In a future release I would like to implement the address field with the use of django's AddressField. This will make it easier for users to input their addresses.
+- I will also want to provide a variety of payment methods like paypal for user's payment convenience.
