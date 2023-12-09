@@ -1228,6 +1228,14 @@ A 500 error page has also been implemented to alert users when an internal serve
 
 ![Dashboard page sm](media/docs/readme-images/wireframe-dashboard-sm.png)
 
+- My order
+
+![My Order page lg](media/docs/readme-images/wireframe-my-orders-lg.png)
+
+![My Order page md](media/docs/readme-images/wireframe-my-order-md.png)
+
+![My Order page sm](media/docs/readme-images/wireframe-my-order-sm.png)
+
 - Cart page
 
 ![Cart page lg](media/docs/readme-images/wireframe-cart-lg.jpeg)
