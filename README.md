@@ -1059,3 +1059,18 @@ Before an item is removed from the cart, the user is alerted to confirm the item
 
 ![Cart Page](media/docs/readme-images/cart.jpg)
 
+``USER STORY - As a shopper, I want to view the tax and total purchase amount before proceeding to checkout so that I can verify the accuracy of the billing details.``
+
+Implementation:
+
+**Checkout Page**
+
+On the right hand side of the checkout page on big screens and below the checkout form on small screens, there is a card that contains the product details of the item(s) a user is about to purchase viz; product name, image, variations (if applicable), quantity and price. Below that are the 'check cart' and 'continue shopping' buttons.
+
+At the bottom of the checkout form is the calculated total tax and grand total of the potential purchase which informs the user on the total amount they will be paying for and its corresponding tax. 
+
+Then comes the 'complete order' button for placing the order.
+
+Below the 'complete order' button is a warning message that asks users to stay on the page while their order is been processed.
+
+![Checkout Page](media/docs/readme-images/checkout-page.jpg)
