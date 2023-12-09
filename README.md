@@ -476,7 +476,7 @@ As a user, I want the option to reset my password easily if I forget it, so that
 
 ##### User Story
 
-As a site user, I want to create a personal profile so that I can easily view my order confirmation and history as well as save my billing information.
+As a site user, I want to create a personal profile so that I can easily view my order confirmation and history as well as save and manage my profile.
 
 ##### Acceptance Criteria
 
@@ -981,3 +981,47 @@ Error handling has been implemented solidly to take care of all steps within the
 The password reset link is also secured with expiration for user accout security. If the link is expired, the user is alerted wth an error message to restart the verification process. User account with multiple password reset trials within a short range of time might be suspended for stricter verification.
 
 ![Password Reset link](media/docs/readme-images/expired-reset-link.jpg)
+
+``As a site user, I want to create a personal profile so that I can easily view my order confirmation and history as well as save and manage my profile.``
+
+Implementation:
+
+**Dashboard**
+
+Only registered users are allowed access to the dashboard. The dashboard has a sidebar on the left side. This side bar has a menu consisting of My Orders, Edit Profile, Change Password, Delete Account and a logout button below it.
+
+On the right side is card divided into two. The first side consists of the user's order count and a link to the users order history. While the second side of the card consists of the user's profile image email address and phone number.
+
+![Dashboard Page](media/docs/readme-images/dashboard.jpg)
+
+On the dashboard, when the user clicks on 'My orders' menu, he or she is taken to the order history page where they can view their order history. The 'View Orders' link in the first part of the card also leads to this order history page.
+
+![My Orders Page](media/docs/readme-images/my-orders.jpg)
+
+On the 'My Orders' page, when the user click on order number he or she is redirected to the order details of that particular order.
+
+![Order Details](media/docs/readme-images/order-detail.jpg)
+
+On the dashboard, when the user clicks on the 'Edit Profile' menu, he or she is taken to the edit profile page where they can update their profile details.
+
+![Profile Update](media/docs/readme-images/profile-update.jpg)
+
+When the profile update is successful, a success message alerts the user on the success of the update.
+
+![Profile Update Success](media/docs/readme-images/profile-edit-success.jpg)
+
+On the dashboard, when the user clicks on the 'Change Password' menu, he or she is taken to the change password page where they can change their password.
+
+![Password Change Page](media/docs/readme-images/change-password.jpg)
+
+When the password change is successful, the user is redirected to the password change success page with buttons to login or go to the home page.
+
+![Password Change Success Page](media/docs/readme-images/password-change-success.jpg)
+
+On the dashboard, when the user clicks on the 'Delete Account' menu, he or she is taken to the account deletion confirmation page where they can confirm the deletion of their account.
+
+![Account Deletion Page](media/docs/readme-images/delete-account.jpg)
+
+After the user confirms the deletion of their account, he or she is first logged out automatically by the system and redirected to the resgister page with a log out and an account deletion succces message. 
+
+![Account Deletion success](media/docs/readme-images/acc-delete-success.jpg)
