@@ -832,6 +832,20 @@ When the user clicks on any of the menu items, the respective category opens.
 
 ![Clothing Category](media/docs/readme-images/clothing-category.jpg)
 
+``As a shopper, I want to be able to search for products by their names or description so that I can easily find specific products of my preference.``
+
+Implementation:
+
+**Search bar**
+
+When a user types in a search input in the search bar located in the middle of the navbar, the search result is displayed on the page if the search is found.
+
+![Search Found](media/docs/readme-images/search.jpg)
+
+If there is no search result found, a message is displayed to let the user know about the state of the search result.
+
+![Search Not Found](media/docs/readme-images/search-not-found.jpg)
+
 ``USER STORY - As a shopper, I want to see a list of all available products so that I can browse through and make informed purchase decisions.``
 
 Implementation:
