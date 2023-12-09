@@ -158,6 +158,8 @@ As a developer, I need to create the navbar so that users can navigate the websi
 
 As a shopper, I want to see a list of all available products so that I can browse through and make informed purchase decisions.
 
+As a developer, I need to create a footer with my social media business handles, contact details and newsletter subscription so that I can market my brand and communicate with my users.
+
 ##### Acceptance Criteria
 
 - There is a navbar that has the kidomart logo which links to the home page.
@@ -816,6 +818,18 @@ The following navigation items are available on all pages:
 The navigation menu is displayed on all pages and is reponsive on all devices. This will allow users to view the site from any device without difficulty.
 
 ![Navbar](media/docs/readme-images/navbar-kidomart.jpg)
+
+``USER STORY - As a developer, I need to create a footer with my social media business handles, contact details and newsletter subscription so that I can market my brand and communicate with my users``
+
+Implementation:
+
+**Footer**
+
+A footer has been added to the bottom of the site which is seen on all site pages. This helps me to communicate to my site users and market my brand.
+
+In the footer, I have provided the shops customer care number and email address for shoppers to be able to contact me on business related issues. I have also provided my social media business handles to market my brand and also for users to interact and communicate with my brand. In the middle is a newsletter form that helps me market my brand as well. 
+
+![Footer](media/docs/readme-images)
 
 ``As a shopper, I want the ability to sort the list of products by category so that I can easily find products in my preferred category.``
 
