@@ -840,6 +840,22 @@ Then come the footer which is found also on all pages.
 ``Default``
 ![Home page default](media/docs/readme-images/home-logged-out.jpg)
 
+``As a shopper, I want to view detailed product information, including descriptions, images, ratings, reviews and pricing, so that I can make informed purchase decisions.``
+
+Implementation:
+
+**Product Details Page**
+
+When a user clicks a product's name or image from the home page, It takes them right to the product detail page.
+
+On the product details page, there is a card in which the product image, name, rating, price, description, size and or color select buttons, add to cart button and back buttons are found.
+
+Below the card is the review and rating section with five empty rating stars and a review form that comes with title and text fields. Below that is the existing rating and reviews if applicable. A logged in user who has purchased a product will see the submit review button that enables him or her to review and rate that particular product.
+
+![Product details](media/docs/readme-images/product-details-loggedin.jpg)
+
+![Product details](media/docs/readme-images/product-details.jpg)
+
 ``USER STORY - As a site user, I want to easily create a personal account to access personalized features so that I can make future purchases securely and efficiently.``
 
 Implementation:
@@ -937,4 +953,3 @@ Error handling has been implemented solidly to take care of all steps within the
 The password reset link is also secured with expiration for user accout security. If the link is expired, the user is alerted wth an error message to restart the verification process. User account with multiple password reset trials within a short range of time might be suspended for stricter verification.
 
 ![Password Reset link](media/docs/readme-images/expired-reset-link.jpg)
-
