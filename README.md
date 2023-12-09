@@ -1196,14 +1196,6 @@ A 500 error page has also been implemented to alert users when an internal serve
 
 ![Login Page sm](media/docs/readme-images/wireframe-login-sm.jpeg)
 
-- Change Password page
-
-![Change Password page lg](media/docs/readme-images/wireframe-change-password-lg.png)
-
-![Change Password page md](media/docs/readme-images/wireframe-change-password-md.png)
-
-![Change Password page sm](media/docs/readme-images/wireframe-change-password-sm.png)
-
 - Checkout Page
 
 ![Checkout Page lg](media/docs/readme-images/wireframe-checkout-lg.jpeg)
@@ -1228,13 +1220,29 @@ A 500 error page has also been implemented to alert users when an internal serve
 
 ![Dashboard page sm](media/docs/readme-images/wireframe-dashboard-sm.png)
 
-- My order
+- My orders
 
 ![My Order page lg](media/docs/readme-images/wireframe-my-orders-lg.png)
 
 ![My Order page md](media/docs/readme-images/wireframe-my-order-md.png)
 
 ![My Order page sm](media/docs/readme-images/wireframe-my-order-sm.png)
+
+- Edit Profile page
+
+![Edit Profile page lg](media/docs/readme-images/wireframe-edit-profile-lg.png)
+
+![Edit Profile page md](media/docs/readme-images/wireframe-edit-profile-md.png)
+
+![Edit Profile page sm](media/docs/readme-images/wireframe-edit-profile-sm.png)
+
+- Change Password page
+
+![Change Password page lg](media/docs/readme-images/wireframe-change-password-lg.png)
+
+![Change Password page md](media/docs/readme-images/wireframe-change-password-md.png)
+
+![Change Password page sm](media/docs/readme-images/wireframe-change-password-sm.png)
 
 - Cart page
 
