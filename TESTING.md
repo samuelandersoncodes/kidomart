@@ -287,3 +287,40 @@ Cart Item is successfully removed showing that the test passed.
 Actual:
 
 Cart Item is successfully removed.
+
+<hr>
+
+**Checkout**
+
+Description:
+
+Ensure a user can successfully checkout on the Kidomart website.
+
+Steps:
+
+1. Navigate to the [KidoMart Checkout Page](https://kidomart-78f25893d540.herokuapp.com/cart/checkout/)
+
+2. Fill out the field in the form;
+- First Name
+- last Name
+- Phone Number
+- Profile picture
+- Address Line 1
+- Address Line 2
+- City
+- State
+- Country
+- Leave a Note (optional)
+- Card details (any of the stripe test card numbers(eg; 4242424242424242 4/24/242/42424))
+
+3. Click on the 'Complete Order' button.
+
+Expected:
+
+User is redirected to the checkout success page which contains an invoice of their purchase with a success message that informs them on the success of their order and payment showing that the test passed.
+
+The user also recieves a purchase confirmation email with his or her purchase details. 
+
+Actual:
+
+User is redirected to the checkout success page which contains an invoice of their purchase with a success message that informs them on the success of their order and payment. The user also recieves a purchase confirmation email with his or her purchase details. 
