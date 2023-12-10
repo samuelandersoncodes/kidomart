@@ -12,12 +12,14 @@ Steps:
 
 1. Navigate to [KidoMart](https://kidomart-78f25893d540.herokuapp.com/) and click on the "Register" link.
 2. Enter your details in the registration form (All fields are required):
+
 - First Name: John
 - Last Name: Doe
 - Email Address: john.doe@example.com (must be an active email)
 - Phone Number: +1 555-123-4567
 - Create Password: Password123
 - Confirm Password: Password123
+
 3. Click the "Register" button.
 
 Expected:
@@ -40,8 +42,10 @@ Steps:
 
 1. Navigate to [KidoMart](https://kidomart-78f25893d540.herokuapp.com/) and click on the "Login" link.
 2. Enter your details in the registration form (All fields are required):
+
 - Email Address: john.doe@example.com (must be the exact email user registered with)
 - Password: Password123 (user's exact password)
+
 3. Click the "Login" button.
 
 Expected:
@@ -83,7 +87,7 @@ Ensure a user can successfully reset their password on the Kidomart website.
 
 Steps:
 
-1. Navigate to the [KidoMart login page](https://kidomart-78f25893d540.herokuapp.com/accounts/login/)  and click on the "Forgot Password" link on top of the login button.
+1. Navigate to the [KidoMart login page](https://kidomart-78f25893d540.herokuapp.com/accounts/login/) and click on the "Forgot Password" link on top of the login button.
 2. Verify that the user is redirected to the "Password Reset" page with the heading and instructions.
 3. Fill in the email address you registered with and click the "Submit" button.
 4. Verify that a verification email is sent to the provided email address.
@@ -147,6 +151,7 @@ Steps:
 1. Navigate to the [KidoMart Dashboard](https://kidomart-78f25893d540.herokuapp.com/accounts/edit_profile/) and click on the "Edit Profile" menu on the the sidebar.
 
 2. On the profile update page, update the following details try to edit any or all of your profile details:
+
 - First Name
 - last Name
 - Phone Number
@@ -157,11 +162,11 @@ Steps:
 - State
 - Country
 
-3. Click on the 'Save' button to save your update. 
+3. Click on the 'Save' button to save your update.
 
 Expected:
 
-User profile is successfully updated. User is redirected to the same page with an update success message and the updated details. 
+User profile is successfully updated. User is redirected to the same page with an update success message and the updated details.
 
 Actual:
 
@@ -178,7 +183,8 @@ Ensure a user can successfully view their order details and history on the Kidom
 Steps:
 
 1. Navigate to the [KidoMart Dashboard](https://kidomart-78f25893d540.herokuapp.com/accounts/my_orders/) and click on the "My Orders" menu on the the sidebar.
-- Alternatively, the 'View Orders' link in the 'Your orders' section of the Dashboard also leads to the the 'My Orders' page upon clicking it. 
+
+- Alternatively, the 'View Orders' link in the 'Your orders' section of the Dashboard also leads to the the 'My Orders' page upon clicking it.
 
 2. On the 'My Orders' page, you will find the order number, full name, phone number, order total, and ordered date. Click on the order number to view the order invoice or details of that particular order.
 
@@ -252,7 +258,7 @@ Ensure a user can successfully increment cart item and decrement cart item on th
 
 Steps:
 
-1. Navigate to the [KidoMart Cart Page](https://kidomart-78f25893d540.herokuapp.com/cart/) 
+1. Navigate to the [KidoMart Cart Page](https://kidomart-78f25893d540.herokuapp.com/cart/)
 
 2. Click on the '-' button to decrease item quantity or click on the '+' button to increase item quantity.
 
@@ -301,6 +307,7 @@ Steps:
 1. Navigate to the [KidoMart Checkout Page](https://kidomart-78f25893d540.herokuapp.com/cart/checkout/)
 
 2. Fill out the field in the form;
+
 - First Name
 - Last Name
 - Phone Number
@@ -319,7 +326,7 @@ Expected:
 
 User is redirected to the checkout success page which contains an invoice of their purchase with a success message that informs them on the success of their order and payment showing that the test passed.
 
-The user also recieves a purchase confirmation email with his or her purchase details. 
+The user also recieves a purchase confirmation email with his or her purchase details.
 
 Actual:
 
@@ -371,7 +378,7 @@ Steps:
 
 3. Select a category by clicking on it.
 
-4. Check if the products are sorted by that category with the category heading on top of it. 
+4. Check if the products are sorted by that category with the category heading on top of it.
 
 Expected:
 
@@ -408,3 +415,9 @@ User is successfully subscribed to the Mailchimp newsletter and a "thank you for
 Actual:
 
 User is successfully subscribed to the Mailchimp newsletter and a "thank you for subscribing" message is displayed. The user's email is added to the 'Audience' section of the Mailchimp dashboard.
+
+<hr>
+
+**Footer**
+
+Testing was performed on the footer links by clicking the font awesome icons and ensuring that the instagram icon opened the kidomart instagram handle in a new tab, the facebook icon opened the kidomart facebook handle in a new tab and the twitter icon also opened the kidomart twitter handle in a new tab. These behaved as expected.
