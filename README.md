@@ -1267,3 +1267,21 @@ A 500 error page has also been implemented to alert users when an internal serve
 ![Account Delete Confirmation page md](media/docs/readme-images/wireframe-account-delete-confirm-md.png)
 
 ![Account Delete Confirmation page sm](media/docs/readme-images/wireframe-account-delete-confirm-sm.png)
+
+- 403 error page
+
+![403 Error Page lg](media/docs/readme-images/wireframe-403-lg.jpeg)
+
+![403 Error Page sm](media/docs/readme-images/wireframe-403-sm.jpeg)
+
+- 404 error page
+
+![404 Error Page lg](media/docs/readme-images/wireframe-404-lg.jpeg)
+
+![404 Error Page sm](media/docs/readme-images/wireframe-404-sm.jpeg)
+
+- 500 error page
+
+![500 Error Page lg](media/docs/readme-images/wireframe-500-lg.jpeg)
+
+![500 Error Page sm](media/docs/readme-images/wireframe-500-sm.jpeg)
