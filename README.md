@@ -1303,3 +1303,10 @@ The entity relationship diagram below shows the schemas for each of the models a
 Views were secured by using the django custom Account model has been build and together with the loginrequired decorator, it is ensured that the operation permission gievn to all lavels od users are well regulated. Checks were thoroughly ran to ensure that users can only perform operations they are permitted to.
 
 Environment variables were stored in an env.py file for local development to ensure no secret keys, api keys or sensitive information were commited to the repository. In production, these variables were added to the heroku config vars within the project.
+
+## The-Surface-Plane
+### Design
+
+### Colour-Scheme
+
+The main color schemes for the website are dark gray (#2b2d2f) mostly found in the main body and a variety of its shades like the lighter gray version of it (#2b2d2f42) on the footer and navbar areas. Black (#000000) was mostly used for the fonts and icons. White (#FFFFFF) was often used for button texts while a lighter version of Charcoal gray (#36454f) is used for the background of most of the buttons except the 'delete account' button which has a red (#ff0000) background color. Warnig texts like the text above the 'delete account' button  and the one below the 'complete order' button on the checkout page are also in red.
