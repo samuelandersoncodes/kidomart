@@ -165,4 +165,30 @@ User profile is successfully updated. User is redirected to the same page with a
 
 Actual:
 
-User profile is successfully updated. User is redirected to the same page with an update success message and the updated details. 
+User profile is successfully updated. User is redirected to the same page with an update success message and the updated details.
+
+<hr>
+
+**My orders**
+
+Description:
+
+Ensure a user can successfully view their order details and history on the Kidomart website.
+
+Steps:
+
+1. Navigate to the [KidoMart Dashboard](https://kidomart-78f25893d540.herokuapp.com/accounts/my_orders/) and click on the "My Orders" menu on the the sidebar.
+- Alternatively, the 'View Orders' link in the 'Your orders' section of the Dashboard also leads to the the 'My Orders' page upon clicking it. 
+
+2. On the 'My Orders' page, you will find the order number, full name, phone number, order total, and ordered date. Click on the order number to view the order invoice or details of that particular order.
+
+Expected:
+
+User has access to and are able to view their order history anytime they want.
+
+Actual:
+
+Users have access to their order history and details and can view it anytime.
+
+
+
