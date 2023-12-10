@@ -1172,6 +1172,14 @@ A 500 error page has also been implemented to alert users when an internal serve
 
 ![Home Page sm](media/docs/readme-images/wireframe-home-sm.jpeg)
 
+- Product Detail page
+
+![Product Detail Page lg](media/docs/readme-images/wireframes-product-detail-lg.png)
+
+![Product Detail Page md](media/docs/readme-images/wireframe-product-detail-md.png)
+
+![Product Detail Page sm](media/docs/readme-images/wireframe-product-detail-sm.png)
+
 - Register page
 
 ![Register Page lg](media/docs/readme-images/wireframe-register-lg.jpeg)
