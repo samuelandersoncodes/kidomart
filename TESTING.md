@@ -421,3 +421,11 @@ User is successfully subscribed to the Mailchimp newsletter and a "thank you for
 **Footer**
 
 Testing was performed on the footer links by clicking the font awesome icons and ensuring that the instagram icon opened the kidomart instagram handle in a new tab, the facebook icon opened the kidomart facebook handle in a new tab and the twitter icon also opened the kidomart twitter handle in a new tab. These behaved as expected.
+
+## Negative Testing
+
+Tests were performed to ensure that:
+
+1. Forms cannot be submitted when required fields are empty.
+
+2. Error handling has been fully implemented to take care of all possible errors during the payment process. Tests have been carried out to ensure that in cases where there are hitchtes or interruptions during the payment process, the user is assured of accurate updates on their payment status and they are informed about what precisely transpired during the payment process.
