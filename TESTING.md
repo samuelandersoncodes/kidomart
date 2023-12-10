@@ -244,7 +244,7 @@ Selected product is added to the cart with the specified color and size.
 
 <hr>
 
-** Cart Item Quantity Increment and Decrement**
+**Cart Item Quantity Increment and Decrement**
 
 Description:
 
@@ -263,3 +263,27 @@ Upon clicking the '-' button, the quantity of the item reduces by one and upon c
 Actual:
 
 Upon clicking the '-' button, the quantity of the item reduces by one and upon clicking the '+' button, the quantity of the item increments by one.
+
+<hr>
+
+**Cart Item Removal**
+
+Description:
+
+Ensure a user can successfully remove cart item on the Kidomart website.
+
+Steps:
+
+1. Navigate to the [KidoMart Cart Page](https://kidomart-78f25893d540.herokuapp.com/cart/)
+
+2. Click on the 'Remove' button under Actions.
+
+- Alternatively, user can click on the '-' button till quantity reaches zero.
+
+Expected:
+
+Cart Item is successfully removed showing that the test passed.
+
+Actual:
+
+Cart Item is successfully removed.
