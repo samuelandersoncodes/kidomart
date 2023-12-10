@@ -302,7 +302,7 @@ Steps:
 
 2. Fill out the field in the form;
 - First Name
-- last Name
+- Last Name
 - Phone Number
 - Profile picture
 - Address Line 1
@@ -323,4 +323,34 @@ The user also recieves a purchase confirmation email with his or her purchase de
 
 Actual:
 
-User is redirected to the checkout success page which contains an invoice of their purchase with a success message that informs them on the success of their order and payment. The user also recieves a purchase confirmation email with his or her purchase details. 
+User is redirected to the checkout success page which contains an invoice of their purchase with a success message that informs them on the success of their order and payment. The user also recieves a purchase confirmation email with his or her purchase details.
+
+<hr>
+
+**Search Bar**
+
+Description:
+
+Ensure a user can search for an item in the search bar of the Kidomart website.
+
+Steps:
+
+1. Navigate to the [KidoMart](https://kidomart-78f25893d540.herokuapp.com/)
+
+2. Type a valid search query into the search bar in the middle of the navbar.
+
+3. Press the "Enter" key or click the search icon to initiate the search.
+
+4. Check if the search results are displayed on the page.
+
+5. Verify that the displayed results match the search query.
+
+6. If no results are found, confirm that a message is displayed indicating the no search result found.
+
+Expected:
+
+If a search item is found, it is displayed on the page with its associated search count. When no item is found for a particular search, there is a clear message that says "Sorry! we do not have this item yet". Therefore, the test passed for this functionality.
+
+Actual:
+
+If a search item is found, it is displayed on the page with its associated search count. When no item is found for a particular search, there is a clear message that says "Sorry! we do not have this item yet"
