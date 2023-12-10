@@ -27,3 +27,25 @@ An activation email is sent to the user with a secure link to activate their acc
 Actual:
 
 User recieves an activation link via email. After account activation, user is redirected to the login page with a success message confirming the account registration and activation.
+
+**Login**
+
+Description:
+
+Ensure a user can successfully log in to his or her Kido account.
+
+Steps:
+
+1. Navigate to [KidoMart](https://kidomart-78f25893d540.herokuapp.com/) and click on the "Login" link.
+2. Enter your details in the registration form (All fields are required):
+- Email Address: john.doe@example.com (must be the exact email user registered with)
+- Password: Password123 (user's exact password)
+3. Click the "Login" button.
+
+Expected:
+
+User is successfully logged in to his or her account dashboard with a login success message.
+
+Actual:
+
+User is successfully logged in to his or her account dashboard with a login success message.
