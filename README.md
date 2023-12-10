@@ -1339,3 +1339,31 @@ The Website logo was coded with an icon from Font Awesome. The placeholder image
   - wireframes were created using Balsamiq from https://balsamiq.cloud/
 - Google Fonts
   - Google fonts was used for the font styling
+
+**Python Modules Used**
+
+* Django Class based views (DeleteView) - Used for the classes to delete user account.
+* Decorators (LoginRequired) - Used to enforce login required on logout, edit profile, checkout, order details, my order, and change password views.
+* messages - Used to pass messages to display feedback to the user upon actions.
+* HttpResponseRedirect, reverse - Used to redirect users to other specified pages
+* render - Used to render templates 
+* get_object_or_404 - Used to get single objects
+
+**External Python Modules**
+
+* s3transfer==0.7.0 - AWS s3 bucket was set up to store and serve static files.
+* boto3==1.28.63 - was installed as dependency with another package.
+* botocore==1.31.63 - was installed as dependency with another package.
+* stripe==7.6.0 - was used for the payment system.
+* django-crispy-forms==1.14.0 - this was used to allow bootstrap4 use with crispy forms.
+* dj-database-url==0.5.0 - was used to parse database url for production environment
+* Django==3.2.22 - the framework used to build the application
+* Pillow==10.1.0 - was used to handle images files.
+* gunicorn==20.1.0 - was installed as dependency with another package.
+* psycopg2==2.9.6 - was needed for heroku deployment.
+* sqlparse==0.4.4 - was installed as dependency with another package.
+* jmespath==1.0.1 - to parse JSON-like data using JMESPath expressions.
+* pytz==2023.3.post1 - was used for time zone support.
+* asgiref==3.7.2 - was installed as dependency with another package.
+* whitenoise==6.2.0 - was used to serve static files directly.
+* django-storages==1.14.2 - was used to configure the storage backend for static files to use AWS s3. 
