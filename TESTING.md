@@ -28,6 +28,8 @@ Actual:
 
 User recieves an activation link via email. After account activation, user is redirected to the login page with a success message confirming the account registration and activation.
 
+<hr>
+
 **Login**
 
 Description:
@@ -49,3 +51,24 @@ User is successfully logged in to his or her account dashboard with a login succ
 Actual:
 
 User is successfully logged in to his or her account dashboard with a login success message.
+
+<hr>
+
+**Logout**
+
+Description:
+
+Ensure a user can log out
+
+Steps:
+
+1. Login to the website
+2. Click the logout button from the navbar or on the dashboard side bar
+
+Expected:
+
+User is logged out and a logout success message is displayed.
+
+Actual:
+
+User is logged out and a logout success message is displayed.
