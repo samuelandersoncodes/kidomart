@@ -354,3 +354,29 @@ If a search item is found, it is displayed on the page with its associated searc
 Actual:
 
 If a search item is found, it is displayed on the page with its associated search count. When no item is found for a particular search, there is a clear message that says "Sorry! we do not have this item yet"
+
+<hr>
+
+**Category Sorting**
+
+Description:
+
+Ensure a user can sort products by category on the Kidomart website.
+
+Steps:
+
+1. Navigate to the [KidoMart](https://kidomart-78f25893d540.herokuapp.com/)
+
+2. Click on the 'Categories' dropdown button.
+
+3. Select a category by clicking on it.
+
+4. Check if the products are sorted by that category with the category heading on top of it. 
+
+Expected:
+
+Products are sorted by the selected category with the category heading on top of it and the item count is also displayed. This passes the test.
+
+Actual:
+
+Products are sorted by the selected category with the category heading on top of it and the item count is also displayed.
