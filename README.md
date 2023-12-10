@@ -1297,3 +1297,9 @@ The Product model on the other hand which has the Category model as its foreign 
 The entity relationship diagram below shows the schemas for each of the models and how they are related.
 
 ![Entity Relationship Diagram](media/docs/readme-images/ERD.JPG)
+
+### Security
+
+Views were secured by using the django custom Account model has been build and together with the loginrequired decorator, it is ensured that the operation permission gievn to all lavels od users are well regulated. Checks were thoroughly ran to ensure that users can only perform operations they are permitted to.
+
+Environment variables were stored in an env.py file for local development to ensure no secret keys, api keys or sensitive information were commited to the repository. In production, these variables were added to the heroku config vars within the project.
