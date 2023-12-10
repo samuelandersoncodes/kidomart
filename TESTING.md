@@ -190,5 +190,27 @@ Actual:
 
 Users have access to their order history and details and can view it anytime.
 
+<hr>
 
+**Delete Account**
+
+Description:
+
+Ensure a user can successfully delete their account on the Kidomart website.
+
+Steps:
+
+1. Navigate to the [KidoMart Dashboard](https://kidomart-78f25893d540.herokuapp.com/accounts/delete_account/) and click on the "Delete Account" menu on the the sidebar.
+
+2. On the account deletion confirmation page, carefully review the informationon the page.
+
+3. Confirm deletion of your account by clicking the 'Delete Account' button.
+
+Expected:
+
+User is first logged out and redirected to the register page with an account deletion success message after the account is deleted.
+
+Actual:
+
+User is first logged out and redirected to the register page with an account deletion success message after the account is deleted.
 
