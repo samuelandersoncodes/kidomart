@@ -1,7 +1,12 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from .forms import RegistrationForm, UserForm
+from .forms import UserProfileForm
 from .models import Account
+from .models import UserProfile
+from django.contrib.auth import get_user_model
+from django.core.files.uploadedfile import SimpleUploadedFile
+
 
 class RegistrationFormTest(TestCase):
     # Registration form test
@@ -90,3 +95,30 @@ class UserFormTest(TestCase):
         response = self.client.post(reverse('edit_profile'), form_data)
         expected_url = f"{reverse('login')}?next={reverse('edit_profile')}"
         self.assertRedirects(response, expected_url)
+
+
+class UserProfileFormTest(TestCase):
+    # User profile test
+    def setUp(self):
+        # Create a test user
+        self.user = get_user_model().objects.create_user(
+            email='test@example.com',
+            username='testuser',
+            password='testpassword',
+            first_name='Test',
+            last_name='User',
+        )
+
+        # Create a UserProfile instance for the user
+        self.user_profile = UserProfile.objects.create(user=self.user)
+
+    def test_valid_data_profile_form(self):
+        valid_data = {
+            'address_line_1': '123 Main St',
+            'address_line_2': 'Apt 4',
+            'country': 'USA',
+            'state': 'NY',
+            'city': 'New York',
+        }
+        form = UserProfileForm(data=valid_data, instance=self.user_profile)
+        self.assertTrue(form.is_valid(), f"Errors: {form.errors}")
