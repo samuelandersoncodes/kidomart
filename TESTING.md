@@ -107,3 +107,31 @@ The user can successfully initiate a password reset from the "Forgot Password" l
 The user receives a verification email and can click the link to reset the password.
 After successfully resetting the password, the user is redirected to the login page with a success message.
 The user can log in with the new password.
+
+<hr>
+
+**Change Password**
+
+Description:
+
+Ensure a user can successfully change their password on the Kidomart website.
+
+Steps:
+
+1. Navigate to the [KidoMart Dashboard](https://kidomart-78f25893d540.herokuapp.com/accounts/change_password/) and click on the "Change Password" on the the sidebar.
+2. Enter your current password.
+3. Create new password.
+4. Confirem new password. (Make sure the new password is exactly what you enter here)
+5. Click on the 'Change' button.
+
+Expected:
+
+After successfully changing the password, the user is redirected to the password change success page. The success page contains a heading and a text indicating the success of the password change.
+The user can either log in or go to the home page from the success page by clicking the "Login" or the 'home' button. Logging in with the updated password is successful.
+
+Actual:
+
+After successfully changing the password, the user is redirected to the password change success page. The success page contains a heading and a text indicating the success of the password change.
+The user can either log in or go to the home page from the success page by clicking the "Login" or the 'home' button. Logging in with the updated password is successful.
+
+
