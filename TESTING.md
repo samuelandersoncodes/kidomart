@@ -335,7 +335,7 @@ Ensure a user can search for an item in the search bar of the Kidomart website.
 
 Steps:
 
-1. Navigate to the [KidoMart](https://kidomart-78f25893d540.herokuapp.com/)
+1. Navigate to [KidoMart](https://kidomart-78f25893d540.herokuapp.com/)
 
 2. Type a valid search query into the search bar in the middle of the navbar.
 
@@ -365,7 +365,7 @@ Ensure a user can sort products by category on the Kidomart website.
 
 Steps:
 
-1. Navigate to the [KidoMart](https://kidomart-78f25893d540.herokuapp.com/)
+1. Navigate to [KidoMart](https://kidomart-78f25893d540.herokuapp.com/)
 
 2. Click on the 'Categories' dropdown button.
 
@@ -380,3 +380,31 @@ Products are sorted by the selected category with the category heading on top of
 Actual:
 
 Products are sorted by the selected category with the category heading on top of it and the item count is also displayed.
+
+<hr>
+
+**Newsletter Subscription**
+
+Description:
+
+Ensure a user can subscribe to newsletters on the Kidomart website.
+
+Steps:
+
+1. Navigate to [KidoMart](https://kidomart-78f25893d540.herokuapp.com/)
+
+2. Locate the newsletter form at the bottom of the page in the footer part.
+
+3. Enter a valid email address.
+
+4. Click on the 'Subscribe' button.
+
+5. Check for the user's email in the 'Audience' section of the Mailchimp dashboard.
+
+Expected:
+
+User is successfully subscribed to the Mailchimp newsletter and a "thank you for subscribing" message is displayed. The user's email is added to the 'Audience' section of the Mailchimp dashboard indicating that the test passed.
+
+Actual:
+
+User is successfully subscribed to the Mailchimp newsletter and a "thank you for subscribing" message is displayed. The user's email is added to the 'Audience' section of the Mailchimp dashboard.
