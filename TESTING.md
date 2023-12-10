@@ -72,3 +72,38 @@ User is logged out and a logout success message is displayed.
 Actual:
 
 User is logged out and a logout success message is displayed.
+
+<hr>
+
+**Password Reset**
+
+Description:
+
+Ensure a user can successfully reset their password on the Kidomart website.
+
+Steps:
+
+1. Navigate to the [KidoMart login page](https://kidomart-78f25893d540.herokuapp.com/accounts/login/)  and click on the "Forgot Password" link on top of the login button.
+2. Verify that the user is redirected to the "Password Reset" page with the heading and instructions.
+3. Fill in the email address you registered with and click the "Submit" button.
+4. Verify that a verification email is sent to the provided email address.
+5. Check the email inbox and click on the verification link in the password reset email.
+6. Verify that the user is redirected to the "Password Reset" page.
+7. Enter a new password and confirm the new password.
+8. Click the "Reset Password" button.
+9. Verify that the user is redirected to the login page with a success message indicating the password reset was successful.
+10. Log in with the new password to ensure successful login.
+
+Expected:
+
+The user can successfully initiate a password reset from the "Forgot Password" link.
+The user receives a verification email and can click the link to reset the password.
+After successfully resetting the password, the user is redirected to the login page with a success message.
+The user is able to log in with the new password.
+
+Actual:
+
+The user can successfully initiate a password reset from the "Forgot Password" link.
+The user receives a verification email and can click the link to reset the password.
+After successfully resetting the password, the user is redirected to the login page with a success message.
+The user can log in with the new password.
