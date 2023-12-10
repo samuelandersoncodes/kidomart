@@ -241,3 +241,25 @@ Actual:
 Expected:
 
 Selected product is added to the cart with the specified color and size.
+
+<hr>
+
+** Cart Item Quantity Increment and Decrement**
+
+Description:
+
+Ensure a user can successfully increment cart item and decrement cart item on the Kidomart website.
+
+Steps:
+
+1. Navigate to the [KidoMart Cart Page](https://kidomart-78f25893d540.herokuapp.com/cart/) 
+
+2. Click on the '-' button to decrease item quantity or click on the '+' button to increase item quantity.
+
+Expected:
+
+Upon clicking the '-' button, the quantity of the item reduces by one and upon clicking the '+' button, the quantity of the item increments by one indicating that the test passed.
+
+Actual:
+
+Upon clicking the '-' button, the quantity of the item reduces by one and upon clicking the '+' button, the quantity of the item increments by one.
