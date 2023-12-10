@@ -1310,3 +1310,7 @@ Environment variables were stored in an env.py file for local development to ens
 ### Colour-Scheme
 
 The main color schemes for the website are dark gray (#2b2d2f) mostly found in the main body and a variety of its shades like the lighter gray version of it (#2b2d2f42) on the footer and navbar areas. Black (#000000) was mostly used for the fonts and icons. White (#FFFFFF) was often used for button texts while a lighter version of Charcoal gray (#36454f) is used for the background of most of the buttons except the 'delete account' button which has a red (#ff0000) background color. Warnig texts like the text above the 'delete account' button  and the one below the 'complete order' button on the checkout page are also in red.
+
+### Typography
+
+The Varela (and san-serif as a backup) font was used throughout the website for texts and Suez One for headings. These fonts were imported into the style sheet from google fonts.
