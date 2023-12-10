@@ -214,3 +214,30 @@ Actual:
 
 User is first logged out and redirected to the register page with an account deletion success message after the account is deleted.
 
+<hr>
+
+**Add to Cart and Product Variation Selection**
+
+Description:
+
+Ensure a user can successfully add an item and its associated variations (colour and or size) to cart on the Kidomart website.
+
+Steps:
+
+1. Navigate to the [KidoMart](https://kidomart-78f25893d540.herokuapp.com/) and click on the any of the product's name or image.
+
+- This redirects you to the [KidoMart product detail page](https://kidomart-78f25893d540.herokuapp.com/category/clothing/coll-unisex-jacket/) of that particular product.
+
+2. In the item card, click on the 'Choose color' button to select a color and the 'Choose Size' button to select a size (if the item has variation(s)).
+
+3. Then click on the add to cart button.
+
+Expected:
+
+Selected product is added to the cart with the specified color and size.
+
+Actual:
+
+Expected:
+
+Selected product is added to the cart with the specified color and size.
