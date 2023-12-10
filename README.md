@@ -1285,3 +1285,15 @@ A 500 error page has also been implemented to alert users when an internal serve
 ![500 Error Page lg](media/docs/readme-images/wireframe-500-lg.jpeg)
 
 ![500 Error Page sm](media/docs/readme-images/wireframe-500-sm.jpeg)
+
+### Database-Design
+
+The database was designed to allow CRUD functionality to be available to registered users, when signed in. The custom user account model is at the heart of the application as it is connected to the registration, profile editing and deleting, password reset and change, purchasing, automated email reception, review and rating. It is linked by primary/foreign key relationships.
+
+The custom Account model which is the core model of the app is tied to the the Order model, the CartItem model, ReviewRating model and LogEntry as foreign keys. The UserProfile model relates to the Account model as a one-to-one relationship for custom account and user profile management. 
+
+The Product model on the other hand which has the Category model as its foreign key is tied to the OrderProduct model, ProductVariation model, CartItem model and the RateReview model as foreign keys.
+
+The entity relationship diagram below shows the schemas for each of the models and how they are related.
+
+![Entity Relationship Diagram](media/docs/readme-images/ERD.JPG)
