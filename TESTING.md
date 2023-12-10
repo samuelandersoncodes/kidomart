@@ -118,7 +118,7 @@ Ensure a user can successfully change their password on the Kidomart website.
 
 Steps:
 
-1. Navigate to the [KidoMart Dashboard](https://kidomart-78f25893d540.herokuapp.com/accounts/change_password/) and click on the "Change Password" on the the sidebar.
+1. Navigate to the [KidoMart Dashboard](https://kidomart-78f25893d540.herokuapp.com/accounts/change_password/) and click on the "Change Password" menu on the the sidebar.
 2. Enter your current password.
 3. Create new password.
 4. Confirem new password. (Make sure the new password is exactly what you enter here)
@@ -134,4 +134,35 @@ Actual:
 After successfully changing the password, the user is redirected to the password change success page. The success page contains a heading and a text indicating the success of the password change.
 The user can either log in or go to the home page from the success page by clicking the "Login" or the 'home' button. Logging in with the updated password is successful.
 
+<hr>
 
+**Edit Profile**
+
+Description:
+
+Ensure a user can successfully update their profile details on the Kidomart e-commerce website.
+
+Steps:
+
+1. Navigate to the [KidoMart Dashboard](https://kidomart-78f25893d540.herokuapp.com/accounts/edit_profile/) and click on the "Edit Profile" menu on the the sidebar.
+
+2. On the profile update page, update the following details try to edit any or all of your profile details:
+- First Name
+- last Name
+- Phone Number
+- Profile picture
+- Address Line 1
+- Address Line 2
+- City
+- State
+- Country
+
+3. Click on the 'Save' button to save your update. 
+
+Expected:
+
+User profile is successfully updated. User is redirected to the same page with an update success message and the updated details. 
+
+Actual:
+
+User profile is successfully updated. User is redirected to the same page with an update success message and the updated details. 
