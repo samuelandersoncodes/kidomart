@@ -1314,3 +1314,28 @@ The main color schemes for the website are dark gray (#2b2d2f) mostly found in t
 ### Typography
 
 The Varela (and san-serif as a backup) font was used throughout the website for texts and Suez One for headings. These fonts were imported into the style sheet from google fonts.
+
+### Imagery
+
+The Website logo was coded with an icon from Font Awesome. The placeholder image for user profile picture and images used for product stocking were taken from dummy-profile-pic, Freepik, Burst and PicJumbo which are royalty-free images.
+
+- HTML
+  - The structure of the Website was developed using HTML as the main language.
+- CSS
+  - The Website was styled using custom CSS in an external file and also with intense use of bootstrap styling.
+- JavaScript
+  - JavaScript was used to make the implement the copyright date and the nav item active switches.
+- Python
+  - Python was the main programming language used for the application alongside the Django Framework.
+- Gitpod
+  - The website was developed using Gitpod IDE
+- GitHub
+  - Source code is hosted on GitHub
+- Git
+  - Used to commit and push code during the development of the Website
+- Font Awesome
+  - This was used for various icons throughout the site
+- Balsamiq
+  - wireframes were created using Balsamiq from https://balsamiq.cloud/
+- Google Fonts
+  - Google fonts was used for the font styling
