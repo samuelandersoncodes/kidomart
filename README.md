@@ -1367,3 +1367,7 @@ The Website logo was coded with an icon from Font Awesome. The placeholder image
 * asgiref==3.7.2 - was installed as dependency with another package.
 * whitenoise==6.2.0 - was used to serve static files directly.
 * django-storages==1.14.2 - was used to configure the storage backend for static files to use AWS s3. 
+
+## Testing
+
+Test cases and results can be found in the [TESTING.md](TESTING.md) file. This was seperated due to the size of the file.
