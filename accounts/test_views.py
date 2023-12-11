@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 from django.urls import reverse
 from django.core import mail
 from django.contrib.auth import get_user_model
@@ -11,7 +11,13 @@ from django.contrib.messages import get_messages
 from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
 from accounts.views import activate
-from .models import Account
+from .models import Account, UserProfile
+from .views import dashboard
+from .forms import UserProfileForm
+from orders.models import Order
+from datetime import datetime, timedelta
+from django.utils import timezone
+from unittest.mock import patch
 
 
 class RegisterViewTest(TestCase):
@@ -128,3 +134,41 @@ class ActivateViewTest(TestCase):
         # Check if error message is displayed
         messages = [m.message for m in get_messages(request)]
         self.assertIn('Invalid activation link', messages)
+
+
+class ForgotPasswordViewTest(TestCase):
+    def setUp(self):
+        # Create a user for testing
+        self.user = get_user_model().objects.create_user(
+            email='testuser@example.com',
+            password='testpassword',
+            first_name='Test',
+            last_name='User',
+            username='testuser'
+        )
+
+    @patch('django.core.mail.EmailMessage.send')
+    def test_forgot_password_view_existing_account(self, email_send_mock):
+        # Access the forgotPassword view with an existing account
+        url = reverse('forgotPassword')
+        data = {'email': 'testuser@example.com'}
+        # Use follow=True to follow redirects
+        response = self.client.post(url, data, follow=True)
+        # Check that the response status code is 200
+        self.assertEqual(response.status_code, 200)
+        # Check that a success message is set
+        self.assertContains(
+            response, 'Password reset email has been sent to your email address.')
+        # Check that email_send was called (email sending is mocked)
+        self.assertTrue(email_send_mock.called)
+
+    def test_forgot_password_view_nonexistent_account(self):
+        # Access the forgotPassword view with a nonexistent account
+        url = reverse('forgotPassword')
+        data = {'email': 'nonexistent@example.com'}
+        # Use follow=True to follow redirects
+        response = self.client.post(url, data, follow=True)
+        # Check that the response status code is 200
+        self.assertEqual(response.status_code, 200)
+        # Check that an error message is set
+        self.assertContains(response, 'This account does not exist')
