@@ -452,3 +452,11 @@ Testing was focused to ensure the following criteria were met:
 - HTML page lang attribute has been set
 - Aria properties have been implemented correctly
 - WCAG 2.1 Coding best practices being followed
+
+## Validator Testing
+
+All pages were run through the [w3 HTML Validator](https://validator.w3.org/). Initially there were some warnings and errors due to stray script tags, misuse of anchor tags within buttons and some improperly closed elements. All of these issues were corrected and all pages passed validation.
+
+Due to the django templating language code used in the HTML files, these could not be copied and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw html code into the validator as this will display only the HTML rendered code.
+
+![HTML Validator](media/docs/test/w3-html-validation.jpg)
