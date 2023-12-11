@@ -460,3 +460,9 @@ All pages were run through the [w3 HTML Validator](https://validator.w3.org/). I
 Due to the django templating language code used in the HTML files, these could not be copied and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw html code into the validator as this will display only the HTML rendered code.
 
 ![HTML Validator](media/docs/test/w3-html-validation.jpg)
+
+The css stylesheet was seperately run through the [w3 CSS Validator](https://jigsaw.w3.org/css-validator/validator). Initially there were some warnings and errors due to use of obsolete elements like 'strike' on the home page and the product detail page. There was also an issue with the closing div container next to the nav element in the navbar. Both issues were corrected and the style sheet passed validation.
+
+There were however two warnings, which came from the Google Font import and the Stripe custom styling which is not within my control and also not deemed harmful. The validator just issued a disclaimer on the Google Font link on the top of my css file that it does not validate thie external file.
+
+![CSS Validator](media/docs/test/jigsaw-validation.jpg)
