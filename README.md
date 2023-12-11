@@ -1379,3 +1379,56 @@ The Website logo was coded with an icon from Font Awesome. The placeholder image
 ## Testing
 
 Test cases and results can be found in the [TESTING.md](TESTING.md) file. This was seperated due to the size of the file.
+
+## Deployment
+
+### Version Control
+
+The site was created using the Gitpod Code editor and pushed to github to the 'kidomart' remote repository.
+
+The following git commands were used throughout development to push code to the repository:
+
+```git add <filename>``` - This command was used to add the file(s) to the staging area before they are committed.
+
+```git commit -m “commit message”``` - This command was used to commit changes to the local repository queued for the final push.
+
+```git push``` - This command was used to push all committed code to the remote repository on github.
+
+```git commit --amend -m "Amended git commit message"``` - This command was used to correct mistakenly/misspelt pushed commit messages.
+
+```git push -f``` - This command was used to force push an amended commit message.
+
+### Heroku Deployment
+
+The site was deployed to Heroku. The steps to deploy are as follows:
+
+- Navigate to heroku and create an account
+- Click the 'new' button on the top right corner
+- Select create new app
+- Enter app name
+- Select region and click create app
+- Click the resources tab and search for Heroku Postgres
+- Select hobby dev and continue
+- Go to the settings tab and then click reveal config vars
+- Add the following config vars:
+  - SECRET_KEY: (django secret key)
+  - DATABASE_URL: (postgres url)
+  - PORT: (port number)
+  - AWS_ACCESS_KEY_ID: (aws access key)
+  - AWS_SECRET_ACCESS_KEY(aws secret key)
+  - USE_AWS (set to true for static files)
+  - STRIPE_PUBLIC_KEY (stripe public key)
+  - STRIPE_SECRET_KEY (stripe secret key)
+  - STRIPE_WH_KEY (stripe webhook key)
+  - EMAIL_HOST_PASSWORD (email app password)
+  - EMAIL_HOST_USER (email host user)
+  - DEFAULT_FROM_EMAIL (email address)
+- Click the deploy tab
+- Scroll down to Connect to GitHub and sign in / authorize when prompted
+- In the search box, find the repositoy you want to deploy and click connect
+- Scroll down to Manual deploy and choose the main branch
+- Click deploy
+
+The app should now be deployed.
+
+The live link can be found here: [Live Site](https://kidomart-78f25893d540.herokuapp.com/)
