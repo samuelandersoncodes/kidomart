@@ -5,5 +5,5 @@ document.getElementById('copyright-date').innerHTML = (new Date().getFullYear())
 
 // Set timeout for alert messages
 setTimeout(function () {
-    $('#message').fadeOut('slow')
+    $('#message').fadeOut('slow');
 }, 6000)
