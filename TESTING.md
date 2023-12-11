@@ -543,3 +543,9 @@ Website was also opened on the following devices and no responsive issues were f
 -Hp laptop 14s                                                               
 -Dell Latitude 5430                                                                                    
 -Mcbook Retina
+
+## Bugs (fixed)
+
+Initially, when the user had an empty cart, there was an error because the object did not exist. This have been fixed with the python exception handling.
+Email sending also had an issue with the SMTP Authentication. An app password alongside email backend configuration was set up to take care of the bug. Thereafter, all verification, activation and confirmation emails are smoothly sent. 
+The website in total functions as expected and there are no bugs.
