@@ -497,6 +497,12 @@ In few cases, like tha of the settings file, ther are external code that may hav
 
 ![PEP8 exceptions sample(Line too log)](media/docs/test/pep8-too-long.jpg)
 
+## Lighthouse Report
+
+Lighthouse report showed areas for improvement on Performance. This was related to the user profile images that users upload on the dashboard. There may be some restrictions of the type of images that can be posted but he website allows room for more flexibility. More restrictions on image types may frustrate users and bring down the patronage of the site. For this reason, users are given a wide range of performance-meaningful image options which are not below standard to upload. Another issue raised was on the spelling out of the width and height of the product images. Product images vary in different dimensions and can only be regulated to some minimal extent to look pleasant on the site.
+
+![Lighthouse](media/docs/test/lighthouse-report.jpg)
+
 ## Responsiveness
 
 All pages were tested to ensure responsiveness on screen sizes from 320px and above as defined in WCAG 2.1 Reflow criteria for responsive design on Chrome, Edge, Firefox and Opera browsers.
