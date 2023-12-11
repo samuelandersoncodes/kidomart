@@ -474,3 +474,43 @@ The only warning remained was the JQuery '$' signs and Stripe variable which sho
 
 ![JS validator- stripe js](media/docs/test/jshint-stripe-js.jpg)
 
+## Responsiveness
+
+All pages were tested to ensure responsiveness on screen sizes from 320px and above as defined in WCAG 2.1 Reflow criteria for responsive design on Chrome, Edge, Firefox and Opera browsers.
+
+Steps to test:
+
+- Open a browser and navigate to [KidoMart](https://kidomart-78f25893d540.herokuapp.com/)
+- Open the developer tools (right click and inspect or hit the F12 key)
+- Set to responsive and decrease width to 320px
+- Set the zoom to 50%
+- Click and drag the responsive window to maximum width
+
+Expected:
+
+The KidoMart website is responsive on all screen sizes and no images are pixelated or stretched. No horizontal scroll is present. No elements overlap. Responsive test passed even beyond screens smaller than 320px.
+
+Actual:
+
+Website behaved as expected.
+
+Website was also opened on the following devices and no responsive issues were found:
+
+-iPhone SE                                                            
+-Huawei mipad 10                                                       
+-Iphone 10                                                        
+-Iphone 12 Xs max                                                         
+-Iphone 12                                                              
+-Iphone 13                                                            
+-Iphone 6S plus                                                  
+-Xiomi Redme 11 pro                                                                     
+-Samsung A 12                                                                 
+-Samsung Galaxy 20                                                                   
+-Samsung Galaxy Tab S7                                                           
+-Samsung m21                                                                     
+-Infinix Hot 12                                                             
+-Asus Sonicmaster                                                       
+-Hp EliteBook 8440p                                                        
+-Hp laptop 14s                                                               
+-Dell Latitude 5430                                                                                    
+-Mcbook Retina
