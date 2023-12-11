@@ -13,7 +13,7 @@
     content="children's clothing e-commerce, online shopping sites, e-commerce website for children's products, 
       best online shops for children's clothes, children's clothing, online stores for children's clothing, kids toys, 
       children's products shopping,  children products, toys, lego shop, lego shop online, toys for children, buy children products">
-  <meta name="author" content="Samuel Anderson" />
+  <meta name="author" content="Samuel Anderson">
   {% endblock %}
   <!-- main style sheet links -->
   {% block corecss %}
@@ -24,13 +24,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon.ico/favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon.ico/favicon-16x16.png' %}">
   <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-  <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/base.css' %}" rel="stylesheet">
   {% endblock %}
   <title>{% block title %}KidoMart{% endblock %}</title>
 </head>
 
 <body>
-
   {% block page_header %}
   <!-- landing page content goes here -->
   {% endblock %}
@@ -59,8 +58,8 @@
   <!-- Stripe js -->
   <script src="https://js.stripe.com/v3/"></script>
   <!-- Mailchimp script -->
-  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-  <script type="text/javascript">
+  <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script>
     (function ($) {
       window.fnames = new Array();
       window.ftypes = new Array();
