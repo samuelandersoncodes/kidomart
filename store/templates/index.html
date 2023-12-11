@@ -113,7 +113,7 @@
                 <!-- Product price-->
                 {% if product.on_sale %}
                 <p class="mb-0">
-                  <strike>${{ product.price }}</strike> | <strong>${{ product.sale_price }}</strong>
+                  <s>${{ product.price }}</s> | <strong>${{ product.sale_price }}</strong>
                 </p>
                 {% else %}
                 <p class="mb-0">${{ product.price }}</p>
@@ -154,7 +154,7 @@
     </li>
     {% else %}
     <li class="page-item disabled">
-      <a href="#" class="page-link" aria-label-disabled="true">&laquo; PREV </a>
+      <a href="#" class="page-link">&laquo; PREV </a>
     </li>
     {% endif %}
     {% for i in products.paginator.page_range %}
@@ -176,7 +176,7 @@
     </li>
     {% else %}
     <li class="page-item disabled">
-      <a href="#" class="page-link" aria-label-disabled="true" aria-label="next page navigator"> NEXT
+      <a href="#" class="page-link" aria-label="next page navigator"> NEXT
         &raquo;</a>
     </li class="page-item">
     {% endif %}
