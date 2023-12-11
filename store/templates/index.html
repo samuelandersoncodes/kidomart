@@ -5,6 +5,7 @@
 {% include 'includes/navbar.html' %}
 <!-- Landing page -->
 <header class="bg-secondary py-1 pb-0">
+  <!-- carousel -->
   <div id="carouselExampleIndicators" class="carousel slide text-center" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -46,7 +47,7 @@
 
 {% block content %}
 <!-- Section for item card -->
-<section class="py-4">
+<div class="py-4">
   <div class="container py-1 px-4 px-lg-5 mt-0 product-container">
     <!-- search count display -->
     {% if 'search' in request.path %}
@@ -141,7 +142,7 @@
       {% endfor %}
     </div>
   </div>
-</section>
+</div>
 <!-- page pagination -->
 <nav class="container" aria-label="Page navigation">
   {% if products.has_other_pages %}
