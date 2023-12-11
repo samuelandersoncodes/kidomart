@@ -14,11 +14,12 @@ from accounts.views import activate
 from .models import Account, UserProfile
 from .views import dashboard
 from .forms import UserProfileForm
-from orders.models import Order
+from orders.models import Order, OrderProduct
 from datetime import datetime, timedelta
 from django.utils import timezone
 from unittest.mock import patch
 from django.contrib import messages
+from products.models import Product
 
 
 class RegisterViewTest(TestCase):
@@ -207,3 +208,34 @@ class ResetPasswordValidateViewTest(TestCase):
         response = self.client.get(url)
         # Check that the response redirects to the forgotPassword page
         self.assertRedirects(response, reverse('forgotPassword'))
+
+
+class OrderDetailViewTest(TestCase):
+    def setUp(self):
+        # Create a test user with required attributes
+        self.user = get_user_model().objects.create_user(
+            first_name='Test',
+            last_name='User',
+            email='testuser@example.com',
+            username='testuser',  # Provide the username
+            password='testpassword'
+        )
+        # Log in the test user
+        self.client.login(email='testuser@example.com',
+                          password='testpassword')
+        # Create a test order
+        self.order = Order.objects.create(
+            user=self.user,
+            order_number='123456',
+            order_total=100.00,
+            tax=0.01,
+            status='PAID'
+        )
+        
+    def test_order_detail_view(self):
+        # Get the URL for the order detail view
+        url = reverse('order_detail', args=[self.order.order_number])
+        # Make a GET request to the order detail view and follow redirects
+        response = self.client.get(url, follow=True)
+        # Check if the response status code is 200 (OK)
+        self.assertEqual(response.status_code, 200)
