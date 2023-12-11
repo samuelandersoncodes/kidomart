@@ -461,8 +461,16 @@ Due to the django templating language code used in the HTML files, these could n
 
 ![HTML Validator](media/docs/test/w3-html-validation.jpg)
 
-The css stylesheet was seperately run through the [w3 CSS Validator](https://jigsaw.w3.org/css-validator/validator). Initially there were some warnings and errors due to use of obsolete elements like 'strike' on the home page and the product detail page. There was also an issue with the closing div container next to the nav element in the navbar. Both issues were corrected and the style sheet passed validation.
+The css stylesheet was seperately run through the [w3 CSS Validator](https://jigsaw.w3.org/css-validator/). Initially there were some warnings and errors due to use of obsolete elements like 'strike' on the home page and the product detail page. There was also an issue with the closing div container next to the nav element in the navbar. Both issues were corrected and the style sheet passed validation.
 
 There were however two warnings, which came from the Google Font import and the Stripe custom styling which is not within my control and also not deemed harmful. The validator just issued a disclaimer on the Google Font link on the top of my css file that it does not validate thie external file.
 
 ![CSS Validator](media/docs/test/jigsaw-validation.jpg)
+
+JavaScript code was run through the [JSHINT](https://jshint.com) javascript validator. It flagged up issues with esversion:6. This was fixed by adding '// jshint esversion: 6' to the top of the js file.
+The only warning remained was the JQuery '$' signs and Stripe variable which shows up as not defined. This cannot be dealt with since the Javascript file is tested seperately and cannot in this regard find the the dynamic values in the workspace. 
+
+![JS validator- custom js](media/docs/test/jshint-custom-js.jpg)
+
+![JS validator- stripe js](media/docs/test/jshint-stripe-js.jpg)
+
