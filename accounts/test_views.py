@@ -20,6 +20,11 @@ from django.utils import timezone
 from unittest.mock import patch
 from django.contrib import messages
 from products.models import Product
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from orders.models import Order
+from carts.models import CartItem
+from django.contrib import messages
 
 
 class RegisterViewTest(TestCase):
@@ -239,3 +244,29 @@ class OrderDetailViewTest(TestCase):
         response = self.client.get(url, follow=True)
         # Check if the response status code is 200 (OK)
         self.assertEqual(response.status_code, 200)
+
+
+class AccountDeleteViewTest(TestCase):
+    # Account delete test
+    def test_account_deletion(self):
+        # Check if a user with the given email already exists
+        existing_user = get_user_model().objects.filter(email='testuser@example.com').first()
+        # If the user exists, delete it
+        if existing_user:
+            existing_user.delete()
+        # Create a test user
+        user = get_user_model().objects.create_user(
+            first_name='Test',
+            last_name='User',
+            username='testuser',
+            email='testuser@example.com',
+            password='testpassword'
+        )
+        # Log in the test user
+        self.client.login(username='testuser', password='testpassword')
+        # Get the URL for the account delete view
+        url = reverse('delete_account')
+        # Make a GET request to the account delete view
+        response = self.client.get(url)
+        # Check if the response status code is a redirect (302)
+        self.assertEqual(response.status_code, 302)
