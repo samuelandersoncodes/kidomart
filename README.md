@@ -1298,7 +1298,7 @@ A 500 error page has also been implemented to alert users when an internal serve
 
 The database was designed to allow CRUD functionality to be available to registered users, when signed in. The custom user account model is at the heart of the application as it is connected to the registration, profile editing and deleting, password reset and change, purchasing, automated email reception, review and rating. It is linked by primary/foreign key relationships.
 
-The custom Account model which is the core model of the app is tied to the the Order model, the CartItem model, ReviewRating model and LogEntry as foreign keys. The UserProfile model relates to the Account model as a one-to-one relationship for custom account and user profile management. 
+The custom Account model which is the core model of the app is tied to the the Order model, the CartItem model, ReviewRating model and LogEntry as foreign keys. The UserProfile model relates to the Account model as a one-to-one relationship for custom account and user profile management.
 
 The Product model on the other hand which has the Category model as its foreign key is tied to the OrderProduct model, ProductVariation model, CartItem model and the RateReview model as foreign keys.
 
@@ -1313,11 +1313,12 @@ Views were secured by using the django custom Account model has been build and t
 Environment variables were stored in an env.py file for local development to ensure no secret keys, api keys or sensitive information were commited to the repository. In production, these variables were added to the heroku config vars within the project.
 
 ## The-Surface-Plane
+
 ### Design
 
 ### Colour-Scheme
 
-The main color schemes for the website are dark gray (#2b2d2f) mostly found in the main body and a variety of its shades like the lighter gray version of it (#2b2d2f42) on the footer and navbar areas. Black (#000000) was mostly used for the fonts and icons. White (#FFFFFF) was often used for button texts while a lighter version of Charcoal gray (#36454f) is used for the background of most of the buttons except the 'delete account' button which has a red (#ff0000) background color. Warnig texts like the text above the 'delete account' button  and the one below the 'complete order' button on the checkout page are also in red.
+The main color schemes for the website are dark gray (#2b2d2f) mostly found in the main body and a variety of its shades like the lighter gray version of it (#2b2d2f42) on the footer and navbar areas. Black (#000000) was mostly used for the fonts and icons. White (#FFFFFF) was often used for button texts while a lighter version of Charcoal gray (#36454f) is used for the background of most of the buttons except the 'delete account' button which has a red (#ff0000) background color. Warnig texts like the text above the 'delete account' button and the one below the 'complete order' button on the checkout page are also in red.
 
 ### Typography
 
@@ -1350,31 +1351,31 @@ The Website logo was coded with an icon from Font Awesome. The placeholder image
 
 **Python Modules Used**
 
-* Django Class based views (DeleteView) - Used for the classes to delete user account.
-* Decorators (LoginRequired) - Used to enforce login required on logout, edit profile, checkout, order details, my order, and change password views.
-* messages - Used to pass messages to display feedback to the user upon actions.
-* HttpResponseRedirect, reverse - Used to redirect users to other specified pages
-* render - Used to render templates 
-* get_object_or_404 - Used to get single objects
+- Django Class based views (DeleteView) - Used for the classes to delete user account.
+- Decorators (LoginRequired) - Used to enforce login required on logout, edit profile, checkout, order details, my order, and change password views.
+- messages - Used to pass messages to display feedback to the user upon actions.
+- HttpResponseRedirect, reverse - Used to redirect users to other specified pages
+- render - Used to render templates
+- get_object_or_404 - Used to get single objects
 
 **External Python Modules**
 
-* s3transfer==0.7.0 - AWS s3 bucket was set up to store and serve static files.
-* boto3==1.28.63 - was installed as dependency with another package.
-* botocore==1.31.63 - was installed as dependency with another package.
-* stripe==7.6.0 - was used for the payment system.
-* django-crispy-forms==1.14.0 - this was used to allow bootstrap4 use with crispy forms.
-* dj-database-url==0.5.0 - was used to parse database url for production environment
-* Django==3.2.22 - the framework used to build the application
-* Pillow==10.1.0 - was used to handle images files.
-* gunicorn==20.1.0 - was installed as dependency with another package.
-* psycopg2==2.9.6 - was needed for heroku deployment.
-* sqlparse==0.4.4 - was installed as dependency with another package.
-* jmespath==1.0.1 - to parse JSON-like data using JMESPath expressions.
-* pytz==2023.3.post1 - was used for time zone support.
-* asgiref==3.7.2 - was installed as dependency with another package.
-* whitenoise==6.2.0 - was used to serve static files directly.
-* django-storages==1.14.2 - was used to configure the storage backend for static files to use AWS s3. 
+- s3transfer==0.7.0 - AWS s3 bucket was set up to store and serve static files.
+- boto3==1.28.63 - was installed as dependency with another package.
+- botocore==1.31.63 - was installed as dependency with another package.
+- stripe==7.6.0 - was used for the payment system.
+- django-crispy-forms==1.14.0 - this was used to allow bootstrap4 use with crispy forms.
+- dj-database-url==0.5.0 - was used to parse database url for production environment
+- Django==3.2.22 - the framework used to build the application
+- Pillow==10.1.0 - was used to handle images files.
+- gunicorn==20.1.0 - was installed as dependency with another package.
+- psycopg2==2.9.6 - was needed for heroku deployment.
+- sqlparse==0.4.4 - was installed as dependency with another package.
+- jmespath==1.0.1 - to parse JSON-like data using JMESPath expressions.
+- pytz==2023.3.post1 - was used for time zone support.
+- asgiref==3.7.2 - was installed as dependency with another package.
+- whitenoise==6.2.0 - was used to serve static files directly.
+- django-storages==1.14.2 - was used to configure the storage backend for static files to use AWS s3.
 
 ## Testing
 
@@ -1388,15 +1389,15 @@ The site was created using the Gitpod Code editor and pushed to github to the 'k
 
 The following git commands were used throughout development to push code to the repository:
 
-```git add <filename>``` - This command was used to add the file(s) to the staging area before they are committed.
+`git add <filename>` - This command was used to add the file(s) to the staging area before they are committed.
 
-```git commit -m “commit message”``` - This command was used to commit changes to the local repository queued for the final push.
+`git commit -m “commit message”` - This command was used to commit changes to the local repository queued for the final push.
 
-```git push``` - This command was used to push all committed code to the remote repository on github.
+`git push` - This command was used to push all committed code to the remote repository on github.
 
-```git commit --amend -m "Amended git commit message"``` - This command was used to correct mistakenly/misspelt pushed commit messages.
+`git commit --amend -m "Amended git commit message"` - This command was used to correct mistakenly/misspelt pushed commit messages.
 
-```git push -f``` - This command was used to force push an amended commit message.
+`git push -f` - This command was used to force push an amended commit message.
 
 ### Heroku Deployment
 
@@ -1432,3 +1433,28 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 The app should now be deployed.
 
 The live link can be found here: [Live Site](https://kidomart-78f25893d540.herokuapp.com/)
+
+## Credits
+
+- [Code Institute](https://github.com/Code-Institute-Org/gitpod-full-template)
+
+  - I appreciate Code institute's tutorship support and their gitpod template.
+
+- [Font Awesome](https://fontawesome.com/icons)
+
+  - Code was used from this website to create the KidoMart logo and the social media icons in the footer.
+  - Styles were changed to suit styling on the Web application.
+
+- [Google Fonts](https://fonts.google.com/)
+
+  - The fonts (Suez One and Varela) used on this web application were imported from google fonts.
+
+- [Product images](https://www.freepik.com/)
+
+ - Most of the product images had come from this site.
+
+- Persons
+
+  - I thank Dick Vlaanderen for mentoring me throughout the project.
+
+  - I thank Olena Olkhovyk for inspiring me and giving me styling ideas.
