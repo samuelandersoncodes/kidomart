@@ -10,6 +10,7 @@ The live link can be found here: [Live Site - KidoMart](https://kidomart-78f2589
 
 - [KidoMart](#kidomart)
   - [Table of Contents](#table-of-contents)
+- [Business Model](#business-model)
 - [User-Experience-Design](#user-experience-design)
   - [The-Strategy-Plane](#the-strategy-plane)
     - [Site-Goals](#site-goals)
@@ -35,6 +36,43 @@ The live link can be found here: [Live Site - KidoMart](https://kidomart-78f2589
     - [Version Control](#version-control)
     - [Heroku Deployment](#heroku-deployment)
   - [Credits](#credits)
+
+# Business Model
+
+## Introduction
+Welcome to KidoMart, your go-to destination for high-quality children's products delivered right to your doorstep. At KidoMart, we specialize in providing a wide range of carefully curated children's items, ranging from toys and clothing to educational materials, all designed to bring joy and enhance the well-being of the little ones.
+
+## Mission
+Our mission at KidoMart is to empower childhood dreams by providing a one-stop-shop for parents seeking exceptional products that contribute to the growth, happiness and development of their children. We are dedicated to fostering creativity, imagination and learning through our thoughtfully curated product selection.
+
+## Vision
+At KidoMart, our vision is to become the preferred choice for families seeking top-quality children's products. We aspire to continually innovate our product offerings, enhance our services and create a lasting impact on the lives of children and their families.
+
+## Target Audience
+Our business operates on a Business-to-Client (B2C) model, connecting directly with individual customers who are parents, guardians, or anyone looking for exceptional products for children. We understand the unique needs of families and strive to offer a convenient and delightful shopping experience.
+
+## Product Variety
+KidoMart takes pride in offering a diverse selection of children's products, carefully selected to cater for different age groups, interests and developmental stages. From the latest toys that spark creativity to comfortable clothing that ensures both style and comfort, our product range is designed to meet the evolving needs of growing children.
+
+## Online Shopping Platform
+Our e-commerce platform serves as the primary interface for customers to explore, select and purchase products. The website is designed with user-friendly navigation, intuitive categorization and detailed product descriptions to facilitate a seamless shopping experience.
+
+## Ordering and Delivery
+Customers can easily place orders through our secure online platform. Once an order is placed, our efficient order processing system ensures a swift and accurate fulfillment process. As part of our inaugural promotion, we currently offer nationwide free delivery of our products. We urge our cunstomers to take a very good advantage of this promotion. 
+
+KidoMart is committed to timely deliveries. Our logistics partners work diligently to ensure that products reach our customers' doorsteps in the shortest possible time, allowing families to enjoy their purchases without delay.
+
+## Customer Support
+We understand that excellent customer service is key to a positive shopping experience. Our dedicated customer support team is readily available to assist with inquiries, provide product information and address any concerns that our valued customers may have. For this reason, we have provided our customer service numbers and email on our website and all our marketing platfroms. We have also provided our social media handles on our website for effiecient and convenient interaction with our customers.
+
+## Promotions and Loyalty Programs
+To show appreciation to our loyal customers, KidoMart runs periodic promotions and offers exclusive deals. Our loyalty program rewards repeat customers with special discounts, early access to new arrivals and other exciting benefits. We therefore encourage all our customers to subscribe to our monthly newsletters for exclusive promotional rewards.
+
+## Exceptional Convenience:
+We strive to make the lives of parents easier by offering a convenient online platform where they can effortlessly find and order high-quality children's products. Our commitment to exceptional service extends from the moment of selection to the joyous arrival of each product at our customers' homes.
+
+## Community Building:
+Beyond being a marketplace, KidoMart aims to build a community of like-minded parents who share a passion for providing the best for their children. We foster connections through engaging content, forums and events that celebrate the joys and challenges of parenthood. We therefore urge our customers to follow all of our ground-breaking Corporate Social Responsibility activities and join us in person for a binding relationship.
 
 # User-Experience-Design
 
