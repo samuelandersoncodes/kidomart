@@ -429,3 +429,11 @@ Tests were performed to ensure that:
 1. Forms cannot be submitted when required fields are empty.
 
 2. Error handling has been fully implemented to take care of all possible errors during the payment process. Tests have been carried out to ensure that in cases where there are hitchtes or interruptions during the payment process, the user is assured of accurate updates on their payment status and they are informed about what precisely transpired during the payment process.
+
+## Unit Testing
+
+Unit tests were carried out to test core functionality in some forms, template views, models and redirects to make sure these core parts of the app is thoroughly tested to its bits.
+
+Results:
+
+![unit tests](media/docs/test/unittest-coverage.jpg)
