@@ -18,6 +18,7 @@ from orders.models import Order
 from datetime import datetime, timedelta
 from django.utils import timezone
 from unittest.mock import patch
+from django.contrib import messages
 
 
 class RegisterViewTest(TestCase):
@@ -172,3 +173,37 @@ class ForgotPasswordViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         # Check that an error message is set
         self.assertContains(response, 'This account does not exist')
+
+
+class ResetPasswordValidateViewTest(TestCase):
+    def setUp(self):
+        # Create a user for testing
+        self.user = get_user_model().objects.create_user(
+            email='testuser@example.com',
+            password='testpassword',
+            first_name='Test',
+            last_name='User',
+            username='testuser'
+        )
+        # Generate a token for the user
+        self.token = default_token_generator.make_token(self.user)
+
+    def test_reset_password_validate_valid_token(self):
+        # Access the reset_password_validate view with a valid token
+        # Updated lines:
+        uidb64 = urlsafe_base64_encode(force_bytes(self.user.pk))
+        url = reverse('reset_password_validate', args=[uidb64, self.token])
+        response = self.client.get(url)
+        # Check that the response redirects to the resetPassword page
+        self.assertRedirects(response, reverse('resetPassword'))
+        # Check that the 'uid' is stored in the session
+        self.assertEqual(self.client.session.get('uid'), str(self.user.pk))
+
+    def test_reset_password_validate_invalid_token(self):
+        # Access the reset_password_validate view with an invalid token
+        uidb64 = urlsafe_base64_encode(force_bytes(self.user.pk))
+        invalid_token = 'invalid-token'
+        url = reverse('reset_password_validate', args=[uidb64, invalid_token])
+        response = self.client.get(url)
+        # Check that the response redirects to the forgotPassword page
+        self.assertRedirects(response, reverse('forgotPassword'))
