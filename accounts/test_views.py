@@ -270,3 +270,18 @@ class AccountDeleteViewTest(TestCase):
         response = self.client.get(url)
         # Check if the response status code is a redirect (302)
         self.assertEqual(response.status_code, 302)
+
+
+class PasswordChangeSuccessViewTest(TestCase):
+    # Password change success test
+    
+    def test_password_change_success_view(self):
+        # Use the reverse function to get the URL for the view
+        url = reverse('password_change_success')
+        # Make a GET request to the password change success view
+        response = self.client.get(url)
+        # Check if the response status code is 200 (OK)
+        self.assertEqual(response.status_code, 200)
+        # Check if the expected template is used
+        self.assertTemplateUsed(response, 'accounts/password_change_success.html')
+        self.assertContains(response, 'Password Change Successful', html=True)
