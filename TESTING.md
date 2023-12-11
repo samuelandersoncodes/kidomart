@@ -474,6 +474,29 @@ The only warning remained was the JQuery '$' signs and Stripe variable which sho
 
 ![JS validator- stripe js](media/docs/test/jshint-stripe-js.jpg)
 
+All python files were run through the [Pep8](https://pep8ci.herokuapp.com/) validator to ensure all code was pep8 compliant. Some errors were shown due to blank spacing and lines too long. All of these errors were resolved and code passed validator tests.
+
+![PEP8 cart models](media/docs/test/pe8-cart-models.jpg)
+![PEP8 cart admin](media/docs/test/pep8-cart-admin.jpg)
+![PEP8 cart url](media/docs/test/pep8-cart-url.jpg)
+![PEP8 category admin](media/docs/test/pep8-category-admin.jpg)
+![PEP8 category context processor](media/docs/test/pep8-category-context-processor.jpg)
+![PEP8 category model](media/docs/test/pep8-category-model.jpg)
+![PEP8 custom storage](media/docs/test/pep8-custom-storage.jpg)
+![PEP8 main urls](media/docs/test/pep8-main-urls.jpg)
+![PEP8 order admin](media/docs/test/pep8-order-admin.jpg)
+![PEP8 order forms](media/docs/test/pep8-order-forms.jpg)
+![PEP8 order models](media/docs/test/pep8-order-models.jpg)
+![PEP8 product admin](media/docs/test/pep8-product-admin.jpg)
+![PEP8 product form](media/docs/test/pep8-product-form.jpg)
+![PEP8 products urls](media/docs/test/pep8-products-urls.jpg)
+![PEP8 products view](media/docs/test/pep8-products-view.jpg)
+![PEP8 store urls](media/docs/test/pep8-store-urls.jpg)
+
+In few cases, like tha of the settings file, ther are external code that may have 'Line too long' warnings. These are left in their sate if they are readable and have no hitches. In other cases, very little white spaces are left for the readability and clarity of code alongside descriptive comments. Those file how ever has unittest implemented to ensure their utmost functionality.
+
+![PEP8 exceptions sample(Line too log)](media/docs/test/pep8-too-long.jpg)
+
 ## Responsiveness
 
 All pages were tested to ensure responsiveness on screen sizes from 320px and above as defined in WCAG 2.1 Reflow criteria for responsive design on Chrome, Edge, Firefox and Opera browsers.
