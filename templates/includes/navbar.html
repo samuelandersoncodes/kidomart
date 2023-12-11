@@ -29,6 +29,7 @@
         </div>
       </form>
     </div>
+    <!-- unauthenticated user welcome message and auth links -->
     <div class="mx-2">
       {% if user.id is None %}
       <small class="text-muted text-dark">Welcome to KidoMart</small>
@@ -38,23 +39,24 @@
       </div>
     </div>
     {% else %}
+    <!-- authenticated user welcome message and auth links -->
     <small class="text-muted text-dark">Welcome {{ user.first_name }}</small>
     <div class="text-center">
       <a href="{% url 'dashboard' %}" class="text-dark text-decoration-none"><strong>Dashboard</strong> </a> <span> |
       </span>
       <a href="{% url 'logout' %}" class="text-dark text-decoration-none"><strong>Logout</strong></a>
     </div>
-  </div>
-  {% endif %}
-  <!-- cart form -->
-  <form action="{% url 'cart' %}" class="my-1 cart-form">
-    <button class="btn btn-outline-dark" type="submit" aria-label="Shopping Cart">
-      <i class="bi-cart-fill"></i>
-      <strong>Cart&nbsp;</strong>
-      <span class="badge bg-dark text-white ms-1 rounded-pill">{{ cart_count }}</span>
-    </button>
-  </form>
-  <div class="col-md-8 mx-auto text-center heading-font bg-secondary text-white">
-    <h2 class="fs-5 mt-1 px-3">The Only Shop with Free Nationwide Delivery</h2>
+    {% endif %}
+    <!-- cart form -->
+    <form action="{% url 'cart' %}" class="my-1 cart-form">
+      <button class="btn btn-outline-dark" type="submit" aria-label="Shopping Cart">
+        <i class="bi-cart-fill"></i>
+        <strong>Cart&nbsp;</strong>
+        <span class="badge bg-dark text-white ms-1 rounded-pill">{{ cart_count }}</span>
+      </button>
+    </form>
+    <div class="col-md-8 mx-auto text-center heading-font bg-secondary text-white">
+      <h2 class="fs-5 mt-1 px-3">The Only Shop with Free Nationwide Delivery</h2>
+    </div>
   </div>
 </nav>
