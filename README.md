@@ -1154,6 +1154,18 @@ An email is also automatically sent to the user with details to confirm and prov
 
 ![Checkout Success Email](media/docs/readme-images/checkout-success-email.png)
 
+``As a site user of the e-commerce website, I want to be able to read and submit reviews for products, as well as provide ratings based on my experience with the products, so that I can make informed purchasing decisions.``
+
+Implementation:
+
+**Rating and Review**
+
+After an authenticated user has successfully made a purchase, they are allowed to submit a review and rate the product on the product detail page below the item card. They will just have to click on the number of stars per their rating, fill out the review form that comes with the 'Review Title' and 'Review Text' fields then click on the 'Submit Review' button.
+
+These reviews can be viewed by anyone on the product detail page while the calculated rating average is seen on products both on the home page and on the product detail page. 
+
+![Rating and Review](media/docs/readme-images/rating-review.jpg)
+
 **Error Pages**
 
 `USER STORY - As a developer, I need to implement a 404 error page to alert users when they have accessed a page that does not exist`
