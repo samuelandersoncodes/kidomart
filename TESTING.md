@@ -334,6 +334,34 @@ User is redirected to the checkout success page which contains an invoice of the
 
 <hr>
 
+**Rating and Review**
+
+Description:
+
+Ensure a user can successfully rate and review purchased product.
+
+Steps:
+
+1. Navigate to the [KidoMart Product Detail Page](https://kidomart-78f25893d540.herokuapp.com/category/clothing/coll-unisex-jacket/) after a purchase. (users can only review products they have purchased)
+
+2. Scroll down to the review section.
+
+3. Click on the number of stars per your rating.
+
+4. Fill out the review form that comes with the 'Review Title' and 'Review Text' fields.
+
+5. Click on the 'Submit Review' button.
+
+Expected:
+
+Review and the rating are submitted successfully. Reviews and the calculated rating average can be viewed by anyone on the product detail page. While the calculated rating average is seen also on the product on the home page. The test passed.
+
+Actual:
+
+Review and the rating are submitted successfully. Reviews and the calculated rating average can be viewed by anyone on the product detail page. While the calculated rating average is seen also on the products on the home page.
+
+<hr>
+
 **Search Bar**
 
 Description:
@@ -468,7 +496,7 @@ There were however two warnings, which came from the Google Font import and the 
 ![CSS Validator](media/docs/test/jigsaw-validation.jpg)
 
 JavaScript code was run through the [JSHINT](https://jshint.com) javascript validator. It flagged up issues with esversion:6. This was fixed by adding '// jshint esversion: 6' to the top of the js file.
-The only warning remained was the JQuery '$' signs and Stripe variable which shows up as not defined. This cannot be dealt with since the Javascript file is tested seperately and cannot in this regard find the the dynamic values in the workspace. 
+The only warning remained was the JQuery '$' signs and Stripe variable which shows up as not defined. This cannot be dealt with since the Javascript file is tested seperately and cannot in this regard find the the dynamic values in the workspace.
 
 ![JS validator- custom js](media/docs/test/jshint-custom-js.jpg)
 
@@ -525,27 +553,27 @@ Website behaved as expected.
 
 Website was also opened on the following devices and no responsive issues were found:
 
--iPhone SE                                                            
--Huawei mipad 10                                                       
--Iphone 10                                                        
--Iphone 12 Xs max                                                         
--Iphone 12                                                              
--Iphone 13                                                            
--Iphone 6S plus                                                  
--Xiomi Redme 11 pro                                                                     
--Samsung A 12                                                                 
--Samsung Galaxy 20                                                                   
--Samsung Galaxy Tab S7                                                           
--Samsung m21                                                                     
--Infinix Hot 12                                                             
--Asus Sonicmaster                                                       
--Hp EliteBook 8440p                                                        
--Hp laptop 14s                                                               
--Dell Latitude 5430                                                                                    
+-iPhone SE  
+-Huawei mipad 10  
+-Iphone 10  
+-Iphone 12 Xs max  
+-Iphone 12  
+-Iphone 13  
+-Iphone 6S plus  
+-Xiomi Redme 11 pro  
+-Samsung A 12  
+-Samsung Galaxy 20  
+-Samsung Galaxy Tab S7  
+-Samsung m21  
+-Infinix Hot 12  
+-Asus Sonicmaster  
+-Hp EliteBook 8440p  
+-Hp laptop 14s  
+-Dell Latitude 5430  
 -Mcbook Retina
 
 ## Bugs (fixed)
 
 Initially, when the user had an empty cart, there was an error because the object did not exist. This have been fixed with the python exception handling.
-Email sending also had an issue with the SMTP Authentication. An app password alongside email backend configuration was set up to take care of the bug. Thereafter, all verification, activation and confirmation emails are smoothly sent. 
+Email sending also had an issue with the SMTP Authentication. An app password alongside email backend configuration was set up to take care of the bug. Thereafter, all verification, activation and confirmation emails are smoothly sent.
 The website in total functions as expected and there are no bugs.
