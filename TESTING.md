@@ -446,6 +446,32 @@ User is successfully subscribed to the Mailchimp newsletter and a "thank you for
 
 <hr>
 
+**Home Page Pagination**
+
+Description:
+
+Ensure a user can smoothly switch pages on the Kidomart home page.
+
+Steps:
+
+1. Navigate to [KidoMart](https://kidomart-78f25893d540.herokuapp.com/)
+
+2. Locate the pagination element at the bottom of the page right above the footer.
+
+3. Click on a page you want to view by clicking on the page number.
+
+4. You can also use the 'NEXT' and 'PREV' buttons to move to the next and the previous pages respectively.
+
+Expected:
+
+User successfully navigates to the selected page indicating that the test passed.
+
+Actual:
+
+User successfully navigates to the selected page as expected.
+
+<hr>
+
 **Footer**
 
 Testing was performed on the footer links by clicking the font awesome icons and ensuring that the instagram icon opened the kidomart instagram handle in a new tab, the facebook icon opened the kidomart facebook handle in a new tab and the twitter icon also opened the kidomart twitter handle in a new tab. These behaved as expected.
