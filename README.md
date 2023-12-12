@@ -909,8 +909,12 @@ Below the navbar is a nice carousel that slides images of three children with le
 In the middle of the page, are list of products.
 Each product has an image, name, price and its associated rating below it.
 
-The page takes twelve products at a go in pagination. Therefore at the bottom of each twelfth post is the 'next' button that takes users to subsequent pages. When users are on older posts, they can easily come back to fresher posts by clicking the 'prev' button.
-Then come the footer which is found also on all pages.
+##### Home Page Pagination
+
+``As a site user I want to be able to easily navigate through multiple pages of product listings so that I can find and view the products I am interested in.``
+
+The page takes twelve products at a go in pagination. Therefore at the bottom of each twelfth product is the 'next' button that takes users to subsequent pages. When users are on older posts, they can easily come back to fresher posts by clicking the 'prev' button.
+Then comes the footer which is found also on all pages.
 
 `Logged in`
 ![Home page logged in](media/docs/readme-images/home-logged-in.jpg)
