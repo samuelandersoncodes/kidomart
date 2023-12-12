@@ -601,5 +601,11 @@ Website was also opened on the following devices and no responsive issues were f
 ## Bugs (fixed)
 
 Initially, when the user had an empty cart, there was an error because the object did not exist. This have been fixed with the python exception handling.
+
 Email sending also had an issue with the SMTP Authentication. An app password alongside email backend configuration was set up to take care of the bug. Thereafter, all verification, activation and confirmation emails are smoothly sent.
+
+Paypal as an alternative payment plan was implemented but due to a bug in its functionality, the only fix was to take it off.
+
+In a final hour test, the navbar was seen to have had a bit of responsive issue and was immediately fixed. 
+
 The website in total functions as expected and there are no bugs.
