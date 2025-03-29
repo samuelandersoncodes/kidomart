@@ -32,6 +32,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
     'kidomart-78f25893d540.herokuapp.com',
     '8000-samuelanderson-kidomart-scn4sskwo16.ws-eu106.gitpod.io'
 ]
